@@ -5,13 +5,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AromaCareGlow.Commerce.Web.Models;
+using AromaCareGlow.Commerce.Web.SOA.Contract;
 
 namespace AromaCareGlow.Commerce.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ICustomerDataServiceProxy _customerDataServiceProxy;
+        public HomeController(ICustomerDataServiceProxy customerDataServiceProxy)
+        {
+            _customerDataServiceProxy = customerDataServiceProxy;
+        }
         public IActionResult Index()
         {
+            var result =_customerDataServiceProxy.GetCustomerByEmail("majid80_sit@yahoo.com");
             return View();
         }
 

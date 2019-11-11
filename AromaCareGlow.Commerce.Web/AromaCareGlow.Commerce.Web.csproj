@@ -11,6 +11,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
+    <PackageReference Include="Polly" Version="7.1.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\AromaCareGlow.Commerce.Web.Model\AromaCareGlow.Commerce.Web.Model.csproj" />
+    <ProjectReference Include="..\AromaCareGlow.Commerce.Web.SOA\AromaCareGlow.Commerce.Web.SOA.csproj" />
   </ItemGroup>
 
 </Project>
