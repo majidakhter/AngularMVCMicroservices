@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AromaCareGlow.Commerce.Web.Models;
 using AromaCareGlow.Commerce.Web.SOA.Contract;
+using AromaCareGlow.Commerce.Web.Domain.Interface;
 
 namespace AromaCareGlow.Commerce.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ICustomerDataServiceProxy _customerDataServiceProxy;
-        public HomeController(ICustomerDataServiceProxy customerDataServiceProxy)
+        private readonly ICustomerService _customerDataServiceProxy;
+        public HomeController(ICustomerService customerDataServiceProxy)
         {
             _customerDataServiceProxy = customerDataServiceProxy;
         }

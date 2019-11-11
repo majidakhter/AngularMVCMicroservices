@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AromaCareGlow.Commerce.Web.Domain.Interface
 {
-    public interface ICustomerInfo
+    public interface ICustomerService
     {
         Task<CustomerDto> GetCustomerByEmail(string emailId);
     }

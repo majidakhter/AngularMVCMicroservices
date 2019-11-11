@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AromaCareGlow.Commerce.Web.CommonLib\AromaCareGlow.Commerce.Web.CommonLib.csproj" />
     <ProjectReference Include="..\AromaCareGlow.Commerce.Web.Model\AromaCareGlow.Commerce.Web.Model.csproj" />
+    <ProjectReference Include="..\AromaCareGlow.Commerce.Web.SOA\AromaCareGlow.Commerce.Web.SOA.csproj" />
   </ItemGroup>
 
 </Project>
