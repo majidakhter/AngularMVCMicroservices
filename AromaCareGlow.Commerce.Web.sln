@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AromaCareGlow.Commerce.Web", "AromaCareGlow.Commerce.Web\AromaCareGlow.Commerce.Web.csproj", "{3C665170-A80B-4324-A37E-C3D2F187ED57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AromaCareGlow.Commerce.Web", "AromaCareGlow.Commerce.Web\AromaCareGlow.Commerce.Web.csproj", "{3C665170-A80B-4324-A37E-C3D2F187ED57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AromaCareGlow.Commerce.Web.SOA", "AromaCareGlow.Commerce.Web.SOA\AromaCareGlow.Commerce.Web.SOA.csproj", "{7A807B8D-37A3-46E3-B987-495181CDD4F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AromaCareGlow.Commerce.Web.SOA", "AromaCareGlow.Commerce.Web.SOA\AromaCareGlow.Commerce.Web.SOA.csproj", "{7A807B8D-37A3-46E3-B987-495181CDD4F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AromaCareGlow.Commerce.Web.Domain", "AromaCareGlow.Commerce.Web.Domain\AromaCareGlow.Commerce.Web.Domain.csproj", "{3879736A-7E8C-46BF-84A0-BF6F14F5A437}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AromaCareGlow.Commerce.Web.Domain", "AromaCareGlow.Commerce.Web.Domain\AromaCareGlow.Commerce.Web.Domain.csproj", "{3879736A-7E8C-46BF-84A0-BF6F14F5A437}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AromaCareGlow.Commerce.Web.Model", "AromaCareGlow.Commerce.Web.Model\AromaCareGlow.Commerce.Web.Model.csproj", "{6533A734-3878-4A6A-BA68-B4AB1A340A19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AromaCareGlow.Commerce.Web.Model", "AromaCareGlow.Commerce.Web.Model\AromaCareGlow.Commerce.Web.Model.csproj", "{6533A734-3878-4A6A-BA68-B4AB1A340A19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AromaCareGlow.Commerce.Web.UnitTest", "AromaCareGlow.Commerce.Web.UnitTest\AromaCareGlow.Commerce.Web.UnitTest.csproj", "{904C3350-D629-4389-926E-5EA3B6B6EA35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AromaCareGlow.Commerce.Web.UnitTest", "AromaCareGlow.Commerce.Web.UnitTest\AromaCareGlow.Commerce.Web.UnitTest.csproj", "{904C3350-D629-4389-926E-5EA3B6B6EA35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AromaCareGlow.Commerce.Web.CommonLib", "AromaCareGlow.Commerce.Web.CommonLib\AromaCareGlow.Commerce.Web.CommonLib.csproj", "{C82AB117-1135-48B6-B4DE-DFDC47410FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AromaCareGlow.Commerce.Web.CommonLib", "AromaCareGlow.Commerce.Web.CommonLib\AromaCareGlow.Commerce.Web.CommonLib.csproj", "{C82AB117-1135-48B6-B4DE-DFDC47410FEE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AromaCareGlow.Commerce.AngularWeb", "AromaCareGlow.Commerce.AngularWeb\AromaCareGlow.Commerce.AngularWeb.csproj", "{D2EE8DE2-F747-4FD1-8856-CCA6A136CA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AromaCareGlow.Commerce.Web.AngularMVC1.1", "AromaCareGlow.Commerce.Web.AngularMVC1.1\AromaCareGlow.Commerce.Web.AngularMVC1.1.csproj", "{7F8D3CED-2274-4BE9-81A7-6E3368CBD632}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{C82AB117-1135-48B6-B4DE-DFDC47410FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C82AB117-1135-48B6-B4DE-DFDC47410FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C82AB117-1135-48B6-B4DE-DFDC47410FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2EE8DE2-F747-4FD1-8856-CCA6A136CA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EE8DE2-F747-4FD1-8856-CCA6A136CA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EE8DE2-F747-4FD1-8856-CCA6A136CA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EE8DE2-F747-4FD1-8856-CCA6A136CA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F8D3CED-2274-4BE9-81A7-6E3368CBD632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F8D3CED-2274-4BE9-81A7-6E3368CBD632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F8D3CED-2274-4BE9-81A7-6E3368CBD632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F8D3CED-2274-4BE9-81A7-6E3368CBD632}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

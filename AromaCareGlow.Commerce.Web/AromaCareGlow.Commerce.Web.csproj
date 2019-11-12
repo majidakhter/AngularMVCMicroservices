@@ -21,4 +21,9 @@
     <ProjectReference Include="..\AromaCareGlow.Commerce.Web.Model\AromaCareGlow.Commerce.Web.Model.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>
