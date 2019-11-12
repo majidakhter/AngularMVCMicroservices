@@ -22,7 +22,7 @@ var RegisterComponent = /** @class */ (function () {
         this.router = router;
     }
     RegisterComponent.prototype.ngOnInit = function () {
-        this._newUser = new registration_1.Registration('', '', '');
+        this._newUser = new registration_1.Registration('', '', '', '', '', '', '', false);
     };
     RegisterComponent.prototype.register = function () {
         var _this = this;
@@ -34,7 +34,7 @@ var RegisterComponent = /** @class */ (function () {
         }, function (error) { return console.error('Error: ' + error); }, function () {
             if (_registrationResult.Succeeded) {
                 _this.notificationService.printSuccessMessage('Dear ' + _this._newUser.Username + ', please login with your credentials');
-                _this.router.navigate(['account/login']);
+                _this.router.navigate(['accounts/login']);
             }
             else {
                 _this.notificationService.printErrorMessage(_registrationResult.Message);

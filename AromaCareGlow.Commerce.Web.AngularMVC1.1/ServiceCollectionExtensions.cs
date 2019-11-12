@@ -4,7 +4,7 @@ using AromaCareGlow.Commerce.Web.SOA.Contract;
 using AromaCareGlow.Commerce.Web.SOA.Proxy;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AromaCareGlow.Commerce.Web
+namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
 {
     public static class ServiceCollectionExtensions
     {
@@ -12,6 +12,8 @@ namespace AromaCareGlow.Commerce.Web
         {
             services.AddSingleton<ICustomerService, CustomerService>();
             services.AddSingleton<ICustomerDataServiceProxy, CustomerDataServiceProxy>();
+            services.AddSingleton<IEncryptionService, EncryptionService>();
+            services.AddSingleton<IMembershipService, MemberShipService>();
         }
     }
 }

@@ -38,7 +38,7 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(Configuration);
-            //services.Configure<CustomerDataServiceToggleSettings>(Configuration.GetSection("CustomerDataServiceToggleSettings"));
+            services.AddDependencyServices();
             services.AddMvc()
           .AddJsonOptions(opt =>
           {
@@ -54,7 +54,6 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-           // loggerFactory.AddConsole();
 
             if (env.IsDevelopment())
             {
@@ -69,9 +68,6 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-
-                // Uncomment the following line to add a route for porting Web API 2 controllers.
-                //routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
             });
         }
     }

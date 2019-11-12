@@ -19,7 +19,7 @@ namespace AromaCareGlow.Commerce.Web.Controllers
         }
         public IActionResult Index()
         {
-            var result =_customerDataServiceProxy.GetCustomerByEmail("majid80_sit@yahoo.com");
+            var result =_customerDataServiceProxy.GetCustomerByEmail("");
             return View();
         }
 

@@ -19,7 +19,8 @@ export class RegisterComponent implements OnInit {
         public router: Router) { }
 
     ngOnInit() {
-        this._newUser = new Registration('', '', '');
+        this._newUser = new Registration('', '', '', '', '', '', '', false);
+      
     }
 
     register(): void {
@@ -34,7 +35,7 @@ export class RegisterComponent implements OnInit {
                 () => {
                     if (_registrationResult.Succeeded) {
                         this.notificationService.printSuccessMessage('Dear ' + this._newUser.Username + ', please login with your credentials');
-                        this.router.navigate(['account/login']);
+                        this.router.navigate(['accounts/login']);
                     }
                     else {
                         this.notificationService.printErrorMessage(_registrationResult.Message);

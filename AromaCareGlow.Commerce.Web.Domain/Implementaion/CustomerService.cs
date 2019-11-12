@@ -1,9 +1,6 @@
 ﻿using AromaCareGlow.Commerce.Web.Domain.Interface;
 using AromaCareGlow.Commerce.Web.Model.DTO;
 using AromaCareGlow.Commerce.Web.SOA.Contract;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AromaCareGlow.Commerce.Web.Domain.Implementaion
@@ -20,5 +17,6 @@ namespace AromaCareGlow.Commerce.Web.Domain.Implementaion
            var result= _customerDataServiceProxy.GetCustomerByEmail(emailId);
             return result;
         }
+       
     }
 }

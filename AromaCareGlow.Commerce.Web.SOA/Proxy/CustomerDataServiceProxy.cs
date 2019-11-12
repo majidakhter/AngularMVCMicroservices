@@ -22,7 +22,11 @@ namespace AromaCareGlow.Commerce.Web.SOA.Proxy
         private static HttpClient client;
         private static CircuitBreakerPolicy CircuitBreakerPolicy { get; set; }
         private const string CUSTOMERDATASERVICE_GETCUSTOMER = "v1/Customer/GetCustomerByEmail";
-        
+        private const string CUSTOMERDATASERVICE_GETCUSTOMERBYID = "v1/Customer/GetCustomerById";
+        private const string CUSTOMERDATASERVICE_GETCUSTOMERBYUserName = "v1/Customer/GetCustomerByUsername";
+        private const string CUSTOMERDATASERVICE_GETCurrentPassword = "v1/CustomerPassword/GetCurrentPassword";
+        private const string CUSTOMERDATASERVICE_GETCustomerRoleBySystemName = "v1/CustomerRole/GetCustomerRoleBySystemName";
+
         public CustomerDataServiceProxy()
         {
            // quoteInfoToggle = ConsulUtil.GetConsulProperty<QuoteInfoToggleSettings>(ConsulConstants.QuoteInfoToggleSettings);
@@ -59,6 +63,90 @@ namespace AromaCareGlow.Commerce.Web.SOA.Proxy
                 var jsonString = await results.Content.ReadAsStringAsync();
                 objResponse = JsonConvert.DeserializeObject<CustomerDto>(jsonString);
                 
+            }
+            return objResponse;
+        }
+        public async Task<CustomerDto> GetCustomerById(int CustomerId)
+        {
+            CustomerDto objResponse = new CustomerDto();
+            if (string.IsNullOrEmpty(CustomerId.ToString()))
+            {
+                throw new ArgumentNullException();
+            }
+            var uri = string.Format("{0}/{1}/{2}",
+                                   "https://localhost:44328",
+                                   CUSTOMERDATASERVICE_GETCUSTOMERBYID, CustomerId);
+
+            var results = await client.GetAsync(uri).ConfigureAwait(false);
+
+            if (results.IsSuccessStatusCode)
+            {
+                var jsonString = await results.Content.ReadAsStringAsync();
+                objResponse = JsonConvert.DeserializeObject<CustomerDto>(jsonString);
+
+            }
+            return objResponse;
+        }
+        public async Task<CustomerDto> GetCustomerByUserName(string userName)
+        {
+            CustomerDto objResponse = new CustomerDto();
+            if (string.IsNullOrEmpty(userName))
+            {
+                throw new ArgumentNullException();
+            }
+            var uri = string.Format("{0}/{1}/{2}",
+                                   "https://localhost:44328",
+                                   CUSTOMERDATASERVICE_GETCUSTOMERBYUserName, userName);
+
+            var results = await client.GetAsync(uri).ConfigureAwait(false);
+
+            if (results.IsSuccessStatusCode)
+            {
+                var jsonString = await results.Content.ReadAsStringAsync();
+                objResponse = JsonConvert.DeserializeObject<CustomerDto>(jsonString);
+
+            }
+            return objResponse;
+        }
+        public async Task<CustomerPasswordDto> GetCurrentPassword(int CustomerId)
+        {
+            CustomerPasswordDto objResponse = new CustomerPasswordDto();
+            if (string.IsNullOrEmpty(CustomerId.ToString()))
+            {
+                throw new ArgumentNullException();
+            }
+            var uri = string.Format("{0}/{1}/{2}",
+                                   "https://localhost:44328",
+                                   CUSTOMERDATASERVICE_GETCurrentPassword, CustomerId);
+
+            var results = await client.GetAsync(uri).ConfigureAwait(false);
+
+            if (results.IsSuccessStatusCode)
+            {
+                var jsonString = await results.Content.ReadAsStringAsync();
+                objResponse = JsonConvert.DeserializeObject<CustomerPasswordDto>(jsonString);
+
+            }
+            return objResponse;
+        }
+        public async Task<CustomerRoleDto> GetCustomerRoleBySystemName(string systemName)
+        {
+            CustomerRoleDto objResponse = new CustomerRoleDto();
+            if (string.IsNullOrEmpty(systemName))
+            {
+                throw new ArgumentNullException();
+            }
+            var uri = string.Format("{0}/{1}/{2}",
+                                   "https://localhost:44328",
+                                   CUSTOMERDATASERVICE_GETCustomerRoleBySystemName, systemName);
+
+            var results = await client.GetAsync(uri).ConfigureAwait(false);
+
+            if (results.IsSuccessStatusCode)
+            {
+                var jsonString = await results.Content.ReadAsStringAsync();
+                objResponse = JsonConvert.DeserializeObject<CustomerRoleDto>(jsonString);
+
             }
             return objResponse;
         }
