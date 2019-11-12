@@ -5,11 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { Headers, RequestOptions, BaseRequestOptions} from '@angular/http';
 import { HomeComponent } from './components/home.component';
-
+import { AccountModule } from './components/accounts/account.module';
 import { AppComponent }  from './app.component';
 
 import { routing } from './routes';
-
+import { DataService } from './core/services/data.service';
+import { MemberShipService } from './core/services/membership.service';
+import { UtilityService } from './core/services/utility.service';
+import { NotificationService } from './core/services/notification.service';
 
 
 class AppBaseRequestOptions extends BaseRequestOptions {
@@ -28,10 +31,10 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         FormsModule,
         HttpModule,
         routing,
-       
+        AccountModule
     ],
     declarations: [AppComponent, HomeComponent],
-    providers: [
+    providers: [DataService, MemberShipService, UtilityService, NotificationService,
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         { provide: RequestOptions, useClass: AppBaseRequestOptions }],
     bootstrap: [AppComponent]

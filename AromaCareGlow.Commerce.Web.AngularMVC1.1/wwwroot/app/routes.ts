@@ -2,7 +2,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home.component';
-
+import { accountRoutes, accountRouting } from './components/accounts/routes';
 const appRoutes: Routes = [
     {
         path: '',

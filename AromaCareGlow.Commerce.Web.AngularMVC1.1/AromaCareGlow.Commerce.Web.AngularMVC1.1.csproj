@@ -6,6 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\app\components\accounts\account.module.ts" />
+    <Content Remove="wwwroot\app\components\accounts\login.component.ts" />
+    <Content Remove="wwwroot\app\components\accounts\register.component.ts" />
+    <Content Remove="wwwroot\app\core\domain\customer.ts" />
+    <Content Remove="wwwroot\app\core\domain\operationResult.ts" />
+    <Content Remove="wwwroot\app\core\domain\registration.ts" />
+    <Content Remove="wwwroot\app\core\services\data.service.ts" />
+    <Content Remove="wwwroot\app\core\services\membership.service.ts" />
+    <Content Remove="wwwroot\app\core\services\notification.service.ts" />
+    <Content Remove="wwwroot\app\core\services\utility.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.7" />
@@ -16,9 +29,21 @@
   
   <ItemGroup>
     <Folder Include="wwwroot\app\core\common\" />
-    <Folder Include="wwwroot\app\core\domain\" />
-    <Folder Include="wwwroot\app\core\services\" />
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+ 
+  
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\app\components\accounts\account.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\accounts\login.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\accounts\register.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\customer.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\operationResult.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\registration.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\data.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\membership.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\notification.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\utility.service.ts" />
   </ItemGroup>
 
 </Project>

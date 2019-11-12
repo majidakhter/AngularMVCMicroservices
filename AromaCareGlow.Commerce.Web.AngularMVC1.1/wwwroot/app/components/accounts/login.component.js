@@ -11,47 +11,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var registration_1 = require("../../core/domain/registration");
+var customer_1 = require("../../core/domain/customer");
 var operationResult_1 = require("../../core/domain/operationResult");
 var membership_service_1 = require("../../core/services/membership.service");
 var notification_service_1 = require("../../core/services/notification.service");
-var RegisterComponent = (function () {
-    function RegisterComponent(membershipService, notificationService, router) {
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent(membershipService, notificationService, router) {
         this.membershipService = membershipService;
         this.notificationService = notificationService;
         this.router = router;
     }
-    RegisterComponent.prototype.ngOnInit = function () {
-        this._newUser = new registration_1.Registration('', '', '');
+    LoginComponent.prototype.ngOnInit = function () {
+        this._user = new customer_1.Customer('', '');
     };
-    RegisterComponent.prototype.register = function () {
+    LoginComponent.prototype.login = function () {
         var _this = this;
-        var _registrationResult = new operationResult_1.OperationResult(false, '');
-        this.membershipService.register(this._newUser)
+        var _authenticationResult = new operationResult_1.OperationResult(false, '');
+        this.membershipService.login(this._user)
             .subscribe(function (res) {
-            _registrationResult.Succeeded = res.Succeeded;
-            _registrationResult.Message = res.Message;
+            _authenticationResult.Succeeded = res.Succeeded;
+            _authenticationResult.Message = res.Message;
         }, function (error) { return console.error('Error: ' + error); }, function () {
-            if (_registrationResult.Succeeded) {
-                _this.notificationService.printSuccessMessage('Dear ' + _this._newUser.Username + ', please login with your credentials');
-                _this.router.navigate(['account/login']);
+            if (_authenticationResult.Succeeded) {
+                _this.notificationService.printSuccessMessage('Welcome back ' + _this._user.Username + '!');
+                localStorage.setItem('user', JSON.stringify(_this._user));
+                _this.router.navigate(['home']);
             }
             else {
-                _this.notificationService.printErrorMessage(_registrationResult.Message);
+                _this.notificationService.printErrorMessage(_authenticationResult.Message);
             }
         });
     };
     ;
-    RegisterComponent = __decorate([
+    LoginComponent = __decorate([
         core_1.Component({
-            selector: 'register',
-            providers: [membership_service_1.MembershipService, notification_service_1.NotificationService],
-            templateUrl: './app/components/account/register.component.html'
+            selector: 'albums',
+            templateUrl: './app/components/accounts/login.component.html'
         }),
-        __metadata("design:paramtypes", [membership_service_1.MembershipService,
+        __metadata("design:paramtypes", [membership_service_1.MemberShipService,
             notification_service_1.NotificationService,
             router_1.Router])
-    ], RegisterComponent);
-    return RegisterComponent;
+    ], LoginComponent);
+    return LoginComponent;
 }());
-exports.RegisterComponent = RegisterComponent;
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map

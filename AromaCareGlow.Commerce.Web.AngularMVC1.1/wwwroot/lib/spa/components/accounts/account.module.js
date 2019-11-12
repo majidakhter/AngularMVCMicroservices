@@ -33,7 +33,7 @@ var AccountModule = (function () {
             ],
             providers: [
                 data_service_1.DataService,
-                membership_service_1.MembershipService,
+                membership_service_1.MemberShipService,
                 notification_service_1.NotificationService
             ]
         })

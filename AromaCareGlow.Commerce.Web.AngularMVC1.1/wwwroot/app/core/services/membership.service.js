@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("./data.service");
 var customer_1 = require("../domain/customer");
-var MemberShipService = (function () {
+var MemberShipService = /** @class */ (function () {
     function MemberShipService(accountService) {
         this.accountService = accountService;
         this._accountRegisterAPI = 'api/customer/register/';
@@ -53,3 +53,4 @@ var MemberShipService = (function () {
     return MemberShipService;
 }());
 exports.MemberShipService = MemberShipService;
+//# sourceMappingURL=membership.service.js.map

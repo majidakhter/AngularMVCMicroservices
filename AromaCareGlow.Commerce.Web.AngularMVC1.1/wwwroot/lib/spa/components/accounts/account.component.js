@@ -10,25 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var UtilityService = (function () {
-    function UtilityService(router) {
-        this._router = router;
+var AccountComponent = (function () {
+    function AccountComponent() {
     }
-    UtilityService.prototype.convertDateTime = function (date) {
-        var _formattedDate = new Date(date.toString());
-        return _formattedDate.toDateString();
-    };
-    UtilityService.prototype.navigate = function (path) {
-        this._router.navigate([path]);
-    };
-    UtilityService.prototype.navigateToSignIn = function () {
-        this.navigate('/accounts/login');
-    };
-    UtilityService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [router_1.Router])
-    ], UtilityService);
-    return UtilityService;
+    AccountComponent = __decorate([
+        core_1.Component({
+            selector: 'account',
+            templateUrl: './app/components/accounts/account.component.html'
+        }),
+        __metadata("design:paramtypes", [])
+    ], AccountComponent);
+    return AccountComponent;
 }());
-exports.UtilityService = UtilityService;
+exports.AccountComponent = AccountComponent;

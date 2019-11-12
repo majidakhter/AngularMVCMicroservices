@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
-var DataService = (function () {
+var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
     }
@@ -45,3 +45,4 @@ var DataService = (function () {
     return DataService;
 }());
 exports.DataService = DataService;
+//# sourceMappingURL=data.service.js.map

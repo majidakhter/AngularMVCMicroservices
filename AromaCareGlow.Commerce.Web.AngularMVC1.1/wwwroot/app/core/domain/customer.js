@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var User = (function () {
-    function User(username, password) {
+var Customer = /** @class */ (function () {
+    function Customer(username, password) {
         this.Username = username;
         this.Password = password;
         this.RememberMe = false;
     }
-    return User;
+    return Customer;
 }());
-exports.User = User;
+exports.Customer = Customer;
+//# sourceMappingURL=customer.js.map

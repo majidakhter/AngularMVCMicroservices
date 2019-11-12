@@ -1,11 +1,11 @@
-﻿import { ModuleWithProviders }  from '@angular/core';
+import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home.component';
 import { PhotosComponent } from './components/photos.component';
 import { AlbumsComponent } from './components/albums.component';
 import { AlbumPhotosComponent } from './components/album-photos.component';
-import { accountRoutes, accountRouting } from './components/account/routes';
+import { accountRoutes, accountRouting } from './components/accounts/routes';
 
 
 const appRoutes: Routes = [

@@ -6,7 +6,7 @@ var login_component_1 = require("./login.component");
 var register_component_1 = require("./register.component");
 exports.accountRoutes = [
     {
-        path: 'account',
+        path: 'accounts',
         component: account_component_1.AccountComponent,
         children: [
             { path: 'register', component: register_component_1.RegisterComponent },
@@ -15,3 +15,4 @@ exports.accountRoutes = [
     }
 ];
 exports.accountRouting = router_1.RouterModule.forChild(exports.accountRoutes);
+//# sourceMappingURL=routes.js.map

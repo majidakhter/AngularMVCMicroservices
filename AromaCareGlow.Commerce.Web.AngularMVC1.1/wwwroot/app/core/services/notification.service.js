@@ -10,25 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var UtilityService = (function () {
-    function UtilityService(router) {
-        this._router = router;
+var NotificationService = /** @class */ (function () {
+    function NotificationService() {
+        this._notifier = alertify;
     }
-    UtilityService.prototype.convertDateTime = function (date) {
-        var _formattedDate = new Date(date.toString());
-        return _formattedDate.toDateString();
+    NotificationService.prototype.printSuccessMessage = function (message) {
+        this._notifier.success(message);
     };
-    UtilityService.prototype.navigate = function (path) {
-        this._router.navigate([path]);
+    NotificationService.prototype.printErrorMessage = function (message) {
+        this._notifier.error(message);
     };
-    UtilityService.prototype.navigateToSignIn = function () {
-        this.navigate('/accounts/login');
+    NotificationService.prototype.printConfirmationDialog = function (message, okCallback) {
+        this._notifier.confirm(message, function (e) {
+            if (e) {
+                okCallback();
+            }
+            else {
+            }
+        });
     };
-    UtilityService = __decorate([
+    NotificationService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [router_1.Router])
-    ], UtilityService);
-    return UtilityService;
+        __metadata("design:paramtypes", [])
+    ], NotificationService);
+    return NotificationService;
 }());
-exports.UtilityService = UtilityService;
+exports.NotificationService = NotificationService;
+//# sourceMappingURL=notification.service.js.map
