@@ -4,6 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using Microsoft.Extensions.Configuration;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
+using AromaCareGlow.Commerce.Web.AngularMVC1._1.Controllers;
 
 namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
 {
@@ -32,6 +36,7 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
             }
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+
         }
 
         public IConfiguration Configuration { get; }
@@ -39,6 +44,28 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
         {
             services.AddSingleton(Configuration);
             services.AddDependencyServices();
+            services.AddAuthentication("FiverSecurityScheme")
+              .AddCookie("FiverSecurityScheme", options =>
+              {
+                  options.AccessDeniedPath = new PathString("/accounts/Forbidden");
+                  options.LoginPath = new PathString("/accounts/login");
+              });
+            // Polices
+            services.AddAuthorization(options =>
+            {
+                // inline policies
+                options.AddPolicy("AdminOnly", policy =>
+                {
+                    policy.RequireClaim(ClaimTypes.Role, "Admin");
+                });
+
+            });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+           .AddCookie(options => {
+              options.LoginPath = "/accounts/login/";
+           });
+
+
             services.AddMvc()
           .AddJsonOptions(opt =>
           {
@@ -49,6 +76,10 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
                   res.NamingStrategy = null;
               }
           });
+            var serviceProvider = services.BuildServiceProvider();
+            var logger = serviceProvider.GetService<ILogger<CustomerController>>();
+            services.AddSingleton(typeof(ILogger), logger);
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +92,7 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
             }
 
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
             {
