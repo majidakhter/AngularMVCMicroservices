@@ -16,7 +16,7 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseApplicationInsights()
+               // .UseApplicationInsights()
                 .Build();
 
             host.Run();
