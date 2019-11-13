@@ -1,25 +1,78 @@
 ﻿<!-- Navigation -->
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" [routerLink]="['/home']"><i class="fa fa-home fa-fw"></i>&nbsp;AromaCareGlow Commerce</a>
+        <div class="row">
+            <div>
+                <a class="navbar-brand navbar-left" [routerLink]="['/home']"><i class="fa fa-home fa-fw"></i>&nbsp;AromaCareGlow Commerce</a>
+                <div>
+                    <form class="navbar-brand navbar-left">
+                        <input type="text" placeholder="Search on AromaCareGlow ....">
+                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <div>
+                    <a class="navbar-brand navbar-right" [routerLink]="['/accounts/login']"><i class="fa fa-unlock-alt fa-fw"></i>&nbsp;Sign in</a>
+                    <a class="navbar-brand navbar-right" [routerLink]="['/home']" (click)="logout()"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</a>
+                </div>
+                <div>
+                    
+                    <a class="navbar-brand navbar-right" [routerLink]="['/accounts/login']"><i class="fa fa-shopping-basket"></i><span>0</span>&nbsp;Shopping Cart</a>
+                </div>
+            </div>
+            
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-info fa-fw"></i>&nbsp;About</a>
-                </li>
-                <!--<li>
-                    <a [routerLink]="['/photos']"><i class="fa fa-camera fa-fw"></i>&nbsp;Photos</a>
+                    <a [routerLink]="['/photos']"><i class="fa fa-camera fa-fw"></i>&nbsp;Home</a>
                 </li>
                 <li>
-                <li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Albums</a></li>-->
+                    <a [routerLink]="['/photos']"><i class="fa fa-camera fa-fw"></i>&nbsp;Men</a>
+                </li>
+
+                <li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Women</a></li>
+                <li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Jewelary</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;Shoes<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="https://github.com/majidakhter" target="_blank"><i class="fa fa-github fa-fw"></i>&nbsp;Sneakers</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/majid80_sit" target="_blank"><i class="fa fa-twitter fa-fw"></i>&nbsp;Sandals</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/majid.akhter" target="_blank"><i class="fa fa-facebook fa-fw"></i>&nbsp;Formal Shoes</a>
+                        </li>
+                        <li>
+                            <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Boots</a>
+                        </li>
+                        <li>
+                            <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Flip Flops</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;Pages<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="https://github.com/majidakhter" target="_blank"><i class="fa fa-github fa-fw"></i>&nbsp;Product Page</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/majid80_sit" target="_blank"><i class="fa fa-twitter fa-fw"></i>&nbsp;Category Page</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/majid.akhter" target="_blank"><i class="fa fa-facebook fa-fw"></i>&nbsp;Cart Page</a>
+                        </li>
+                        <li>
+                            <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Contact Page</a>
+                        </li>
+                        <li>
+                            <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Checkout Page</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;Blog<b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -37,17 +90,18 @@
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i>&nbsp;{{getUserName()}}<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li *ngIf="!isUserLoggedIn()">
-                            <a [routerLink]="['/accounts/login']"><i class="fa fa-unlock-alt fa-fw"></i>&nbsp;Sign in</a>
-                        </li>
-                        <li *ngIf="isUserLoggedIn()">
-                            <a  [routerLink]="['/home']" (click)="logout()"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</a>
-                        </li>
-                    </ul>
-                </li>
+                <!--<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i>&nbsp;{{getUserName()}}<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li *ngIf="!isUserLoggedIn()">
+                <a [routerLink]="['/accounts/login']"><i class="fa fa-unlock-alt fa-fw"></i>&nbsp;Sign in</a>
+            </li>
+            <li *ngIf="isUserLoggedIn()">
+                <a [routerLink]="['/home']" (click)="logout()"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</a>
+            </li>
+        </ul>
+    </li>-->
+
             </ul>
         </div>
     </div>
