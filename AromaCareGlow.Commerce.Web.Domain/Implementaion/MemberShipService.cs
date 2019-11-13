@@ -115,7 +115,6 @@ namespace AromaCareGlow.Commerce.Web.Domain.Implementaion
 
         private bool isPasswordValid(CustomerPasswordDto user, string password)
         {
-            //return string.Equals(_encryptionService.EncryptPassword(password, user.Password), user.PasswordSalt);
             var hashPassword = _encryptionService.CreatePasswordHash(password, user.PasswordSalt, "SHA512");
             return   user.Password.Equals(hashPassword);
         }
