@@ -13,6 +13,15 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC.ViewModel
         [Required]
         public string Password { get; set; }
         [Required]
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+        public Item[] Gender { get; set; }
+        public string SelectedGender { get; set; }
+        public string CompanyName { get; set; }
+        public bool NewsLetter { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        [Required]
         [EmailAddress]
         public string Email { get; set; }
     }
