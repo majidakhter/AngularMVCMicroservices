@@ -4,25 +4,33 @@
     <div class="container">
         <div class="row">
             <div>
-                <a class="navbar-brand navbar-left" [routerLink]="['/home']"><i class="fa fa-home fa-fw"></i>&nbsp;AromaCareGlow Commerce</a>
                 <div>
-                    <form class="navbar-brand navbar-left">
-                        <input type="text" placeholder="Search on AromaCareGlow ....">
-                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </form>
+                    <div class="navbar-brand mx-auto">
+                        <img  src="lib/img/logo.jpg" alt="">
+                    </div>
+                   
+                    <div class="navbar-header mx-auto" style="align-content:center">
+                        <form class="navbar-brand mx-auto">
+                            <input type="text" style="height:37px;width:285px" placeholder="Search on AromaCare...">
+                            <button><i class="fa fa-search" style="height:30px;vertical-align:middle"></i></button>
+                        </form>
+                    </div>
+                    
                 </div>
-                <div>
+                <div *ngIf="!isUserLoggedIn()">
                     <a class="navbar-brand navbar-right" [routerLink]="['/accounts/login']"><i class="fa fa-unlock-alt fa-fw"></i>&nbsp;Sign in</a>
+                </div>
+                <div *ngIf="isUserLoggedIn()">
                     <a class="navbar-brand navbar-right" [routerLink]="['/home']" (click)="logout()"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</a>
                 </div>
                 <div>
-                    
+
                     <a class="navbar-brand navbar-right" [routerLink]="['/accounts/login']"><i class="fa fa-shopping-basket"></i><span>0</span>&nbsp;Shopping Cart</a>
                 </div>
             </div>
             
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                 <li>
                     <a [routerLink]="['/photos']"><i class="fa fa-camera fa-fw"></i>&nbsp;Home</a>

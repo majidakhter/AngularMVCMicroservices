@@ -1,4 +1,5 @@
-﻿var gulp = require('gulp'),
+/// <binding Clean='clean-lib' />
+var gulp = require('gulp'),
     ts = require('gulp-typescript'),
     merge = require('merge'),
     fs = require("fs"),
