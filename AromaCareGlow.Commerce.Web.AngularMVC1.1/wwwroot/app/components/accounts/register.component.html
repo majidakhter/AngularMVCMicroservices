@@ -49,49 +49,26 @@
                                     <label for="sign-up-role">Date Of Birth</label>
                                 </div>
                                 <div class="col-xs-2">
-                                    <select class="form-control" id="selectday"  name="Day">
-                                        <option>Day</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
+                                  
+                                    <select class="form-control" id="selectday" [(ngModel)]="daySelected" name="day">
+                                        <option *ngFor="let item of _newUser.Day" value= "{{ item.value }}">
+                                            {{ item.name }}
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="col-xs-3">
-                                    <select class="form-control" id="selectmonth"  name="Month">
-                                        <option>Month</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-
+                                    <select class="form-control" id="monthSelect" [(ngModel)]="monthSelected" name="month">
+                                        <option *ngFor="let item of _newUser.Month" value= "{{ item.value }}">
+                                            {{ item.name }}
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="col-xs-3">
-                                    <select class="form-control" id="selectyear"  name="Year">
-                                        <option>Year</option>
-                                        <option>2010</option>
-                                        <option>2011</option>
-                                        <option>2012</option>
+                                   
+                                    <select class="form-control" id="YearSelect" [(ngModel)]="yearSelected"  name="year">
+                                        <option *ngFor="let item of _newUser.Year" value= "{{ item.value }}">
+                                            {{ item.name }}
+                                        </option>
                                     </select>
                                 </div>
                                 

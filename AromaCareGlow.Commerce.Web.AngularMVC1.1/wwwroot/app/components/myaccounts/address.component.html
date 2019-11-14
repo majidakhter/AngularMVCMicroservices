@@ -1,0 +1,112 @@
+﻿<div class="container">
+    <div class="col-md-8 col-sm-8">
+        <form class="form col-md-10 center-block" #registerForm="ngForm">
+
+            <h2>My Account- Addresses</h2>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="FirstName" [(ngModel)]="_newUser.FirstName"
+                       name="firstname" #firstname="ngModel" required>
+                <div [hidden]="firstname.valid || firstname.untouched" class="alert alert-danger">
+                    FirsName is required
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="LastName" [(ngModel)]="_newUser.LastName"
+                       name="lastname" #lastname="ngModel" required>
+                <div [hidden]="lastname.valid || lastname.untouched" class="alert alert-danger">
+                    LastName is required
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control input-lg" placeholder="Email" [(ngModel)]="_newUser.Email"
+                       name="email" #email="ngModel" required>
+                <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+                    Email is required
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="Company Name" [(ngModel)]="_newUser.CompanyName"
+                       name="companyname" #companyname="ngModel">
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <label for="sign-up-role">Country</label>
+                    </div>
+                    <div class="col-xs-2">
+
+                        <select class="form-control" id="selectday" [(ngModel)]="daySelected" name="day">
+                            <option *ngFor="let item of _newUser.Day" value="{{ item.value }}">
+                                {{ item.name }}
+                            </option>
+                        </select>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <label for="sign-up-role">State/Province</label>
+                    </div>
+                    <div class="col-xs-2">
+
+                        <select class="form-control" id="selectday" [(ngModel)]="daySelected" name="day">
+                            <option *ngFor="let item of _newUser.Day" value="{{ item.value }}">
+                                {{ item.name }}
+                            </option>
+                        </select>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="City" [(ngModel)]="_newUser.Username"
+                       name="username" #username="ngModel" required>
+                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                    City is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="Address1" [(ngModel)]="_newUser.Username"
+                       name="username" #username="ngModel" required>
+                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                    Address1 is required
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="Address2" [(ngModel)]="_newUser.Username"
+                       name="username" #username="ngModel" required>
+
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="Zip/Postal Code" [(ngModel)]="_newUser.Username"
+                       name="username" #username="ngModel" required>
+                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                    Zip is required
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="PhoneNumber" [(ngModel)]="_newUser.Username"
+                       name="username" #username="ngModel" required>
+                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                    Phone Number is required
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="FaxNumber" [(ngModel)]="_newUser.Username"
+                       name="username" #username="ngModel" required>
+                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                    Fax Number is required
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block" (click)="save()" [disabled]="!registerForm.form.valid">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

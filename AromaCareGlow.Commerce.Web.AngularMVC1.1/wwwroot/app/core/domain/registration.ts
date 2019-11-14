@@ -8,11 +8,14 @@ export class Registration {
     Gender: Item[];
     CompanyName: string;
     NewsLetter: boolean;
-    DateOfBirth: Date;
+    DateOfBirth: string;
+    Day: Item[];
+    Month: Item[];
+    Year: Item[];
     SelectedGender: string;
     constructor(username: string,
         password: string,
-        email: string, firstName: string, lastName: string, gender: Item[], companyName: string, newsLetter: boolean, dateOfBirth: Date, selectedGender: string) {
+        email: string, firstName: string, lastName: string, gender: Item[], companyName: string, newsLetter: boolean, dateOfBirth: string, selectedGender: string, day: Item[], month: Item[], year: Item[]) {
         this.Username = username;
         this.Password = password;
         this.Email = email;
@@ -23,5 +26,8 @@ export class Registration {
         this.NewsLetter = newsLetter;
         this.DateOfBirth = dateOfBirth;
         this.SelectedGender = selectedGender;
+        this.Day = day;
+        this.Month = month;
+        this.Year = year;
     }
 }

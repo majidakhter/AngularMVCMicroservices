@@ -4,9 +4,8 @@ import { Registration } from '../../core/domain/registration';
 import { OperationResult } from '../../core/domain/operationResult';
 import { MemberShipService } from '../../core/services/membership.service';
 import { NotificationService } from '../../core/services/notification.service';
-import { Item } from '../../core/common/item';
 import { ITEMS } from '../../core/common/mock-data';
-
+import { YEARITEMS, MONTHITEMS, DAYITEMS } from '../../core/common/birthyear';
 @Component({
     selector: 'register',
     providers: [MemberShipService, NotificationService],
@@ -17,21 +16,35 @@ export class RegisterComponent implements OnInit {
     private _newUser: Registration;
     radioSel: any;
     radioSelected: string;
+    daySelected: string;
+    yearSelected: string;
+    monthSelected: string;
     radioSelectedString: string;
-   // itemsList: Item[] = ITEMS;
+    yearselectedString: string;
+    monthselectedString: string;
+    daaySelectedString: string;
     constructor(public membershipService: MemberShipService,
         public notificationService: NotificationService,
         public router: Router) { }
 
     ngOnInit() {
-        this._newUser = new Registration('', '', '', '', '', null, '', false, new Date(),'');
+        this._newUser = new Registration('', '', '', '', '', null, '', false,'','',null,null,null);
         this._newUser.Gender = ITEMS;
-        this.radioSelected = "2";
+        this._newUser.Day = DAYITEMS;
+        this._newUser.Month = MONTHITEMS;
+        this._newUser.Year = YEARITEMS;
+        this.radioSelected = "Male";
+        this.yearSelected = "0";
+        this.monthSelected = "00";
+        this.daySelected = "00";
         this.getSelecteditem();
     }
     getSelecteditem() {
         this.radioSel = ITEMS.find(Item => Item.value === this.radioSelected);
-        this.radioSelectedString  = JSON.stringify(this.radioSel);
+        this.radioSelectedString = JSON.stringify(this.radioSel);
+        this.yearselectedString = JSON.stringify(YEARITEMS.find(Item => Item.value === this.yearSelected));
+        this.monthselectedString = JSON.stringify(MONTHITEMS.find(Item => Item.value === this.monthSelected));
+        this.daaySelectedString = JSON.stringify(DAYITEMS.find(Item => Item.value === this.daySelected));
     }
 
     onItemChange(item:any) {
@@ -40,8 +53,12 @@ export class RegisterComponent implements OnInit {
     register(): void {
         var _registrationResult: OperationResult = new OperationResult(false, '');
         this._newUser.SelectedGender = this.radioSelected;
-        //this.getSelecteditem();
-       // this._newUser.Gender = this.radioSel.name;
+        if (this.daySelected !== "00" && this.monthSelected !== "00" && this.yearSelected !== "0") {
+            this._newUser.DateOfBirth = this.daySelected + '/' + this.monthSelected + '/' + this.yearSelected;
+        }
+        else {
+            this._newUser.DateOfBirth = "01/01/1970";
+        }
         this.membershipService.register(this._newUser)
             .subscribe((res: any) => {
                 _registrationResult.Succeeded = res.Succeeded;

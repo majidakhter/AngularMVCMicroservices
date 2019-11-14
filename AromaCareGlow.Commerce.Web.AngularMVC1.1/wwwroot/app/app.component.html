@@ -21,6 +21,7 @@
                     <a class="navbar-brand navbar-right" [routerLink]="['/accounts/login']"><i class="fa fa-unlock-alt fa-fw"></i>&nbsp;Sign in</a>
                 </div>
                 <div *ngIf="isUserLoggedIn()">
+                    <a class="navbar-brand navbar-right" [routerLink]="['/myaccounts/address']"><i class="fa fa-power-off fa-fw"></i>&nbsp;My Account</a>
                     <a class="navbar-brand navbar-right" [routerLink]="['/home']" (click)="logout()"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</a>
                 </div>
                 <div>
@@ -33,15 +34,15 @@
         <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a [routerLink]="['/photos']"><i class="fa fa-camera fa-fw"></i>&nbsp;Home</a>
+                    <a [routerLink]="['/home']"><i class="fa fa-camera fa-fw"></i>&nbsp;Home</a>
                 </li>
                 <li>
                     <a [routerLink]="['/photos']"><i class="fa fa-camera fa-fw"></i>&nbsp;Men</a>
                 </li>
 
                 <li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Women</a></li>
-                <li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Jewelary</a></li>
-                <li class="dropdown">
+                <!--<li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Jewelary</a></li>-->
+                <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;Shoes<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -60,7 +61,7 @@
                             <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Flip Flops</a>
                         </li>
                     </ul>
-                </li>
+                </li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;Pages<b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -70,12 +71,12 @@
                         <li>
                             <a href="https://twitter.com/majid80_sit" target="_blank"><i class="fa fa-twitter fa-fw"></i>&nbsp;Category Page</a>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="https://www.facebook.com/majid.akhter" target="_blank"><i class="fa fa-facebook fa-fw"></i>&nbsp;Cart Page</a>
                         </li>
                         <li>
                             <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Contact Page</a>
-                        </li>
+                        </li>-->
                         <li>
                             <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Checkout Page</a>
                         </li>
@@ -98,6 +99,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Contact us</a></li>
                 <!--<li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i>&nbsp;{{getUserName()}}<b class="caret"></b></a>
         <ul class="dropdown-menu">

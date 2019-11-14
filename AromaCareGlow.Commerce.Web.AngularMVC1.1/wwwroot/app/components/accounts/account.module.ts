@@ -9,6 +9,7 @@ import { NotificationService } from '../../core/services/notification.service';
 import { AccountComponent } from './account.component';
 import { LoginComponent } from './login.component';
 import { RegisterComponent } from './register.component';
+import { ForgotPasswordComponent } from './forgetpassword.component';
 
 import { accountRouting } from './routes';
 
@@ -21,7 +22,8 @@ import { accountRouting } from './routes';
     declarations: [
         AccountComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        ForgotPasswordComponent
     ],
 
     providers: [

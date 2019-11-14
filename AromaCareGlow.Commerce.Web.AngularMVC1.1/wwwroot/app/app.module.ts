@@ -6,6 +6,7 @@ import { Location, LocationStrategy, HashLocationStrategy } from '@angular/commo
 import { Headers, RequestOptions, BaseRequestOptions} from '@angular/http';
 import { HomeComponent } from './components/home.component';
 import { AccountModule } from './components/accounts/account.module';
+import { MyAccountModule } from './components/myaccounts/myaccont.module';
 import { AppComponent }  from './app.component';
 
 import { routing } from './routes';
@@ -31,7 +32,8 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         FormsModule,
         HttpModule,
         routing,
-        AccountModule
+        AccountModule,
+        MyAccountModule
     ],
     declarations: [AppComponent, HomeComponent],
     providers: [DataService, MemberShipService, UtilityService, NotificationService,

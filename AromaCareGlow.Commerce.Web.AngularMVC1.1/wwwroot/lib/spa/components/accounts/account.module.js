@@ -15,6 +15,7 @@ var notification_service_1 = require("../../core/services/notification.service")
 var account_component_1 = require("./account.component");
 var login_component_1 = require("./login.component");
 var register_component_1 = require("./register.component");
+var forgetpassword_component_1 = require("./forgetpassword.component");
 var routes_1 = require("./routes");
 var AccountModule = (function () {
     function AccountModule() {
@@ -29,7 +30,8 @@ var AccountModule = (function () {
             declarations: [
                 account_component_1.AccountComponent,
                 login_component_1.LoginComponent,
-                register_component_1.RegisterComponent
+                register_component_1.RegisterComponent,
+                forgetpassword_component_1.ForgotPasswordComponent
             ],
             providers: [
                 data_service_1.DataService,

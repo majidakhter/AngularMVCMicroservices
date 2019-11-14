@@ -8,8 +8,17 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\app\components\accounts\account.module.ts" />
+    <Content Remove="wwwroot\app\components\accounts\address.component.ts" />
+    <Content Remove="wwwroot\app\components\accounts\forgetpassword.component.ts" />
     <Content Remove="wwwroot\app\components\accounts\login.component.ts" />
+    <Content Remove="wwwroot\app\components\accounts\myaccount.component.ts" />
     <Content Remove="wwwroot\app\components\accounts\register.component.ts" />
+    <Content Remove="wwwroot\app\components\myaccounts\downloadableproduct.component.ts" />
+    <Content Remove="wwwroot\app\components\myaccounts\productreview.component.ts" />
+    <Content Remove="wwwroot\app\components\myaccounts\rewardpoint.component.ts" />
+    <Content Remove="wwwroot\app\components\myaccounts\routes.ts" />
+    <Content Remove="wwwroot\app\components\myaccounts\stocksubscription.component.ts" />
+    <Content Remove="wwwroot\app\core\common\birthyear.ts" />
     <Content Remove="wwwroot\app\core\common\Item.ts" />
     <Content Remove="wwwroot\app\core\common\mock-data.ts" />
     <Content Remove="wwwroot\app\core\domain\customer.ts" />
@@ -34,6 +43,8 @@
   
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\app\components\customerservices\" />
+    <Folder Include="wwwroot\app\components\siteinformation\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
@@ -49,8 +60,18 @@
   
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\app\components\accounts\account.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\accounts\forgetpassword.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\address.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\accounts\login.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\downloadableproduct.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\myaccont.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\myaccount.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\accounts\register.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\productreview.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\rewardpoint.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\routes.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\stocksubscription.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\common\birthyear.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\Item.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\mock-data.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\customer.ts" />

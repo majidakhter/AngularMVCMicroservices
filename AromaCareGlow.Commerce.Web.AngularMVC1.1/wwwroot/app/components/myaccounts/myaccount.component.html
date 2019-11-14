@@ -1,0 +1,48 @@
+﻿<div id="loginModal" class="container">
+
+    <div class="row row col-md-4 col-sm-3">
+
+        <h1 class="text-left">
+            <span class="fa-stack fa-1x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span>My Acoount
+        </h1>
+    </div>
+    <div class="row col-md-12 col-sm-10">
+
+        <div class="col-md-4 col-sm-4">
+
+            <div class="row col-xs-10">
+                <a class="navbar-brand navbar-left" [routerLink]="['/myaccounts/address']"><i class="fa fa-power-off fa-fw"></i>&nbsp;Addresses</a>
+            </div>
+            <div class="row col-xs-10">
+                <a class="navbar-brand navbar-left" [routerLink]="['/myaccounts/order']"><i class="fa fa-power-off fa-fw"></i>&nbsp;Orders</a>
+            </div>
+            <div class="row col-xs-10">
+                <a class="navbar-brand navbar-left" [routerLink]="['/myaccounts/downloadproduct']"><i class="fa fa-power-off fa-fw"></i>&nbsp;Downloadable Products</a>
+            </div>
+            <div class="row col-xs-10">
+                <a class="navbar-brand navbar-left" [routerLink]="['/myaccounts/rewardpoint']"><i class="fa fa-power-off fa-fw"></i>&nbsp;Reward Points</a>
+            </div>
+            <div class="row col-xs-10">
+                <a class="navbar-brand navbar-left" [routerLink]="['/myaccounts/productreview']"><i class="fa fa-power-off fa-fw"></i>&nbsp;My Product Reviews</a>
+            </div>
+            <div class="row col-xs-10">
+                <a class="navbar-brand navbar-left" [routerLink]="['/myaccounts/stocksubscription']"><i class="fa fa-power-off fa-fw"></i>&nbsp;Stock Subscription</a>
+            </div>
+        </div>
+
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+        <!--<div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-danger pull-left" [routerLink]="['/home']" data-dismiss="modal" aria-hidden="true">Cancel</a>
+            </div>
+        </div>-->
+
+
+    </div>
+  
+</div>

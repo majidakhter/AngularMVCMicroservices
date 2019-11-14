@@ -3,10 +3,10 @@
 export const ITEMS: Item[] = [
     {
         name: 'Male',
-        value: '1'
+        value: 'Male'
     },
     {
         name: 'Female',
-        value: '2'
+        value: 'Female'
     }
 ];
