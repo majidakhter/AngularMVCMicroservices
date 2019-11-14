@@ -1,4 +1,4 @@
-﻿<div id="loginModal" class="row">
+﻿<div id="loginModal" class="container" style="margin-top:18px">
  
             <div class="row">
                
@@ -11,7 +11,7 @@
             </div>
             <div class="row">
                
-                    <div class="col-md-8 col-sm-8">
+                    <div class="col-md-6 col-sm-8">
                         <form class="form col-md-8 center-block" #loginForm="ngForm">
                             <div class="form-group">
                                 <input type="text" class="form-control input-sm" placeholder="Username" [(ngModel)]="_user.Username"
@@ -70,7 +70,7 @@
                 
                
             </div>
-                <div class="row">
+                <div class="container">
                     <div class="col-md-4">
                         <a class="btn btn-danger pull-left" [routerLink]="['/home']" data-dismiss="modal" aria-hidden="true">Cancel</a>
                     </div>

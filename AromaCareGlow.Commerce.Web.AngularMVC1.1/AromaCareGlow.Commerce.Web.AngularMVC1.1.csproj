@@ -18,6 +18,15 @@
     <Content Remove="wwwroot\app\components\myaccounts\rewardpoint.component.ts" />
     <Content Remove="wwwroot\app\components\myaccounts\routes.ts" />
     <Content Remove="wwwroot\app\components\myaccounts\stocksubscription.component.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\aboutus.component.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\contactus.component.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\privacynotice.component.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\routes.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\shippingreturns.component.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\siteinfo.component.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\siteinfo.module.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\sitemap.component.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\usecondition.component.ts" />
     <Content Remove="wwwroot\app\core\common\birthyear.ts" />
     <Content Remove="wwwroot\app\core\common\Item.ts" />
     <Content Remove="wwwroot\app\core\common\mock-data.ts" />
@@ -44,7 +53,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="wwwroot\app\components\customerservices\" />
-    <Folder Include="wwwroot\app\components\siteinformation\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
@@ -71,6 +79,15 @@
     <TypeScriptCompile Include="wwwroot\app\components\myaccounts\rewardpoint.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\myaccounts\routes.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\myaccounts\stocksubscription.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\aboutus.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\contactus.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\privacynotice.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\routes.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\shippingreturns.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\siteinfo.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\siteinfo.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\sitemap.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\usecondition.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\birthyear.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\Item.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\mock-data.ts" />

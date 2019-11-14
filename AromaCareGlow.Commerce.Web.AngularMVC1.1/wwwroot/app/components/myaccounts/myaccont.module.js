@@ -28,7 +28,7 @@ var MyAccountModule = /** @class */ (function () {
             imports: [
                 common_1.CommonModule,
                 forms_1.FormsModule,
-                routes_1.accountRouting
+                routes_1.myaccountRouting
             ],
             declarations: [
                 myaccount_component_1.MyAccountComponent,

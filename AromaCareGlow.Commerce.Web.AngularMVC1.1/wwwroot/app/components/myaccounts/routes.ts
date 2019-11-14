@@ -22,4 +22,4 @@ export const accountRoutes: Routes = [
     }
 ];
 
-export const accountRouting: ModuleWithProviders = RouterModule.forChild(accountRoutes);
+export const myaccountRouting: ModuleWithProviders = RouterModule.forChild(accountRoutes);

@@ -13,13 +13,13 @@ import { DownloadableProductComponent } from './downloadableproduct.component';
 import { ProductReviewComponent } from './productreview.component';
 import { RewardPointComponent } from './rewardpoint.component';
 import { StockSubscriptionComponent } from './stocksubscription.component';
-import { accountRouting } from './routes';
+import { myaccountRouting } from './routes';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        accountRouting
+        myaccountRouting
     ],
     declarations: [
         MyAccountComponent,

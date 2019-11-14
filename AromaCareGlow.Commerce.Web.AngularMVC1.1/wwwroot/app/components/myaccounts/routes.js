@@ -22,5 +22,5 @@ exports.accountRoutes = [
         ]
     }
 ];
-exports.accountRouting = router_1.RouterModule.forChild(exports.accountRoutes);
+exports.myaccountRouting = router_1.RouterModule.forChild(exports.accountRoutes);
 //# sourceMappingURL=routes.js.map

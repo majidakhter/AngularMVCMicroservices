@@ -12,32 +12,32 @@ var common_1 = require("@angular/common");
 var data_service_1 = require("../../core/services/data.service");
 var membership_service_1 = require("../../core/services/membership.service");
 var notification_service_1 = require("../../core/services/notification.service");
-var myaccount_component_1 = require("./myaccount.component");
-var address_component_1 = require("./address.component");
-var order_component_1 = require("./order.component");
-var downloadableproduct_component_1 = require("./downloadableproduct.component");
-var productreview_component_1 = require("./productreview.component");
-var rewardpoint_component_1 = require("./rewardpoint.component");
-var stocksubscription_component_1 = require("./stocksubscription.component");
+var usecondition_component_1 = require("./usecondition.component");
+var sitemap_component_1 = require("./sitemap.component");
+var shippingreturns_component_1 = require("./shippingreturns.component");
+var privacynotice_component_1 = require("./privacynotice.component");
+var aboutus_component_1 = require("./aboutus.component");
+var contactus_component_1 = require("./contactus.component");
 var routes_1 = require("./routes");
-var MyAccountModule = (function () {
-    function MyAccountModule() {
+var siteinfo_component_1 = require("./siteinfo.component");
+var SiteInfoModule = (function () {
+    function SiteInfoModule() {
     }
-    MyAccountModule = __decorate([
+    SiteInfoModule = __decorate([
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
                 forms_1.FormsModule,
-                routes_1.myaccountRouting
+                routes_1.mysiteRouting
             ],
             declarations: [
-                myaccount_component_1.MyAccountComponent,
-                address_component_1.AddressComponent,
-                order_component_1.OrderComponent,
-                downloadableproduct_component_1.DownloadableProductComponent,
-                productreview_component_1.ProductReviewComponent,
-                rewardpoint_component_1.RewardPointComponent,
-                stocksubscription_component_1.StockSubscriptionComponent
+                siteinfo_component_1.SiteInfoComponent,
+                usecondition_component_1.UseConditionComponent,
+                sitemap_component_1.SiteMapComponent,
+                shippingreturns_component_1.ShippingReturnComponent,
+                privacynotice_component_1.PrivacyNoticeComponent,
+                aboutus_component_1.AboutusComponent,
+                contactus_component_1.ContactusComponent
             ],
             providers: [
                 data_service_1.DataService,
@@ -45,7 +45,7 @@ var MyAccountModule = (function () {
                 notification_service_1.NotificationService
             ]
         })
-    ], MyAccountModule);
-    return MyAccountModule;
+    ], SiteInfoModule);
+    return SiteInfoModule;
 }());
-exports.MyAccountModule = MyAccountModule;
+exports.SiteInfoModule = SiteInfoModule;
