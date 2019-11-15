@@ -8,6 +8,8 @@ var downloadableproduct_component_1 = require("./downloadableproduct.component")
 var productreview_component_1 = require("./productreview.component");
 var rewardpoint_component_1 = require("./rewardpoint.component");
 var stocksubscription_component_1 = require("./stocksubscription.component");
+var shoppingcart_component_1 = require("./shoppingcart.component");
+var wishlist_component_1 = require("./wishlist.component");
 exports.accountRoutes = [
     {
         path: 'myaccounts',
@@ -18,7 +20,9 @@ exports.accountRoutes = [
             { path: 'downloadproduct', component: downloadableproduct_component_1.DownloadableProductComponent },
             { path: 'productreview', component: productreview_component_1.ProductReviewComponent },
             { path: 'rewardpoint', component: rewardpoint_component_1.RewardPointComponent },
-            { path: 'stocksubscription', component: stocksubscription_component_1.StockSubscriptionComponent }
+            { path: 'stocksubscription', component: stocksubscription_component_1.StockSubscriptionComponent },
+            { path: 'shoppingcart', component: shoppingcart_component_1.ShoppingCartComponent },
+            { path: 'wishlist', component: wishlist_component_1.WishListComponent }
         ]
     }
 ];

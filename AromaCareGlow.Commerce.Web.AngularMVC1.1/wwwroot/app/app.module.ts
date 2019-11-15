@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home.component';
 import { AccountModule } from './components/accounts/account.module';
 import { MyAccountModule } from './components/myaccounts/myaccont.module';
 import { SiteInfoModule } from './components/siteinformation/siteinfo.module';
+import { CustomerServiceModule } from './components/customerservices/customerservice.module';
 import { AppComponent }  from './app.component';
 
 import { routing } from './routes';
@@ -35,7 +36,8 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         routing,
         AccountModule,
         MyAccountModule,
-        SiteInfoModule
+        SiteInfoModule,
+        CustomerServiceModule
     ],
     declarations: [AppComponent, HomeComponent],
     providers: [DataService, MemberShipService, UtilityService, NotificationService,

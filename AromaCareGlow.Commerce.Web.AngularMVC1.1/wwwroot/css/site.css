@@ -210,3 +210,13 @@ footer {
         transform: rotate(360deg);
     }
 }
+.set-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+.banner {
+    padding: 50px 34px 47px;
+    position: relative;
+    margin-bottom: 70px;
+}

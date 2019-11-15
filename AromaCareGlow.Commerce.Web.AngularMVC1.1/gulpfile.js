@@ -30,6 +30,7 @@ gulp.task('setup-vendors', function (done) {
         'node_modules/fancybox/dist/js/jquery.fancybox.pack.js',
         'bower_components/alertify.js/lib/alertify.min.js',
         'systemjs.config.js'
+      
     ]).pipe(gulp.dest(paths.jsVendors));
 
     gulp.src([
@@ -38,7 +39,7 @@ gulp.task('setup-vendors', function (done) {
         'bower_components/components-font-awesome/css/font-awesome.css',
         'bower_components/alertify.js/themes/alertify.core.css',
         'bower_components/alertify.js/themes/alertify.bootstrap.css',
-        'bower_components/alertify.js/themes/alertify.default.css'
+        'bower_components/alertify.js/themes/alertify.default.css',
     ]).pipe(gulp.dest(paths.cssVendors));
 
     gulp.src([
@@ -47,7 +48,10 @@ gulp.task('setup-vendors', function (done) {
         'node_modules/fancybox/dist/img/fancybox_loading@2x.gif',
         'node_modules/fancybox/dist/img/fancybox_overlay.png',
         'node_modules/fancybox/dist/img/fancybox_sprite.png',
-        'node_modules/fancybox/dist/img/fancybox_sprite@2x.png'
+        'node_modules/fancybox/dist/img/fancybox_sprite@2x.png',
+        './wwwroot/images/product/y1.jpg',
+        './wwwroot/images/logo.jpg',
+        './wwwroot/images/banner-bg.jpg'
     ]).pipe(gulp.dest(paths.imgVendors));
 
     gulp.src([
@@ -62,6 +66,7 @@ gulp.task('setup-vendors', function (done) {
         'bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf',
         'bower_components/components-font-awesome/fonts/fontawesome-webfont.woff',
         'bower_components/components-font-awesome/fonts/fontawesome-webfont.woff2',
+       
     ]).pipe(gulp.dest(paths.fontsVendors));
 
     gulp.src('node_modules/' + "@angular/**/*.js",

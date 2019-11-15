@@ -13,6 +13,8 @@ import { DownloadableProductComponent } from './downloadableproduct.component';
 import { ProductReviewComponent } from './productreview.component';
 import { RewardPointComponent } from './rewardpoint.component';
 import { StockSubscriptionComponent } from './stocksubscription.component';
+import { ShoppingCartComponent } from './shoppingcart.component';
+import { WishListComponent } from './wishlist.component';
 import { myaccountRouting } from './routes';
 
 @NgModule({
@@ -28,7 +30,9 @@ import { myaccountRouting } from './routes';
         DownloadableProductComponent,
         ProductReviewComponent,
         RewardPointComponent,
-        StockSubscriptionComponent
+        StockSubscriptionComponent,
+        ShoppingCartComponent,
+        WishListComponent
     ],
 
     providers: [

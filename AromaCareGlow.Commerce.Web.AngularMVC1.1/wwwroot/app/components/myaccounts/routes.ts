@@ -7,6 +7,8 @@ import { DownloadableProductComponent } from './downloadableproduct.component';
 import { ProductReviewComponent } from './productreview.component';
 import { RewardPointComponent } from './rewardpoint.component';
 import { StockSubscriptionComponent } from './stocksubscription.component';
+import { ShoppingCartComponent } from './shoppingcart.component';
+import { WishListComponent } from './wishlist.component';
 export const accountRoutes: Routes = [
     {
         path: 'myaccounts',
@@ -17,7 +19,9 @@ export const accountRoutes: Routes = [
             { path: 'downloadproduct', component: DownloadableProductComponent },
             { path: 'productreview', component: ProductReviewComponent },
             { path: 'rewardpoint', component: RewardPointComponent },
-            { path: 'stocksubscription', component: StockSubscriptionComponent }
+            { path: 'stocksubscription', component: StockSubscriptionComponent },
+            { path: 'shoppingcart', component: ShoppingCartComponent },
+            { path: 'wishlist', component: WishListComponent }
         ]
     }
 ];
