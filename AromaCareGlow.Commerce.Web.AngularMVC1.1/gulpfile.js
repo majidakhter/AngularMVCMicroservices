@@ -51,7 +51,19 @@ gulp.task('setup-vendors', function (done) {
         'node_modules/fancybox/dist/img/fancybox_sprite@2x.png',
         './wwwroot/images/product/y1.jpg',
         './wwwroot/images/logo.jpg',
-        './wwwroot/images/banner-bg.jpg'
+        './wwwroot/images/banner-bg.jpg',
+        './wwwroot/images/product/cocealersmain.jpg',
+        './wwwroot/images/product/colorcosmeticmain.jpeg',
+        './wwwroot/images/product/EyeLinermain.jpg',
+        './wwwroot/images/product/FacePowdermain.jpeg',
+        './wwwroot/images/product/lipcolormain.jpg',
+        './wwwroot/images/product/img1.jpg',
+        './wwwroot/images/product/img2.jpg',
+        './wwwroot/images/product/img3.jpg',
+        './wwwroot/images/product/img4.jpg',
+        './wwwroot/images/product/img5.jpg',
+        './wwwroot/images/product/img6.jpg',
+        './wwwroot/images/product/img7.jpg'
     ]).pipe(gulp.dest(paths.imgVendors));
 
     gulp.src([

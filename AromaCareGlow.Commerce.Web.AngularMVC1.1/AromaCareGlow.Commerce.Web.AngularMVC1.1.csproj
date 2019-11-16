@@ -13,6 +13,12 @@
     <Content Remove="wwwroot\app\components\accounts\login.component.ts" />
     <Content Remove="wwwroot\app\components\accounts\myaccount.component.ts" />
     <Content Remove="wwwroot\app\components\accounts\register.component.ts" />
+    <Content Remove="wwwroot\app\components\corefeature\category.component.ts" />
+    <Content Remove="wwwroot\app\components\corefeature\checkout.component.ts" />
+    <Content Remove="wwwroot\app\components\corefeature\men.component.ts" />
+    <Content Remove="wwwroot\app\components\corefeature\product.component.ts" />
+    <Content Remove="wwwroot\app\components\corefeature\shoppingcart.component.ts" />
+    <Content Remove="wwwroot\app\components\corefeature\women.component.ts" />
     <Content Remove="wwwroot\app\components\customerservices\compareproduct.component.ts" />
     <Content Remove="wwwroot\app\components\customerservices\customerservice.component.ts" />
     <Content Remove="wwwroot\app\components\customerservices\customerservice.module.ts" />
@@ -61,6 +67,7 @@
   
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\app\components\corefeature\" />
     <Folder Include="wwwroot\icon-fonts\" />
   </ItemGroup>
   
@@ -76,6 +83,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\app\components\accounts\account.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\accounts\forgetpassword.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\category.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\accounts\checkout.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\men.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\product.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\accounts\shoppingcart.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\women.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\customerservices\compareproduct.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\customerservices\customerservice.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\customerservices\customerservice.module.ts" />

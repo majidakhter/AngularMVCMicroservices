@@ -26,7 +26,7 @@
                 </div>
                 <div>
 
-                    <a class="navbar-brand navbar-right" [routerLink]="['/accounts/login']"><i class="fa fa-shopping-basket"></i><span>0</span>&nbsp;Shopping Cart</a>
+                    <a class="navbar-brand navbar-right" [routerLink]="['/accounts/shoppingcart']"><i class="fa fa-shopping-basket"></i><span>0</span>&nbsp;Shopping Cart</a>
                 </div>
             </div>
 
@@ -37,10 +37,10 @@
                     <a [routerLink]="['/home']"><i class="fa fa-camera fa-fw"></i>&nbsp;Home</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/photos']"><i class="fa fa-camera fa-fw"></i>&nbsp;Men</a>
+                    <a [routerLink]="['/men']"><i class="fa fa-camera fa-fw"></i>&nbsp;Men</a>
                 </li>
 
-                <li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Women</a></li>
+                <li><a [routerLink]="['/women']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Women</a></li>
                 <!--<li><a [routerLink]="['/albums']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Jewelary</a></li>-->
                 <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;Shoes<b class="caret"></b></a>
@@ -66,19 +66,19 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;Pages<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="https://github.com/majidakhter" target="_blank"><i class="fa fa-github fa-fw"></i>&nbsp;Product Page</a>
+                            <a [routerLink]="['/product']"><i class="fa fa-camera fa-fw"></i>&nbsp;Product</a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/majid80_sit" target="_blank"><i class="fa fa-twitter fa-fw"></i>&nbsp;Category Page</a>
+                            <a [routerLink]="['/category']"><i class="fa fa-camera fa-fw"></i>&nbsp;Category</a>
                         </li>
                         <!--<li>
-                            <a href="https://www.facebook.com/majid.akhter" target="_blank"><i class="fa fa-facebook fa-fw"></i>&nbsp;Cart Page</a>
-                        </li>
+        <a href="https://www.facebook.com/majid.akhter" target="_blank"><i class="fa fa-facebook fa-fw"></i>&nbsp;Cart Page</a>
+    </li>
+    <li>
+        <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Contact Page</a>
+    </li>-->
                         <li>
-                            <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Contact Page</a>
-                        </li>-->
-                        <li>
-                            <a href="https://help.syncfusion.com/angular/gettingstarted/getting-started-angular-with-mvc-application" target="_blank"><i class="fa fa-backward fa-fw"></i>&nbsp;Checkout Page</a>
+                        <a [routerLink]="['/accounts/checkout']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Check Out</a>
                         </li>
                     </ul>
                 </li>
@@ -198,13 +198,13 @@
                                     <a [routerLink]="['/myaccounts/address']"><i class="fa fa-camera fa-fw"></i>&nbsp;Addresses</a>
                                 </li>
                                 <li>
-                                    <a [routerLink]="['/myaccounts/shoppingcart']"><i class="fa fa-camera fa-fw"></i>&nbsp;Shopping Cart</a>
+                                    <a [routerLink]="['/accounts/shoppingcart']"><i class="fa fa-camera fa-fw"></i>&nbsp;Shopping Cart</a>
                                 </li>
                                 <li>
                                     <a [routerLink]="['/myaccounts/wishlist']"><i class="fa fa-camera fa-fw"></i>&nbsp;Wish List</a>
                                 </li>
                                 <li>
-                                    <a [routerLink]="['/myaccounts/address']"><i class="fa fa-camera fa-fw"></i>&nbsp;Apply for Vendor Account</a>
+                                    <a [routerLink]="['/accounts/address']"><i class="fa fa-camera fa-fw"></i>&nbsp;Apply for Vendor Account</a>
                                 </li>
 
                             </ul>

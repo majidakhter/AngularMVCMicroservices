@@ -5,10 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { Headers, RequestOptions, BaseRequestOptions} from '@angular/http';
 import { HomeComponent } from './components/home.component';
+import { MenComponent } from './components/men.component';
+import { WomenComponent } from './components/women.component';
 import { AccountModule } from './components/accounts/account.module';
 import { MyAccountModule } from './components/myaccounts/myaccont.module';
 import { SiteInfoModule } from './components/siteinformation/siteinfo.module';
 import { CustomerServiceModule } from './components/customerservices/customerservice.module';
+import { ProductComponent } from './components/product.component';
+import { CategoryComponent } from './components/category.component';
 import { AppComponent }  from './app.component';
 
 import { routing } from './routes';
@@ -39,7 +43,7 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         SiteInfoModule,
         CustomerServiceModule
     ],
-    declarations: [AppComponent, HomeComponent],
+    declarations: [AppComponent, HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent],
     providers: [DataService, MemberShipService, UtilityService, NotificationService,
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         { provide: RequestOptions, useClass: AppBaseRequestOptions }],

@@ -23,10 +23,14 @@ var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
 var http_2 = require("@angular/http");
 var home_component_1 = require("./components/home.component");
+var men_component_1 = require("./components/men.component");
+var women_component_1 = require("./components/women.component");
 var account_module_1 = require("./components/accounts/account.module");
 var myaccont_module_1 = require("./components/myaccounts/myaccont.module");
 var siteinfo_module_1 = require("./components/siteinformation/siteinfo.module");
 var customerservice_module_1 = require("./components/customerservices/customerservice.module");
+var product_component_1 = require("./components/product.component");
+var category_component_1 = require("./components/category.component");
 var app_component_1 = require("./app.component");
 var routes_1 = require("./routes");
 var data_service_1 = require("./core/services/data.service");
@@ -59,7 +63,7 @@ var AppModule = (function () {
                 siteinfo_module_1.SiteInfoModule,
                 customerservice_module_1.CustomerServiceModule
             ],
-            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent],
+            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, men_component_1.MenComponent, women_component_1.WomenComponent, product_component_1.ProductComponent, category_component_1.CategoryComponent],
             providers: [data_service_1.DataService, membership_service_1.MemberShipService, utility_service_1.UtilityService, notification_service_1.NotificationService,
                 { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
                 { provide: http_2.RequestOptions, useClass: AppBaseRequestOptions }],
