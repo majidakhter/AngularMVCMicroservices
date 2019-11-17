@@ -16,7 +16,8 @@ var WishListComponent = (function () {
     WishListComponent = __decorate([
         core_1.Component({
             selector: 'order',
-            templateUrl: './app/components/myaccounts/wishlist.component.html'
+            templateUrl: './app/components/myaccounts/wishlist.component.html',
+            styleUrls: ['./app/components/myaccounts/wishlist.component.css']
         }),
         __metadata("design:paramtypes", [])
     ], WishListComponent);

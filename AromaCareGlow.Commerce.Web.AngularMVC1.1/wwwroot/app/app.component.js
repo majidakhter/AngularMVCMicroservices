@@ -41,7 +41,8 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'dashboard-app',
-            templateUrl: './app/app.component.html'
+            templateUrl: './app/app.component.html',
+            styleUrls: ['./app/app.component.css']
         }),
         __metadata("design:paramtypes", [membership_service_1.MemberShipService,
             common_1.Location])

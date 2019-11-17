@@ -31,16 +31,19 @@
             <div class="row col-xs-10">
                 <a class="navbar-brand navbar-left" [routerLink]="['/myaccounts/stocksubscription']"><i class="fa fa-power-off fa-fw"></i>&nbsp;Stock Subscription</a>
             </div>
+            <div class="row col-xs-10">
+                <a class="navbar-brand navbar-left" [routerLink]="['/myaccounts/changepassword']"><i class="fa fa-power-off fa-fw"></i>&nbsp;Change Password</a>
+            </div>
         </div>
-
+        <!-- Create child component for each view and display it using Angular Structural Directive i.e ngIf/ngSwitch refer here https://angular.io/guide/structural-directives on click event instead of routing-->
         <div>
             <router-outlet></router-outlet>
         </div>
         <!--<div class="row">
-            <div class="col-md-4">
-                <a class="btn btn-danger pull-left" [routerLink]="['/home']" data-dismiss="modal" aria-hidden="true">Cancel</a>
-            </div>
-        </div>-->
+        <div class="col-md-4">
+            <a class="btn btn-danger pull-left" [routerLink]="['/home']" data-dismiss="modal" aria-hidden="true">Cancel</a>
+        </div>
+    </div>-->
 
 
     </div>

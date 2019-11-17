@@ -1,6 +1,7 @@
 ﻿<section class="product-section">
     <div class="container">
         <div class="row">
+            <!--Apply Angular attribute directive to zoom in and zoom out the image-->
             <div class="col-lg-6">
                 <div class="product-pic-zoom">
                     <img class="product-big-img" src="../../images/single-product/1.jpg" alt="">
@@ -62,25 +63,46 @@
                 <a href="#" class="site-btn">SHOP NOW</a>
                 <div id="accordion" class="accordion-area">
                     <div class="panel">
-                        <div class="panel-header" id="headingOne">
-                            <button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">information</button>
-                        </div>
+                       
                         <div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="panel-body">
-                                <p>Approx length 66cm/26" (Based on a UK size 8 sample)</p>
-                                <p>Mixed fibres</p>
-                                <p>The Model wears a UK size 8/ EU size 36/ US size 4 and her height is 5'8"</p>
+                                <!--<p>Approx length 66cm/26" (Based on a UK size 8 sample)</p>
+    <p>Mixed fibres</p>
+    <p>The Model wears a UK size 8/ EU size 36/ US size 4 and her height is 5'8"</p>-->
+                                <!--<app-accordion>
+        <app-accordion-item *ngFor="let item of accordionItems">
+            <div class="accordion-item-header">
+                {{ item.title }}
+            </div>
+            <div class="accordion-item-content">
+                {{ item.content }}
+            </div>
+        </app-accordion-item>
+    </app-accordion>-->
+                                <app-accordion>
+                                    <app-accordion-item class="panel-header" *ngFor="let item of accordionItems" [title]="item.title">
+                                        <div class="row">
+                                            <!--<div class="panel-header" id="headingOne">
+                                                <button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1"></button>
+                                            </div>-->
+                                        </div>
+                                        <div class="row">
+                                            {{item.content}}
+                                        </div>
+                                        
+                                    </app-accordion-item>
+                                </app-accordion>
                             </div>
                         </div>
                     </div>
-                    <div class="panel">
+                    <!--<div class="panel">
                         <div class="panel-header" id="headingTwo">
                             <button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">care details </button>
                         </div>
                         <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="panel-body">
                                 <img src="../../images/cards.png" alt="">
-
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
                             </div>
                         </div>
                     </div>
@@ -92,10 +114,11 @@
                             <div class="panel-body">
                                 <h4>7 Days Returns</h4>
                                 <p>Cash on Delivery Available<br>Home Delivery <span>3 - 4 days</span></p>
-
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod nec.</p>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
+                    <!--Use Ad Banner Angular dynamic component here -->
                 </div>
 
             </div>

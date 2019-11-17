@@ -1,0 +1,4 @@
+﻿<h2 class="accordion-head" (click)="onClick($event)">{{ title }}</h2>
+<div class="accordion-body" [class.active]="active">
+    <ng-content></ng-content>
+</div>

@@ -6,6 +6,7 @@
   "repository": "https://github.com/majidakhter",
   "private": true,
   "dependencies": {
+    "@angular/animations": "4.0.2",
     "@angular/common": "4.0.2",
     "@angular/compiler": "4.0.2",
     "@angular/core": "4.0.2",

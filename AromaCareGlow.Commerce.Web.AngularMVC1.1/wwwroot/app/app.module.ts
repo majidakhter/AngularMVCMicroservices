@@ -14,7 +14,9 @@ import { CustomerServiceModule } from './components/customerservices/customerser
 import { ProductComponent } from './components/product.component';
 import { CategoryComponent } from './components/category.component';
 import { AppComponent }  from './app.component';
-
+import { AccordionComponent } from './customcomponent/accordion/accordion.component';
+import { AccordionItemComponent } from './customcomponent/accordion-item/accordion-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './routes';
 import { DataService } from './core/services/data.service';
 import { MemberShipService } from './core/services/membership.service';
@@ -41,9 +43,10 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         AccountModule,
         MyAccountModule,
         SiteInfoModule,
-        CustomerServiceModule
+        CustomerServiceModule,
+        BrowserAnimationsModule
     ],
-    declarations: [AppComponent, HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent],
+    declarations: [AppComponent, HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent, AccordionItemComponent, AccordionComponent],
     providers: [DataService, MemberShipService, UtilityService, NotificationService,
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         { provide: RequestOptions, useClass: AppBaseRequestOptions }],
