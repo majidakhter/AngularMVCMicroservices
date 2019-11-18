@@ -6,6 +6,7 @@ var men_component_1 = require("./components/men.component");
 var women_component_1 = require("./components/women.component");
 var product_component_1 = require("./components/product.component");
 var category_component_1 = require("./components/category.component");
+var vendoraccount_component_1 = require("./components/vendoraccount.component");
 var appRoutes = [
     {
         path: '',
@@ -31,6 +32,10 @@ var appRoutes = [
     {
         path: 'category',
         component: category_component_1.CategoryComponent
+    },
+    {
+        path: 'vendor',
+        component: vendoraccount_component_1.VendorAccountComponent
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

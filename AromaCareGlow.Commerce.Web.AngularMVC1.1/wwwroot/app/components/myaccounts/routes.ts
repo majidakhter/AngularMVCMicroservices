@@ -10,6 +10,7 @@ import { StockSubscriptionComponent } from './stocksubscription.component';
 import { ShoppingCartComponent } from './shoppingcart.component';
 import { WishListComponent } from './wishlist.component';
 import { ChangePasswordComponent } from './changepassword.component';
+import { AddressViewComponent } from './addressview.component';
 export const accountRoutes: Routes = [
     {
         path: 'myaccounts',
@@ -23,7 +24,8 @@ export const accountRoutes: Routes = [
             { path: 'stocksubscription', component: StockSubscriptionComponent },
             { path: 'shoppingcart', component: ShoppingCartComponent },
             { path: 'wishlist', component: WishListComponent },
-            { path: 'changepassword', component: ChangePasswordComponent }
+            { path: 'changepassword', component: ChangePasswordComponent },
+            { path: 'addressview', component: AddressViewComponent }
         ]
     }
 ];

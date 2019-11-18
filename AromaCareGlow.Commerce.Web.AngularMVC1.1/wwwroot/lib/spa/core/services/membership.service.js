@@ -18,10 +18,15 @@ var MemberShipService = (function () {
         this._accountRegisterAPI = 'api/customer/register/';
         this._accountLoginAPI = 'api/customer/authenticate/';
         this._accountLogoutAPI = 'api/customer/logout/';
+        this._accountAddressAPI = 'api/customer/saveaddress/';
     }
     MemberShipService.prototype.register = function (newUser) {
         this.accountService.set(this._accountRegisterAPI);
         return this.accountService.post(JSON.stringify(newUser));
+    };
+    MemberShipService.prototype.saveAddress = function (newCustomer) {
+        this.accountService.set(this._accountAddressAPI);
+        return this.accountService.post(JSON.stringify(newCustomer));
     };
     MemberShipService.prototype.login = function (creds) {
         this.accountService.set(this._accountLoginAPI);

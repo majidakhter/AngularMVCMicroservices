@@ -1,0 +1,49 @@
+﻿<div class="container">
+    <div  >
+       
+        <form class="form col-md-6 center-block" style="float:none;margin-top:140px" #contactusform="ngForm">
+
+            <h2>Apply for vendor account</h2>
+
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="Vendor Name" [(ngModel)]="_newUser.VendorName"
+                       name="vendorname" #vendorname="ngModel" required>
+                <div [hidden]="vendorname.valid || vendorname.untouched" class="alert alert-danger">
+                    Vendor Name is required
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <input type="email" class="form-control input-lg" placeholder="Email" [(ngModel)]="_newUser.Email"
+                       name="email" #email="ngModel" required>
+                <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+                    Email is required
+                </div>
+            </div>
+            <div class="form-group">
+
+                <textarea class="form-control input-lg" rows="8" placeholder="Description" [(ngModel)]="_newUser.Message"
+                          name="message" #message="ngModel" required></textarea>
+
+            </div>
+            <div class="form-group ">
+               
+               
+                <div class="row">
+                    <div class="col-xs-3">
+                        <label for="sign-up-gender">Picture:</label>
+                    </div>
+
+                    <div class="custom-control  custom-control-inline">
+                        <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block" (click)="send()" [disabled]="!contactusform.form.valid">SEND NOW</button>
+            </div>
+        </form>
+        </div>
+
+</div>

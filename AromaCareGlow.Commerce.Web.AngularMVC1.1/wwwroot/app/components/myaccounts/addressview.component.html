@@ -1,0 +1,34 @@
+﻿<div class="container">
+    <div class="col-md-8 col-sm-8">
+        <div class="row pull-right">
+            <a [routerLink]="['/myaccounts/address']">Edit</a>
+            <a [routerLink]="['/accounts/login']">Delete</a>
+        </div>
+        <div class="form-group">
+            <label>{{_address1.FirstName+' '+_address1.LastName}}</label>
+        </div>
+        <div class="form-group">
+            <label>Email :</label>
+            <label>{{_address1.Email}}</label>
+        </div>
+        <div class="form-group">
+            <label>Phone Number :</label>
+            <label>{{_address1.PhoneNo}}</label>
+        </div>
+        <div class="form-group">
+            <label>Fax Number :</label>
+            <label>{{_address1.FaxNumber}}</label>
+        </div>
+        <div class="form-group">
+            <label>{{_address1.Address1}}</label>
+        </div>
+        <div class="form-group">
+            <label>{{_address1.City+' '+_address1.Zip}}</label>
+        </div>
+        <div class="form-group">
+            <label>{{_address1.SelectedCountry}}</label>
+        </div> <div class="form-group">
+            <button class="btn btn-primary btn-lg btn-block" (click)="addNew()" >ADD NEW</button>
+        </div>
+    </div>
+</div>

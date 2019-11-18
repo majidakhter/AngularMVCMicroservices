@@ -17,6 +17,7 @@ import { AppComponent }  from './app.component';
 import { AccordionComponent } from './customcomponent/accordion/accordion.component';
 import { AccordionItemComponent } from './customcomponent/accordion-item/accordion-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VendorAccountComponent } from './components/vendoraccount.component';
 import { routing } from './routes';
 import { DataService } from './core/services/data.service';
 import { MemberShipService } from './core/services/membership.service';
@@ -46,7 +47,7 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         CustomerServiceModule,
         BrowserAnimationsModule
     ],
-    declarations: [AppComponent, HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent, AccordionItemComponent, AccordionComponent],
+    declarations: [AppComponent, HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent, AccordionItemComponent, AccordionComponent, VendorAccountComponent],
     providers: [DataService, MemberShipService, UtilityService, NotificationService,
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         { provide: RequestOptions, useClass: AppBaseRequestOptions }],

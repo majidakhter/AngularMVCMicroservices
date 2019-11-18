@@ -16,6 +16,7 @@ import { StockSubscriptionComponent } from './stocksubscription.component';
 import { ShoppingCartComponent } from './shoppingcart.component';
 import { WishListComponent } from './wishlist.component';
 import { ChangePasswordComponent } from './changepassword.component';
+import { AddressViewComponent } from './addressview.component';
 import { myaccountRouting } from './routes';
 
 @NgModule({
@@ -34,7 +35,8 @@ import { myaccountRouting } from './routes';
         StockSubscriptionComponent,
         ShoppingCartComponent,
         WishListComponent,
-        ChangePasswordComponent
+        ChangePasswordComponent,
+        AddressViewComponent
     ],
 
     providers: [

@@ -80,13 +80,13 @@
         </app-accordion-item>
     </app-accordion>-->
                                 <app-accordion>
-                                    <app-accordion-item class="panel-header" *ngFor="let item of accordionItems" [title]="item.title">
+                                    <app-accordion-item  *ngFor="let item of accordionItems" [title]="item.title">
                                         <div class="row">
                                             <!--<div class="panel-header" id="headingOne">
                                                 <button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1"></button>
                                             </div>-->
                                         </div>
-                                        <div class="row">
+                                        <div >
                                             {{item.content}}
                                         </div>
                                         

@@ -11,6 +11,7 @@ var stocksubscription_component_1 = require("./stocksubscription.component");
 var shoppingcart_component_1 = require("./shoppingcart.component");
 var wishlist_component_1 = require("./wishlist.component");
 var changepassword_component_1 = require("./changepassword.component");
+var addressview_component_1 = require("./addressview.component");
 exports.accountRoutes = [
     {
         path: 'myaccounts',
@@ -24,7 +25,8 @@ exports.accountRoutes = [
             { path: 'stocksubscription', component: stocksubscription_component_1.StockSubscriptionComponent },
             { path: 'shoppingcart', component: shoppingcart_component_1.ShoppingCartComponent },
             { path: 'wishlist', component: wishlist_component_1.WishListComponent },
-            { path: 'changepassword', component: changepassword_component_1.ChangePasswordComponent }
+            { path: 'changepassword', component: changepassword_component_1.ChangePasswordComponent },
+            { path: 'addressview', component: addressview_component_1.AddressViewComponent }
         ]
     }
 ];

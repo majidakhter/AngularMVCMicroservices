@@ -22,6 +22,7 @@ var stocksubscription_component_1 = require("./stocksubscription.component");
 var shoppingcart_component_1 = require("./shoppingcart.component");
 var wishlist_component_1 = require("./wishlist.component");
 var changepassword_component_1 = require("./changepassword.component");
+var addressview_component_1 = require("./addressview.component");
 var routes_1 = require("./routes");
 var MyAccountModule = /** @class */ (function () {
     function MyAccountModule() {
@@ -43,7 +44,8 @@ var MyAccountModule = /** @class */ (function () {
                 stocksubscription_component_1.StockSubscriptionComponent,
                 shoppingcart_component_1.ShoppingCartComponent,
                 wishlist_component_1.WishListComponent,
-                changepassword_component_1.ChangePasswordComponent
+                changepassword_component_1.ChangePasswordComponent,
+                addressview_component_1.AddressViewComponent
             ],
             providers: [
                 data_service_1.DataService,

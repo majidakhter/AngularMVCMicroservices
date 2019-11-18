@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { Registration } from '../domain/registration';
 import { Customer } from '../domain/customer';
+import { Address } from '../domain/address';
 
 @Injectable()
 export class MemberShipService {
     private _accountRegisterAPI: string = 'api/customer/register/';
     private _accountLoginAPI: string = 'api/customer/authenticate/';
     private _accountLogoutAPI: string = 'api/customer/logout/';
+    private _accountAddressAPI: string = 'api/customer/saveaddress/';
 
     constructor(public accountService: DataService) {
 
@@ -19,7 +21,11 @@ export class MemberShipService {
 
         return this.accountService.post(JSON.stringify(newUser));
     }
+    saveAddress(newCustomer: Address) {
+        this.accountService.set(this._accountAddressAPI);
 
+        return this.accountService.post(JSON.stringify(newCustomer));
+    }
     login(creds: Customer) {
         this.accountService.set(this._accountLoginAPI);
         return this.accountService.post(JSON.stringify(creds));

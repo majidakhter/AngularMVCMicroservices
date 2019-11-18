@@ -141,5 +141,50 @@ namespace AromaCareGlow.Commerce.Web.AngularMVC1._1.Controllers
             _result = new ObjectResult(_registrationResult);
             return _result;
         }
+
+        [Route("saveaddress")]
+        [HttpPost]
+        public IActionResult SaveAddress([FromBody]AddressViewModel address)
+        {
+            IActionResult _result = new ObjectResult(false);
+            GenericResult _registrationResult = null;
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    //User _user = _membershipService.CreateUser(user.Username, user.Email, user.Password, new int[] { 1 });
+                    CustomerDto _user = new CustomerDto();
+                    if (_user != null)
+                    {
+                        _registrationResult = new GenericResult()
+                        {
+                            Succeeded = true,
+                            Message = "SaveAddress succeeded"
+                        };
+                    }
+                }
+                else
+                {
+                    _registrationResult = new GenericResult()
+                    {
+                        Succeeded = false,
+                        Message = "Invalid fields."
+                    };
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _registrationResult = new GenericResult()
+                {
+                    Succeeded = false,
+                    Message = ex.Message
+                };
+                _logger.LogError(ex, ex.Message, ex.StackTrace, DateTime.Now);
+            }
+            _result = new ObjectResult(_registrationResult);
+            return _result;
+        }
     }
 }

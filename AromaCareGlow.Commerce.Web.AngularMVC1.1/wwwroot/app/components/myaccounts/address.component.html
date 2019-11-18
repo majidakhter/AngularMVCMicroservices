@@ -1,31 +1,31 @@
 ﻿<div class="container">
     <div class="col-md-8 col-sm-8">
-        <form class="form col-md-10 center-block" #registerForm="ngForm">
+        <form class="form col-md-10 center-block" #addressForm="ngForm">
 
             <h2>My Account- Addresses</h2>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="FirstName" [(ngModel)]="_newUser.FirstName"
+                <input type="text" class="form-control input-lg" placeholder="FirstName" [(ngModel)]="_address.FirstName"
                        name="firstname" #firstname="ngModel" required>
                 <div [hidden]="firstname.valid || firstname.untouched" class="alert alert-danger">
                     FirsName is required
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="LastName" [(ngModel)]="_newUser.LastName"
+                <input type="text" class="form-control input-lg" placeholder="LastName" [(ngModel)]="_address.LastName"
                        name="lastname" #lastname="ngModel" required>
                 <div [hidden]="lastname.valid || lastname.untouched" class="alert alert-danger">
                     LastName is required
                 </div>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control input-lg" placeholder="Email" [(ngModel)]="_newUser.Email"
+                <input type="email" class="form-control input-lg" placeholder="Email" [(ngModel)]="_address.Email"
                        name="email" #email="ngModel" required>
                 <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
                     Email is required
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Company Name" [(ngModel)]="_newUser.CompanyName"
+                <input type="text" class="form-control input-lg" placeholder="Company Name" [(ngModel)]="_address.CompanyName"
                        name="companyname" #companyname="ngModel">
             </div>
             <div class="form-group">
@@ -33,11 +33,11 @@
                     <div class="col-xs-3">
                         <label for="sign-up-role">Country</label>
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-md-6">
 
-                        <select class="form-control" id="selectday" [(ngModel)]="daySelected" name="day">
-                            <option *ngFor="let item of _newUser.Day" value="{{ item.value }}">
-                                {{ item.name }}
+                        <select class="form-control" id="selectCountry" [(ngModel)]="selectedCountry" name="country" (change)="onItemChange($event.target.value)">
+                            <option *ngFor="let item of _address.Country" value="{{ item.countrycode }}">
+                                {{ item.countryname }}
                             </option>
                         </select>
                     </div>
@@ -51,11 +51,11 @@
                     <div class="col-xs-3">
                         <label for="sign-up-role">State/Province</label>
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-md-6">
 
-                        <select class="form-control" id="selectday" [(ngModel)]="daySelected" name="day">
-                            <option *ngFor="let item of _newUser.Day" value="{{ item.value }}">
-                                {{ item.name }}
+                        <select class="form-control" id="selectState" [(ngModel)]="selectedState" name="state">
+                            <option *ngFor="let item of _address.State" value="{{ item.statecode }}">
+                                {{ item.statename }}
                             </option>
                         </select>
                     </div>
@@ -64,48 +64,46 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="City" [(ngModel)]="_newUser.Username"
-                       name="username" #username="ngModel" required>
-                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                <input type="text" class="form-control input-lg" placeholder="City" [(ngModel)]="_address.City"
+                       name="city" #city="ngModel" required>
+                <div [hidden]="city.valid || city.untouched" class="alert alert-danger">
                     City is required
                 </div>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Address1" [(ngModel)]="_newUser.Username"
-                       name="username" #username="ngModel" required>
-                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                <input type="text" class="form-control input-lg" placeholder="Address1" [(ngModel)]="_address.Address1"
+                       name="address1" #address1="ngModel" required>
+                <div [hidden]="address1.valid || address1.untouched" class="alert alert-danger">
                     Address1 is required
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Address2" [(ngModel)]="_newUser.Username"
-                       name="username" #username="ngModel" required>
+                <input type="text" class="form-control input-lg" placeholder="Address2" [(ngModel)]="_address.Address2"
+                       name="address2" #address2="ngModel" >
 
             </div>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="Zip/Postal Code" [(ngModel)]="_newUser.Username"
-                       name="username" #username="ngModel" required>
-                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                <input type="text" class="form-control input-lg" placeholder="Zip/Postal Code" [(ngModel)]="_address.Zip"
+                       name="zip" #zip="ngModel" required>
+                <div [hidden]="zip.valid || zip.untouched" class="alert alert-danger">
                     Zip is required
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="PhoneNumber" [(ngModel)]="_newUser.Username"
-                       name="username" #username="ngModel" required>
-                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+                <input type="text" class="form-control input-lg" placeholder="Phone Number" [(ngModel)]="_address.PhoneNo"
+                       name="phonenumber" #phonenumber="ngModel" required>
+                <div [hidden]="phonenumber.valid || phonenumber.untouched" class="alert alert-danger">
                     Phone Number is required
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" placeholder="FaxNumber" [(ngModel)]="_newUser.Username"
-                       name="username" #username="ngModel" required>
-                <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
-                    Fax Number is required
-                </div>
+                <input type="text" class="form-control input-lg" placeholder="FaxNumber" [(ngModel)]="_address.FaxNumber"
+                       name="faxnumber" #faxnumber="ngModel" >
+               
             </div>
             <div class="form-group">
-                <button class="btn btn-primary btn-lg btn-block" (click)="save()" [disabled]="!registerForm.form.valid">Save</button>
+                <button class="btn btn-primary btn-lg btn-block" (click)="save()" [disabled]="!addressForm.form.valid">Save</button>
             </div>
         </form>
     </div>
