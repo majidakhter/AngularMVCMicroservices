@@ -1,11 +1,12 @@
 ﻿import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../core/services/data.service';
 import { MemberShipService } from '../../core/services/membership.service';
 import { NotificationService } from '../../core/services/notification.service';
-
+import { ConfirmationDialogModule } from '../../customcomponent/confirmation-dialog/confirmation-dialog.module';
+import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
 import { MyAccountComponent } from './myaccount.component';
 import { AddressComponent } from './address.component';
 import {OrderComponent } from './order.component';
@@ -21,8 +22,12 @@ import { myaccountRouting } from './routes';
 
 @NgModule({
     imports: [
+        
         CommonModule,
         FormsModule,
+        NgbModule,
+        ConfirmationDialogModule,
+       
         myaccountRouting
     ],
     declarations: [
@@ -37,12 +42,15 @@ import { myaccountRouting } from './routes';
         WishListComponent,
         ChangePasswordComponent,
         AddressViewComponent
+        
     ],
 
     providers: [
         DataService,
         MemberShipService,
-        NotificationService
+        NotificationService,
+        ConfirmationDialogService
+        
     ]
 })
 export class MyAccountModule { }

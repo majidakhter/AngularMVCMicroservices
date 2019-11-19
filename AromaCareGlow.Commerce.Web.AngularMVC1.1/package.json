@@ -16,6 +16,7 @@
     "@angular/platform-browser-dynamic": "4.0.2",
     "@angular/router": "4.0.2",
     "angular-in-memory-web-api": "~0.2.4",
+    "@ng-bootstrap/ng-bootstrap": "1.0.0",
     "body-parser": "1.14.1",
     "bootstrap": "3.3.5",
     "core-js": "^2.4.1",

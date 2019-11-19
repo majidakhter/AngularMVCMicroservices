@@ -10,6 +10,7 @@
     <Content Remove="wwwroot\app\components\accounts\account.module.ts" />
     <Content Remove="wwwroot\app\components\accounts\address.component.ts" />
     <Content Remove="wwwroot\app\components\accounts\forgetpassword.component.ts" />
+    <Content Remove="wwwroot\app\components\accounts\index.ts" />
     <Content Remove="wwwroot\app\components\accounts\login.component.ts" />
     <Content Remove="wwwroot\app\components\accounts\myaccount.component.ts" />
     <Content Remove="wwwroot\app\components\accounts\register.component.ts" />
@@ -22,13 +23,16 @@
     <Content Remove="wwwroot\app\components\customerservices\compareproduct.component.ts" />
     <Content Remove="wwwroot\app\components\customerservices\customerservice.component.ts" />
     <Content Remove="wwwroot\app\components\customerservices\customerservice.module.ts" />
+    <Content Remove="wwwroot\app\components\customerservices\index.ts" />
     <Content Remove="wwwroot\app\components\customerservices\newproduct.component.ts" />
     <Content Remove="wwwroot\app\components\customerservices\news.component.ts" />
     <Content Remove="wwwroot\app\components\customerservices\routes.ts" />
     <Content Remove="wwwroot\app\components\customerservices\search.component.ts" />
+    <Content Remove="wwwroot\app\components\index.ts" />
     <Content Remove="wwwroot\app\components\myaccounts\addressview.component.ts" />
     <Content Remove="wwwroot\app\components\myaccounts\changepassword.component.ts" />
     <Content Remove="wwwroot\app\components\myaccounts\downloadableproduct.component.ts" />
+    <Content Remove="wwwroot\app\components\myaccounts\index.ts" />
     <Content Remove="wwwroot\app\components\myaccounts\productreview.component.ts" />
     <Content Remove="wwwroot\app\components\myaccounts\rewardpoint.component.ts" />
     <Content Remove="wwwroot\app\components\myaccounts\routes.ts" />
@@ -37,6 +41,7 @@
     <Content Remove="wwwroot\app\components\myaccounts\wishlist.component.ts" />
     <Content Remove="wwwroot\app\components\siteinformation\aboutus.component.ts" />
     <Content Remove="wwwroot\app\components\siteinformation\contactus.component.ts" />
+    <Content Remove="wwwroot\app\components\siteinformation\index.ts" />
     <Content Remove="wwwroot\app\components\siteinformation\privacynotice.component.ts" />
     <Content Remove="wwwroot\app\components\siteinformation\routes.ts" />
     <Content Remove="wwwroot\app\components\siteinformation\shippingreturns.component.ts" />
@@ -47,6 +52,7 @@
     <Content Remove="wwwroot\app\components\vendoraccount.component.ts" />
     <Content Remove="wwwroot\app\core\common\birthyear.ts" />
     <Content Remove="wwwroot\app\core\common\country.ts" />
+    <Content Remove="wwwroot\app\core\common\index.ts" />
     <Content Remove="wwwroot\app\core\common\Item.ts" />
     <Content Remove="wwwroot\app\core\common\mock-data.ts" />
     <Content Remove="wwwroot\app\core\common\region.ts" />
@@ -54,14 +60,20 @@
     <Content Remove="wwwroot\app\core\common\statelist.ts" />
     <Content Remove="wwwroot\app\core\domain\address.ts" />
     <Content Remove="wwwroot\app\core\domain\customer.ts" />
+    <Content Remove="wwwroot\app\core\domain\index.ts" />
     <Content Remove="wwwroot\app\core\domain\operationResult.ts" />
     <Content Remove="wwwroot\app\core\domain\registration.ts" />
     <Content Remove="wwwroot\app\core\services\data.service.ts" />
+    <Content Remove="wwwroot\app\core\services\index.ts" />
     <Content Remove="wwwroot\app\core\services\membership.service.ts" />
     <Content Remove="wwwroot\app\core\services\notification.service.ts" />
     <Content Remove="wwwroot\app\core\services\utility.service.ts" />
     <Content Remove="wwwroot\app\customcomponent\accordion\accordion.component.ts" />
     <Content Remove="wwwroot\app\customcomponent\animation.ts" />
+    <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.component.ts" />
+    <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.module.ts" />
+    <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.service.ts" />
+    <Content Remove="wwwroot\app\customcomponent\index.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -93,13 +105,18 @@
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\app\components\accounts\account.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\accounts\forgetpassword.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\accounts\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\category.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\accounts\checkout.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\customerservices\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\men.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\myaccounts\addressview.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\myaccounts\changepassword.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\myaccounts\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\product.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\accounts\shoppingcart.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\components\siteinformation\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\vendoraccount.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\women.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\components\customerservices\compareproduct.component.ts" />
@@ -132,6 +149,7 @@
     <TypeScriptCompile Include="wwwroot\app\components\siteinformation\usecondition.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\birthyear.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\country.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\common\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\Item.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\mock-data.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\region.ts" />
@@ -139,14 +157,20 @@
     <TypeScriptCompile Include="wwwroot\app\core\common\statelist.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\address.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\customer.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\operationResult.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\registration.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\data.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\membership.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\notification.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\utility.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\accordion\accordion.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\animation.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\index.ts" />
   </ItemGroup>
 
 </Project>

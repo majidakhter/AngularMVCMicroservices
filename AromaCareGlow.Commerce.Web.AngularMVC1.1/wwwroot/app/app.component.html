@@ -232,13 +232,13 @@
                             <h3>My Account</h3>
                             <ul>
 
-                                <li>
+                                <li *ngIf="isUserLoggedIn()">
                                     <a [routerLink]="['/myaccounts/address']"><i class="fa fa-camera fa-fw"></i>&nbsp;My account</a>
                                 </li>
-                                <li>
+                                <li *ngIf="isUserLoggedIn()">
                                     <a [routerLink]="['/myaccounts/order']"><i class="fa fa-camera fa-fw"></i>&nbsp;Orders</a>
                                 </li>
-                                <li>
+                                <li *ngIf="isUserLoggedIn()">
                                     <a [routerLink]="['/myaccounts/address']"><i class="fa fa-camera fa-fw"></i>&nbsp;Addresses</a>
                                 </li>
                                 <li>
@@ -274,8 +274,8 @@
         </div>
         <div class="row">
             <p class="text-white text-center mt-5">
-                Copyright &copy;2019
-                <script>document.write(new Date().getFullYear());</script> All rights reserved | This site developed  <i class="fa fa-heart-o" aria-hidden="true"></i>for AromaCareGlow by Majid
+                Copyright &copy;
+                {{CopyRightDate}} All rights reserved | This site developed  <i class="fa fa-heart-o" aria-hidden="true"></i>for AromaCareGlow by Majid
             </p>
         </div>
     </footer>

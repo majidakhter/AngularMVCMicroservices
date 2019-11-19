@@ -9,9 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var data_service_1 = require("../../core/services/data.service");
 var membership_service_1 = require("../../core/services/membership.service");
 var notification_service_1 = require("../../core/services/notification.service");
+var confirmation_dialog_module_1 = require("../../customcomponent/confirmation-dialog/confirmation-dialog.module");
+var confirmation_dialog_service_1 = require("../../customcomponent/confirmation-dialog/confirmation-dialog.service");
 var myaccount_component_1 = require("./myaccount.component");
 var address_component_1 = require("./address.component");
 var order_component_1 = require("./order.component");
@@ -32,6 +35,8 @@ var MyAccountModule = (function () {
             imports: [
                 common_1.CommonModule,
                 forms_1.FormsModule,
+                ng_bootstrap_1.NgbModule,
+                confirmation_dialog_module_1.ConfirmationDialogModule,
                 routes_1.myaccountRouting
             ],
             declarations: [
@@ -50,7 +55,8 @@ var MyAccountModule = (function () {
             providers: [
                 data_service_1.DataService,
                 membership_service_1.MemberShipService,
-                notification_service_1.NotificationService
+                notification_service_1.NotificationService,
+                confirmation_dialog_service_1.ConfirmationDialogService
             ]
         })
     ], MyAccountModule);

@@ -5,7 +5,7 @@ import { enableProdMode } from '@angular/core';
 
 enableProdMode();
 import { MemberShipService } from './core/services/membership.service';
-import { Customer } from './core/domain/customer';
+
 
 @Component({
     selector: 'dashboard-app',
@@ -13,13 +13,16 @@ import { Customer } from './core/domain/customer';
     styleUrls: ['./app/app.component.css']
 })
 export class AppComponent implements OnInit {
-
+    CopyRightDate: number;
     constructor(public membershipService: MemberShipService,
         public location: Location) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.CopyRightDate = new Date().getFullYear();
+    }
 
     isUserLoggedIn(): boolean {
+        //use the below code to check everywhere wherever page can be accssed only by login user i.e my account orders wishlist
         return this.membershipService.isUserAuthenticated();
     }
 

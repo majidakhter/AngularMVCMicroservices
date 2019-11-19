@@ -90,6 +90,10 @@ gulp.task('setup-vendors', function (done) {
         { base: 'node_modules/' })
         .pipe(gulp.dest(lib));
 
+    gulp.src('node_modules/' + "@ng-bootstrap/**/*.js",
+        { base: 'node_modules/' })
+        .pipe(gulp.dest(lib));
+
     gulp.src('node_modules/' + "core-js/client/shim*.js",
         { base: 'node_modules/' })
         .pipe(gulp.dest(lib));

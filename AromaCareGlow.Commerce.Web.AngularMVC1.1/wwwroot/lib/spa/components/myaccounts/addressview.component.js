@@ -12,9 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var address_1 = require("../../core/domain/address");
+var notification_service_1 = require("../../core/services/notification.service");
+//import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
 var AddressViewComponent = (function () {
-    function AddressViewComponent(router) {
+    function AddressViewComponent(router, confirmModelService) {
         this.router = router;
+        this.confirmModelService = confirmModelService;
     }
     AddressViewComponent.prototype.ngOnInit = function () {
         this._address1 = new address_1.Address('', '', '', null, null, '', '', '', '', '', '', '', '');
@@ -25,12 +28,34 @@ var AddressViewComponent = (function () {
         sessionStorage.removeItem('customeraddress');
         this.router.navigate(['myaccounts/address']);
     };
+    AddressViewComponent.prototype.deleteAddress = function () {
+        this.confirmModelService.printConfirmationDialog('Are you sure you want to delete the address?', function () {
+            //    this.dataService.deleteResource(this._photosAPI + photo.Id)
+            //        .subscribe(res => {
+            //            _removeResult.Succeeded = res.Succeeded;
+            //            _removeResult.Message = res.Message;
+            //        },
+            //            error => console.error('Error: ' + error),
+            //            () => {
+            //                if (_removeResult.Succeeded) {
+            //                    this.notificationService.printSuccessMessage(photo.Title + ' removed from gallery.');
+            //                    this.getAlbumPhotos();
+            //                }
+            //                else {
+            //                    this.notificationService.printErrorMessage('Failed to remove photo');
+            //                }
+            //            });
+        });
+        //this.confirmModelService.confirm('Please confirm', 'Do you really want to Delete the Address ?')
+        //    .then((confirmed) => console.log('User confirmed:', confirmed))
+        //    .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+    };
     AddressViewComponent = __decorate([
         core_1.Component({
             selector: 'myaccount',
             templateUrl: './app/components/myaccounts/addressview.component.html'
         }),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router, notification_service_1.NotificationService])
     ], AddressViewComponent);
     return AddressViewComponent;
 }());

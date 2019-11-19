@@ -20,8 +20,11 @@ var AppComponent = (function () {
         this.membershipService = membershipService;
         this.location = location;
     }
-    AppComponent.prototype.ngOnInit = function () { };
+    AppComponent.prototype.ngOnInit = function () {
+        this.CopyRightDate = new Date().getFullYear();
+    };
     AppComponent.prototype.isUserLoggedIn = function () {
+        //use the below code to check everywhere wherever page can be accssed only by login user i.e my account orders wishlist
         return this.membershipService.isUserAuthenticated();
     };
     AppComponent.prototype.getUserName = function () {

@@ -1,9 +1,16 @@
-﻿<div class="container">
-    <div class="col-md-8 col-sm-8">
-        <div class="row pull-right">
-            <a [routerLink]="['/myaccounts/address']">Edit</a>
-            <a [routerLink]="['/accounts/login']">Delete</a>
-        </div>
+﻿<div class="container" >
+    <div class="row pull-right" style="margin-right:160px;margin-top:-30px">
+        <a [routerLink]="['/myaccounts/address']">Edit</a>
+        <!--<button class="btn btn-primary btn-link" (click)="deleteAddress()">Delete</button>-->
+        <button class="btn btn-xs btn-danger" (click)="deleteAddress()">
+            <span class="fa-stack fa-1x">
+                <i class="fa fa-remove fa-stack-1x fa-inverse"></i>
+            </span>
+        </button>
+
+    </div>
+    <div class="panel panel-default col-md-6 col-sm-8" style="background-color:gainsboro">
+
         <div class="form-group">
             <label>{{_address1.FirstName+' '+_address1.LastName}}</label>
         </div>
@@ -27,8 +34,10 @@
         </div>
         <div class="form-group">
             <label>{{_address1.SelectedCountry}}</label>
-        </div> <div class="form-group">
-            <button class="btn btn-primary btn-lg btn-block" (click)="addNew()" >ADD NEW</button>
         </div>
+
+    </div>
+    <div class="row pull-left col-md-6 col-sm-8">
+        <button class="btn btn-primary btn-lg btn-default" (click)="addNew()">ADD NEW</button>
     </div>
 </div>

@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { Headers, RequestOptions, BaseRequestOptions} from '@angular/http';
 import { HomeComponent } from './components/home.component';
@@ -16,6 +17,8 @@ import { CategoryComponent } from './components/category.component';
 import { AppComponent }  from './app.component';
 import { AccordionComponent } from './customcomponent/accordion/accordion.component';
 import { AccordionItemComponent } from './customcomponent/accordion-item/accordion-item.component';
+
+//import { ConfirmationDialogModule } from './customcomponent/confirmation-dialog/confirmation-dialog.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VendorAccountComponent } from './components/vendoraccount.component';
 import { routing } from './routes';
@@ -42,10 +45,13 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         HttpModule,
         routing,
         AccountModule,
-        MyAccountModule,
+        NgbModule,
         SiteInfoModule,
         CustomerServiceModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MyAccountModule,
+        //ConfirmationDialogModule
+        
     ],
     declarations: [AppComponent, HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent, AccordionItemComponent, AccordionComponent, VendorAccountComponent],
     providers: [DataService, MemberShipService, UtilityService, NotificationService,
