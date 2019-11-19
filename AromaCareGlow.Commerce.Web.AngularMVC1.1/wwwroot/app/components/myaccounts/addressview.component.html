@@ -1,7 +1,9 @@
 ﻿<div class="container" >
     <div class="row pull-right" style="margin-right:160px;margin-top:-30px">
-        <a [routerLink]="['/myaccounts/address']">Edit</a>
-        <!--<button class="btn btn-primary btn-link" (click)="deleteAddress()">Delete</button>-->
+        <a class="btn btn-xs btn-success" [routerLink]="['/myaccounts/address']">
+            <span class="fa-stack fa-1x">
+                <i class="fa fa-edit fa-stack-1x fa-indent"></i></span>
+        </a>
         <button class="btn btn-xs btn-danger" (click)="deleteAddress()">
             <span class="fa-stack fa-1x">
                 <i class="fa fa-remove fa-stack-1x fa-inverse"></i>

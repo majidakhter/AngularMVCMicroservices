@@ -60,8 +60,10 @@
     <Content Remove="wwwroot\app\core\common\statelist.ts" />
     <Content Remove="wwwroot\app\core\domain\address.ts" />
     <Content Remove="wwwroot\app\core\domain\customer.ts" />
+    <Content Remove="wwwroot\app\core\domain\customertest.ts" />
     <Content Remove="wwwroot\app\core\domain\index.ts" />
     <Content Remove="wwwroot\app\core\domain\operationResult.ts" />
+    <Content Remove="wwwroot\app\core\domain\product.ts" />
     <Content Remove="wwwroot\app\core\domain\registration.ts" />
     <Content Remove="wwwroot\app\core\services\data.service.ts" />
     <Content Remove="wwwroot\app\core\services\index.ts" />
@@ -73,6 +75,7 @@
     <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.component.ts" />
     <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.module.ts" />
     <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.service.ts" />
+    <Content Remove="wwwroot\app\customcomponent\grid-component\customgrid.component.ts" />
     <Content Remove="wwwroot\app\customcomponent\index.ts" />
   </ItemGroup>
 
@@ -157,8 +160,10 @@
     <TypeScriptCompile Include="wwwroot\app\core\common\statelist.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\address.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\customer.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\customertest.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\operationResult.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\product.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\registration.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\data.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\index.ts" />
@@ -170,6 +175,7 @@
     <TypeScriptCompile Include="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.module.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\grid-component\customgrid.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\index.ts" />
   </ItemGroup>
 

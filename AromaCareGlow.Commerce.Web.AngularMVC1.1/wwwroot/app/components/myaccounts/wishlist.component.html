@@ -8,44 +8,48 @@
             <div class="col-12">
                 <form action="#">
                     <div class=" table-content table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="plantmore-product-remove">remove</th>
-                                    <th class="plantmore-product-thumbnail">images</th>
-                                    <th class="cart-product-name">Product</th>
-                                    <th class="plantmore-product-price">Unit Price</th>
-                                    <th class="plantmore-product-stock-status">Stock Status</th>
-                                    <th class="plantmore-product-add-cart">add to cart</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="plantmore-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                                    <td class="plantmore-product-thumbnail"><a href="#"><img alt="" src="../../images/cart/1.jpg"></a></td>
-                                    <td class="plantmore-product-name"><a href="#">Nullam maximus</a></td>
-                                    <td class="plantmore-product-price"><span class="amount">$23.39</span></td>
-                                    <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
-                                    <td class="plantmore-product-add-cart"><a href="#">add to cart</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="plantmore-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                                    <td class="plantmore-product-thumbnail"><a href="#"><img alt="" src="../../images/cart/2.jpg"></a></td>
-                                    <td class="plantmore-product-name"><a href="#">Natus erro</a></td>
-                                    <td class="plantmore-product-price"><span class="amount">$30.50</span></td>
-                                    <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
-                                    <td class="plantmore-product-add-cart"><a href="#">add to cart</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="plantmore-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                                    <td class="plantmore-product-thumbnail"><a href="#"><img alt="" src="../../images/cart/3.jpg"></a></td>
-                                    <td class="plantmore-product-name"><a href="#">Sit voluptatem</a></td>
-                                    <td class="plantmore-product-price"><span class="amount">$40.19</span></td>
-                                    <td class="plantmore-product-stock-status"><span class="out-stock">out stock</span></td>
-                                    <td class="plantmore-product-add-cart"><a href="#">add to cart</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <!--<table class="table">
+        <thead>
+            <tr>
+                <th class="plantmore-product-remove">remove</th>
+                <th class="plantmore-product-thumbnail">images</th>
+                <th class="cart-product-name">Product</th>
+                <th class="plantmore-product-price">Unit Price</th>
+                <th class="plantmore-product-stock-status">Stock Status</th>
+                <th class="plantmore-product-add-cart">add to cart</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="plantmore-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                <td class="plantmore-product-thumbnail"><a href="#"><img alt="" src="../../images/cart/1.jpg"></a></td>
+                <td class="plantmore-product-name"><a href="#">Nullam maximus</a></td>
+                <td class="plantmore-product-price"><span class="amount">$23.39</span></td>
+                <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
+                <td class="plantmore-product-add-cart"><a href="#">add to cart</a></td>
+            </tr>
+            <tr>
+                <td class="plantmore-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                <td class="plantmore-product-thumbnail"><a href="#"><img alt="" src="../../images/cart/2.jpg"></a></td>
+                <td class="plantmore-product-name"><a href="#">Natus erro</a></td>
+                <td class="plantmore-product-price"><span class="amount">$30.50</span></td>
+                <td class="plantmore-product-stock-status"><span class="in-stock">in stock</span></td>
+                <td class="plantmore-product-add-cart"><a href="#">add to cart</a></td>
+            </tr>
+            <tr>
+                <td class="plantmore-product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                <td class="plantmore-product-thumbnail"><a href="#"><img alt="" src="../../images/cart/3.jpg"></a></td>
+                <td class="plantmore-product-name"><a href="#">Sit voluptatem</a></td>
+                <td class="plantmore-product-price"><span class="amount">$40.19</span></td>
+                <td class="plantmore-product-stock-status"><span class="out-stock">out stock</span></td>
+                <td class="plantmore-product-add-cart"><a href="#">add to cart</a></td>
+            </tr>
+        </tbody>
+    </table>-->
+                        <customgrid-ui [grid-data]="productCollection"
+                                 [grid-entityname]="'Product'"
+                                 (grid-selected)="Select($event)">
+                        </customgrid-ui>
                     </div>
                 </form>
             </div>

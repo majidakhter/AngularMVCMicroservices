@@ -5,8 +5,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../core/services/data.service';
 import { MemberShipService } from '../../core/services/membership.service';
 import { NotificationService } from '../../core/services/notification.service';
-import { ConfirmationDialogModule } from '../../customcomponent/confirmation-dialog/confirmation-dialog.module';
-import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
+//import { ConfirmationDialogModule } from '../../customcomponent/confirmation-dialog/confirmation-dialog.module';
+//import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
 import { MyAccountComponent } from './myaccount.component';
 import { AddressComponent } from './address.component';
 import {OrderComponent } from './order.component';
@@ -18,6 +18,7 @@ import { ShoppingCartComponent } from './shoppingcart.component';
 import { WishListComponent } from './wishlist.component';
 import { ChangePasswordComponent } from './changepassword.component';
 import { AddressViewComponent } from './addressview.component';
+import { CustomGridComponent } from '../../customcomponent/grid-component/customgrid.component';
 import { myaccountRouting } from './routes';
 
 @NgModule({
@@ -26,7 +27,7 @@ import { myaccountRouting } from './routes';
         CommonModule,
         FormsModule,
         NgbModule,
-        ConfirmationDialogModule,
+        //ConfirmationDialogModule,
        
         myaccountRouting
     ],
@@ -41,7 +42,8 @@ import { myaccountRouting } from './routes';
         ShoppingCartComponent,
         WishListComponent,
         ChangePasswordComponent,
-        AddressViewComponent
+        AddressViewComponent,
+        CustomGridComponent
         
     ],
 
@@ -49,7 +51,7 @@ import { myaccountRouting } from './routes';
         DataService,
         MemberShipService,
         NotificationService,
-        ConfirmationDialogService
+        //ConfirmationDialogService
         
     ]
 })

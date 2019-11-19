@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var customertest_1 = require("../../core/domain/customertest");
 var ChangePasswordComponent = (function () {
     function ChangePasswordComponent() {
+        this.customer = new customertest_1.CustomerTest('', '', '');
     }
     ChangePasswordComponent = __decorate([
         core_1.Component({

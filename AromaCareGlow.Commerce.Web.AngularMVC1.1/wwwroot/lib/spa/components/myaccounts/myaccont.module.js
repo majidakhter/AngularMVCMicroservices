@@ -13,8 +13,8 @@ var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var data_service_1 = require("../../core/services/data.service");
 var membership_service_1 = require("../../core/services/membership.service");
 var notification_service_1 = require("../../core/services/notification.service");
-var confirmation_dialog_module_1 = require("../../customcomponent/confirmation-dialog/confirmation-dialog.module");
-var confirmation_dialog_service_1 = require("../../customcomponent/confirmation-dialog/confirmation-dialog.service");
+//import { ConfirmationDialogModule } from '../../customcomponent/confirmation-dialog/confirmation-dialog.module';
+//import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
 var myaccount_component_1 = require("./myaccount.component");
 var address_component_1 = require("./address.component");
 var order_component_1 = require("./order.component");
@@ -26,6 +26,7 @@ var shoppingcart_component_1 = require("./shoppingcart.component");
 var wishlist_component_1 = require("./wishlist.component");
 var changepassword_component_1 = require("./changepassword.component");
 var addressview_component_1 = require("./addressview.component");
+var customgrid_component_1 = require("../../customcomponent/grid-component/customgrid.component");
 var routes_1 = require("./routes");
 var MyAccountModule = (function () {
     function MyAccountModule() {
@@ -36,7 +37,7 @@ var MyAccountModule = (function () {
                 common_1.CommonModule,
                 forms_1.FormsModule,
                 ng_bootstrap_1.NgbModule,
-                confirmation_dialog_module_1.ConfirmationDialogModule,
+                //ConfirmationDialogModule,
                 routes_1.myaccountRouting
             ],
             declarations: [
@@ -50,13 +51,13 @@ var MyAccountModule = (function () {
                 shoppingcart_component_1.ShoppingCartComponent,
                 wishlist_component_1.WishListComponent,
                 changepassword_component_1.ChangePasswordComponent,
-                addressview_component_1.AddressViewComponent
+                addressview_component_1.AddressViewComponent,
+                customgrid_component_1.CustomGridComponent
             ],
             providers: [
                 data_service_1.DataService,
                 membership_service_1.MemberShipService,
                 notification_service_1.NotificationService,
-                confirmation_dialog_service_1.ConfirmationDialogService
             ]
         })
     ], MyAccountModule);

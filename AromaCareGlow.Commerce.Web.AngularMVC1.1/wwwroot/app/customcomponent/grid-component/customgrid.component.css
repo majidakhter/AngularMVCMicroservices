@@ -1,0 +1,18 @@
+﻿.plantmore-product-add-cart > a {
+    background: #333333 none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    height: 41px;
+    line-height: 40px;
+    padding: 0 20px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    width: 180px;
+}
+
+    .plantmore-product-add-cart > a:hover {
+        background: #EB3E32;
+    }

@@ -46,9 +46,6 @@ var AddressViewComponent = (function () {
             //                }
             //            });
         });
-        //this.confirmModelService.confirm('Please confirm', 'Do you really want to Delete the Address ?')
-        //    .then((confirmed) => console.log('User confirmed:', confirmed))
-        //    .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
     };
     AddressViewComponent = __decorate([
         core_1.Component({
