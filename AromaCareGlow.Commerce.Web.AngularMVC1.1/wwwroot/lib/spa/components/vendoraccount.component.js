@@ -13,6 +13,19 @@ var core_1 = require("@angular/core");
 var VendorAccountComponent = (function () {
     function VendorAccountComponent() {
     }
+    VendorAccountComponent.prototype.ngOnInit = function () {
+        this.ApplyVendor = this.getVendor();
+    };
+    VendorAccountComponent.prototype.send = function (vendor) {
+    };
+    VendorAccountComponent.prototype.getVendor = function () {
+        var vendor = {
+            'Email': '',
+            'Name': '',
+            'Description': '',
+        };
+        return vendor;
+    };
     VendorAccountComponent = __decorate([
         core_1.Component({
             selector: 'home',

@@ -13,6 +13,22 @@ var core_1 = require("@angular/core");
 var ContactusComponent = /** @class */ (function () {
     function ContactusComponent() {
     }
+    ContactusComponent.prototype.ngOnInit = function () {
+        this.ContactUs = this.getContactUs();
+    };
+    ContactusComponent.prototype.send = function (contactUs) {
+    };
+    ContactusComponent.prototype.getContactUs = function () {
+        var contact = {
+            'Email': '',
+            'Enquiry': '',
+            'FullName': '',
+            'Subject': '',
+            'FirstName': '',
+            'LastName': ''
+        };
+        return contact;
+    };
     ContactusComponent = __decorate([
         core_1.Component({
             selector: 'order',

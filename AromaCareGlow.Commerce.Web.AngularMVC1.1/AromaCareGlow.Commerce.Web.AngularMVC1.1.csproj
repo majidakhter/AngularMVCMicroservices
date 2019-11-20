@@ -59,12 +59,15 @@
     <Content Remove="wwwroot\app\core\common\state.ts" />
     <Content Remove="wwwroot\app\core\common\statelist.ts" />
     <Content Remove="wwwroot\app\core\domain\address.ts" />
+    <Content Remove="wwwroot\app\core\domain\applyvendor.ts" />
+    <Content Remove="wwwroot\app\core\domain\contactus.ts" />
     <Content Remove="wwwroot\app\core\domain\customer.ts" />
     <Content Remove="wwwroot\app\core\domain\customertest.ts" />
     <Content Remove="wwwroot\app\core\domain\index.ts" />
     <Content Remove="wwwroot\app\core\domain\operationResult.ts" />
     <Content Remove="wwwroot\app\core\domain\product.ts" />
     <Content Remove="wwwroot\app\core\domain\registration.ts" />
+    <Content Remove="wwwroot\app\core\domain\vendor.ts" />
     <Content Remove="wwwroot\app\core\services\auth.guard.ts" />
     <Content Remove="wwwroot\app\core\services\data.service.ts" />
     <Content Remove="wwwroot\app\core\services\deactivate.authguard.ts" />
@@ -98,13 +101,13 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="wwwroot\app\components\corefeature\" />
     <Folder Include="wwwroot\icon-fonts\" />
   </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
   
   <ItemGroup>
@@ -166,12 +169,15 @@
     <TypeScriptCompile Include="wwwroot\app\core\common\state.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\common\statelist.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\address.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\applyvendor.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\contactus.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\customer.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\customertest.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\operationResult.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\product.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\registration.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\domain\vendor.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\auth.guard.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\data.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\deactivate.authguard.ts" />

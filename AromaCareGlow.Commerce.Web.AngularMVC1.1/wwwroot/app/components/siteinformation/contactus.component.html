@@ -13,14 +13,14 @@
 
 
                     <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="FirstName" [(ngModel)]="_newUser.FirstName"
+                        <input type="text" class="form-control input-lg" placeholder="FirstName" [(ngModel)]="ContactUs.FirstName"
                                name="firstname" #firstname="ngModel" required>
                         <div [hidden]="firstname.valid || firstname.untouched" class="alert alert-danger">
                             FirsName is required
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="LastName" [(ngModel)]="_newUser.LastName"
+                        <input type="text" class="form-control input-lg" placeholder="LastName" [(ngModel)]="ContactUs.LastName"
                                name="lastname" #lastname="ngModel" required>
                         <div [hidden]="lastname.valid || lastname.untouched" class="alert alert-danger">
                             LastName is required
@@ -29,7 +29,7 @@
 
 
                     <div class="form-group">
-                        <input type="email" class="form-control input-lg" placeholder="Email" [(ngModel)]="_newUser.Email"
+                        <input type="email" class="form-control input-lg" placeholder="Email" [(ngModel)]="ContactUs.Email"
                                name="email" #email="ngModel" required>
                         <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
                             Email is required
@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
 
-                        <textarea class="form-control input-lg" placeholder="Message" [(ngModel)]="_newUser.Message"
+                        <textarea class="form-control input-lg" rows="8" placeholder="Message" [(ngModel)]="ContactUs.Subject"
                                   name="message" #message="ngModel" required></textarea>
                         <div [hidden]="message.valid || message.untouched" class="alert alert-danger">
                             Message is required
