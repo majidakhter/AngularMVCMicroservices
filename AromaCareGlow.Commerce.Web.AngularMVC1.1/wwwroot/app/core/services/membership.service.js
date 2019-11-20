@@ -12,28 +12,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("./data.service");
 var customer_1 = require("../domain/customer");
+var service_constant_1 = require("./service.constant");
 var MemberShipService = /** @class */ (function () {
-    function MemberShipService(accountService) {
+    function MemberShipService(accountService, configuration) {
         this.accountService = accountService;
-        this._accountRegisterAPI = 'api/customer/register/';
-        this._accountLoginAPI = 'api/customer/authenticate/';
-        this._accountLogoutAPI = 'api/customer/logout/';
-        this._accountAddressAPI = 'api/customer/saveaddress/';
+        this.configuration = configuration;
     }
     MemberShipService.prototype.register = function (newUser) {
-        this.accountService.set(this._accountRegisterAPI);
+        this.accountService.set(this.configuration._accountRegisterAPI);
         return this.accountService.post(JSON.stringify(newUser));
     };
     MemberShipService.prototype.saveAddress = function (newCustomer) {
-        this.accountService.set(this._accountAddressAPI);
+        this.accountService.set(this.configuration._accountAddressAPI);
         return this.accountService.post(JSON.stringify(newCustomer));
     };
     MemberShipService.prototype.login = function (creds) {
-        this.accountService.set(this._accountLoginAPI);
+        this.accountService.set(this.configuration._accountLoginAPI);
         return this.accountService.post(JSON.stringify(creds));
     };
     MemberShipService.prototype.logout = function () {
-        this.accountService.set(this._accountLogoutAPI);
+        this.accountService.set(this.configuration._accountLogoutAPI);
         return this.accountService.post(null, false);
     };
     MemberShipService.prototype.isUserAuthenticated = function () {
@@ -53,7 +51,7 @@ var MemberShipService = /** @class */ (function () {
     };
     MemberShipService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [data_service_1.DataService])
+        __metadata("design:paramtypes", [data_service_1.DataService, service_constant_1.Configuration])
     ], MemberShipService);
     return MemberShipService;
 }());

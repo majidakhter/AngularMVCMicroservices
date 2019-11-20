@@ -1,16 +1,11 @@
 ﻿import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MyAccountComponent } from './myaccount.component';
-import { AddressComponent } from './address.component';
-import { OrderComponent } from './order.component';
-import { DownloadableProductComponent } from './downloadableproduct.component';
-import { ProductReviewComponent } from './productreview.component';
-import { RewardPointComponent } from './rewardpoint.component';
-import { StockSubscriptionComponent } from './stocksubscription.component';
-import { ShoppingCartComponent } from './shoppingcart.component';
-import { WishListComponent } from './wishlist.component';
-import { ChangePasswordComponent } from './changepassword.component';
-import { AddressViewComponent } from './addressview.component';
+
+import {
+    MyAccountComponent, AddressComponent, OrderComponent, DownloadableProductComponent, ProductReviewComponent, RewardPointComponent, StockSubscriptionComponent,
+    ShoppingCartComponent, WishListComponent, ChangePasswordComponent, AddressViewComponent
+} from './index';
+
 export const accountRoutes: Routes = [
     {
         path: 'myaccounts',

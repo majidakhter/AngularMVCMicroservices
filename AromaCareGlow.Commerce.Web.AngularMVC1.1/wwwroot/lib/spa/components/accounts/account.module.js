@@ -9,15 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
-var data_service_1 = require("../../core/services/data.service");
-var membership_service_1 = require("../../core/services/membership.service");
-var notification_service_1 = require("../../core/services/notification.service");
-var account_component_1 = require("./account.component");
-var login_component_1 = require("./login.component");
-var register_component_1 = require("./register.component");
-var forgetpassword_component_1 = require("./forgetpassword.component");
-var shoppingcart_component_1 = require("./shoppingcart.component");
-var checkout_component_1 = require("./checkout.component");
+var index_1 = require("../../core/services/index");
+var index_2 = require("./index");
 var routes_1 = require("./routes");
 var AccountModule = (function () {
     function AccountModule() {
@@ -30,17 +23,17 @@ var AccountModule = (function () {
                 routes_1.accountRouting
             ],
             declarations: [
-                account_component_1.AccountComponent,
-                login_component_1.LoginComponent,
-                register_component_1.RegisterComponent,
-                forgetpassword_component_1.ForgotPasswordComponent,
-                shoppingcart_component_1.ShoppingCartComponent,
-                checkout_component_1.CheckoutComponent
+                index_2.AccountComponent,
+                index_2.LoginComponent,
+                index_2.RegisterComponent,
+                index_2.ForgotPasswordComponent,
+                index_2.ShoppingCartComponent,
+                index_2.CheckoutComponent
             ],
             providers: [
-                data_service_1.DataService,
-                membership_service_1.MemberShipService,
-                notification_service_1.NotificationService
+                index_1.DataService,
+                index_1.MemberShipService,
+                index_1.NotificationService
             ]
         })
     ], AccountModule);

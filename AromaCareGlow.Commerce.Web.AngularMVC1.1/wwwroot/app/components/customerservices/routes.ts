@@ -1,11 +1,8 @@
 ﻿import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CustomerServiceComponent } from './customerservice.component';
-import { SearchComponent } from './search.component';
-import { RecentViewedComponent } from './recentviewedproduct.component';
-import { NewsComponent } from './news.component';
-import { NewProductComponent } from './newproduct.component';
-import { CompareProductComponent } from './compareproduct.component';
+
+import { CustomerServiceComponent, SearchComponent, RecentViewedComponent, NewsComponent, NewProductComponent, CompareProductComponent } from './index';
+
 export const accountRoutes: Routes = [
     {
         path: 'customerinfoservice',

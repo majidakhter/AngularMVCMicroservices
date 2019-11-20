@@ -1,12 +1,9 @@
 ﻿import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/home.component';
-import { MenComponent } from './components/men.component';
-import { WomenComponent } from './components/women.component';
-import { ProductComponent } from './components/product.component';
-import { CategoryComponent } from './components/category.component';
-import { VendorAccountComponent } from './components/vendoraccount.component'
+
+import { HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent, VendorAccountComponent } from './components/index';
+
 import { accountRoutes, accountRouting } from './components/accounts/routes';
 
 const appRoutes: Routes = [

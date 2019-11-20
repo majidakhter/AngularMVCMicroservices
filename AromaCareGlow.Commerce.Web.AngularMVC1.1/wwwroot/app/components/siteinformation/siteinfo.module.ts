@@ -2,18 +2,9 @@
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { DataService } from '../../core/services/data.service';
-import { MemberShipService } from '../../core/services/membership.service';
-import { NotificationService } from '../../core/services/notification.service';
-
-import { UseConditionComponent } from './usecondition.component';
-import { SiteMapComponent } from './sitemap.component';
-import { ShippingReturnComponent } from './shippingreturns.component';
-import { PrivacyNoticeComponent } from './privacynotice.component';
-import { AboutusComponent } from './aboutus.component';
-import { ContactusComponent } from './contactus.component';
+import { DataService, MemberShipService, NotificationService } from '../../core/services/index';
 import { mysiteRouting } from './routes';
-import { SiteInfoComponent } from './siteinfo.component';
+import { UseConditionComponent, SiteMapComponent, ShippingReturnComponent, PrivacyNoticeComponent, AboutusComponent, ContactusComponent, SiteInfoComponent } from './index';
 
 @NgModule({
     imports: [

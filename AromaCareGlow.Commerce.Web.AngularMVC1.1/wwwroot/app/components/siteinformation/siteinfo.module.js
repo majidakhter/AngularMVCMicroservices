@@ -9,17 +9,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
-var data_service_1 = require("../../core/services/data.service");
-var membership_service_1 = require("../../core/services/membership.service");
-var notification_service_1 = require("../../core/services/notification.service");
-var usecondition_component_1 = require("./usecondition.component");
-var sitemap_component_1 = require("./sitemap.component");
-var shippingreturns_component_1 = require("./shippingreturns.component");
-var privacynotice_component_1 = require("./privacynotice.component");
-var aboutus_component_1 = require("./aboutus.component");
-var contactus_component_1 = require("./contactus.component");
+var index_1 = require("../../core/services/index");
 var routes_1 = require("./routes");
-var siteinfo_component_1 = require("./siteinfo.component");
+var index_2 = require("./index");
 var SiteInfoModule = /** @class */ (function () {
     function SiteInfoModule() {
     }
@@ -31,18 +23,18 @@ var SiteInfoModule = /** @class */ (function () {
                 routes_1.mysiteRouting
             ],
             declarations: [
-                siteinfo_component_1.SiteInfoComponent,
-                usecondition_component_1.UseConditionComponent,
-                sitemap_component_1.SiteMapComponent,
-                shippingreturns_component_1.ShippingReturnComponent,
-                privacynotice_component_1.PrivacyNoticeComponent,
-                aboutus_component_1.AboutusComponent,
-                contactus_component_1.ContactusComponent
+                index_2.SiteInfoComponent,
+                index_2.UseConditionComponent,
+                index_2.SiteMapComponent,
+                index_2.ShippingReturnComponent,
+                index_2.PrivacyNoticeComponent,
+                index_2.AboutusComponent,
+                index_2.ContactusComponent
             ],
             providers: [
-                data_service_1.DataService,
-                membership_service_1.MemberShipService,
-                notification_service_1.NotificationService
+                index_1.DataService,
+                index_1.MemberShipService,
+                index_1.NotificationService
             ]
         })
     ], SiteInfoModule);

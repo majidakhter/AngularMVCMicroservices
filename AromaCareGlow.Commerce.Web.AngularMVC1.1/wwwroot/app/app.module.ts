@@ -3,30 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { Headers, RequestOptions, BaseRequestOptions} from '@angular/http';
-import { HomeComponent } from './components/home.component';
-import { MenComponent } from './components/men.component';
-import { WomenComponent } from './components/women.component';
+import { Headers, RequestOptions, BaseRequestOptions } from '@angular/http';
+
+import { HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent, VendorAccountComponent } from './components/index';
+import { AccordionComponent, AccordionItemComponent } from './customcomponent/index';
+import { AppComponent } from './app.component';
+import { DataService, MemberShipService, UtilityService, NotificationService, Configuration } from './core/services/index';
+
 import { AccountModule } from './components/accounts/account.module';
 import { MyAccountModule } from './components/myaccounts/myaccont.module';
 import { SiteInfoModule } from './components/siteinformation/siteinfo.module';
 import { CustomerServiceModule } from './components/customerservices/customerservice.module';
-import { ProductComponent } from './components/product.component';
-import { CategoryComponent } from './components/category.component';
-import { AppComponent }  from './app.component';
-import { AccordionComponent } from './customcomponent/accordion/accordion.component';
-import { AccordionItemComponent } from './customcomponent/accordion-item/accordion-item.component';
 
-//import { ConfirmationDialogModule } from './customcomponent/confirmation-dialog/confirmation-dialog.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VendorAccountComponent } from './components/vendoraccount.component';
 import { routing } from './routes';
-import { DataService } from './core/services/data.service';
-import { MemberShipService } from './core/services/membership.service';
-import { UtilityService } from './core/services/utility.service';
-import { NotificationService } from './core/services/notification.service';
-
 
 class AppBaseRequestOptions extends BaseRequestOptions {
     headers: Headers = new Headers();
@@ -54,7 +45,7 @@ class AppBaseRequestOptions extends BaseRequestOptions {
         
     ],
     declarations: [AppComponent, HomeComponent, MenComponent, WomenComponent, ProductComponent, CategoryComponent, AccordionItemComponent, AccordionComponent, VendorAccountComponent],
-    providers: [DataService, MemberShipService, UtilityService, NotificationService,
+    providers: [DataService, MemberShipService, UtilityService, NotificationService, Configuration,
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         { provide: RequestOptions, useClass: AppBaseRequestOptions }],
     bootstrap: [AppComponent]

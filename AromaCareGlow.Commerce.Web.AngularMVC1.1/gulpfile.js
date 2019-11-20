@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     fs = require("fs"),
     del = require('del'),
     path = require('path');
-
+     
 var lib = "./wwwroot/lib/";
 
 var paths = {

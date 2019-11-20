@@ -9,15 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
-var data_service_1 = require("../../core/services/data.service");
-var membership_service_1 = require("../../core/services/membership.service");
-var notification_service_1 = require("../../core/services/notification.service");
-var customerservice_component_1 = require("./customerservice.component");
-var search_component_1 = require("./search.component");
-var recentviewedproduct_component_1 = require("./recentviewedproduct.component");
-var news_component_1 = require("./news.component");
-var newproduct_component_1 = require("./newproduct.component");
-var compareproduct_component_1 = require("./compareproduct.component");
+var index_1 = require("../../core/services/index");
+var index_2 = require("./index");
 var routes_1 = require("./routes");
 var CustomerServiceModule = /** @class */ (function () {
     function CustomerServiceModule() {
@@ -30,17 +23,17 @@ var CustomerServiceModule = /** @class */ (function () {
                 routes_1.customerServiceRouting
             ],
             declarations: [
-                customerservice_component_1.CustomerServiceComponent,
-                search_component_1.SearchComponent,
-                recentviewedproduct_component_1.RecentViewedComponent,
-                news_component_1.NewsComponent,
-                newproduct_component_1.NewProductComponent,
-                compareproduct_component_1.CompareProductComponent
+                index_2.CustomerServiceComponent,
+                index_2.SearchComponent,
+                index_2.RecentViewedComponent,
+                index_2.NewsComponent,
+                index_2.NewProductComponent,
+                index_2.CompareProductComponent
             ],
             providers: [
-                data_service_1.DataService,
-                membership_service_1.MemberShipService,
-                notification_service_1.NotificationService
+                index_1.DataService,
+                index_1.MemberShipService,
+                index_1.NotificationService
             ]
         })
     ], CustomerServiceModule);

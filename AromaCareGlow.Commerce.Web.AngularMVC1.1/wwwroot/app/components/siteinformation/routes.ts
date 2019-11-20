@@ -1,12 +1,7 @@
 ﻿import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UseConditionComponent } from './usecondition.component';
-import { SiteMapComponent } from './sitemap.component';
-import { ShippingReturnComponent } from './shippingreturns.component';
-import { PrivacyNoticeComponent } from './privacynotice.component';
-import { AboutusComponent } from './aboutus.component';
-import { ContactusComponent } from './contactus.component';
-import { SiteInfoComponent } from './siteinfo.component';
+
+import { UseConditionComponent, SiteMapComponent, ShippingReturnComponent, PrivacyNoticeComponent, AboutusComponent, ContactusComponent, SiteInfoComponent } from './index';
 
 export const accountRoutes: Routes = [
     {

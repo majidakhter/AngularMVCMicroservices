@@ -69,6 +69,7 @@
     <Content Remove="wwwroot\app\core\services\index.ts" />
     <Content Remove="wwwroot\app\core\services\membership.service.ts" />
     <Content Remove="wwwroot\app\core\services\notification.service.ts" />
+    <Content Remove="wwwroot\app\core\services\service.constant.ts" />
     <Content Remove="wwwroot\app\core\services\utility.service.ts" />
     <Content Remove="wwwroot\app\customcomponent\accordion\accordion.component.ts" />
     <Content Remove="wwwroot\app\customcomponent\animation.ts" />
@@ -77,11 +78,6 @@
     <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.service.ts" />
     <Content Remove="wwwroot\app\customcomponent\grid-component\customgrid.component.ts" />
     <Content Remove="wwwroot\app\customcomponent\index.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="C:\Users\Admin\Desktop\x1.jpg" Link="x1.jpg" />
-    <Content Include="C:\Users\Admin\Desktop\y1.jpg" Link="y1.jpg" />
   </ItemGroup>
  
   <ItemGroup>
@@ -169,6 +165,7 @@
     <TypeScriptCompile Include="wwwroot\app\core\services\index.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\membership.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\notification.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\service.constant.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\utility.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\accordion\accordion.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\animation.ts" />

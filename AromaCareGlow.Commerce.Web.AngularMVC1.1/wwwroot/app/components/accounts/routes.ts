@@ -1,12 +1,7 @@
 ﻿import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccountComponent, LoginComponent, RegisterComponent, ForgotPasswordComponent, ShoppingCartComponent, CheckoutComponent } from './index';
 
-import { AccountComponent } from './account.component';
-import { LoginComponent } from './login.component';
-import { RegisterComponent } from './register.component';
-import { ForgotPasswordComponent } from './forgetpassword.component';
-import { ShoppingCartComponent } from './shoppingcart.component';
-import { CheckoutComponent } from './checkout.component';
 export const accountRoutes: Routes = [
     {
         path: 'accounts',

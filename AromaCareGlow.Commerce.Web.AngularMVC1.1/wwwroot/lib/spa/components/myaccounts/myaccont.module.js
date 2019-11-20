@@ -10,22 +10,10 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
-var data_service_1 = require("../../core/services/data.service");
-var membership_service_1 = require("../../core/services/membership.service");
-var notification_service_1 = require("../../core/services/notification.service");
+var index_1 = require("../../core/services/index");
 //import { ConfirmationDialogModule } from '../../customcomponent/confirmation-dialog/confirmation-dialog.module';
 //import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
-var myaccount_component_1 = require("./myaccount.component");
-var address_component_1 = require("./address.component");
-var order_component_1 = require("./order.component");
-var downloadableproduct_component_1 = require("./downloadableproduct.component");
-var productreview_component_1 = require("./productreview.component");
-var rewardpoint_component_1 = require("./rewardpoint.component");
-var stocksubscription_component_1 = require("./stocksubscription.component");
-var shoppingcart_component_1 = require("./shoppingcart.component");
-var wishlist_component_1 = require("./wishlist.component");
-var changepassword_component_1 = require("./changepassword.component");
-var addressview_component_1 = require("./addressview.component");
+var index_2 = require("./index");
 var customgrid_component_1 = require("../../customcomponent/grid-component/customgrid.component");
 var routes_1 = require("./routes");
 var MyAccountModule = (function () {
@@ -41,23 +29,23 @@ var MyAccountModule = (function () {
                 routes_1.myaccountRouting
             ],
             declarations: [
-                myaccount_component_1.MyAccountComponent,
-                address_component_1.AddressComponent,
-                order_component_1.OrderComponent,
-                downloadableproduct_component_1.DownloadableProductComponent,
-                productreview_component_1.ProductReviewComponent,
-                rewardpoint_component_1.RewardPointComponent,
-                stocksubscription_component_1.StockSubscriptionComponent,
-                shoppingcart_component_1.ShoppingCartComponent,
-                wishlist_component_1.WishListComponent,
-                changepassword_component_1.ChangePasswordComponent,
-                addressview_component_1.AddressViewComponent,
+                index_2.MyAccountComponent,
+                index_2.AddressComponent,
+                index_2.OrderComponent,
+                index_2.DownloadableProductComponent,
+                index_2.ProductReviewComponent,
+                index_2.RewardPointComponent,
+                index_2.StockSubscriptionComponent,
+                index_2.ShoppingCartComponent,
+                index_2.WishListComponent,
+                index_2.ChangePasswordComponent,
+                index_2.AddressViewComponent,
                 customgrid_component_1.CustomGridComponent
             ],
             providers: [
-                data_service_1.DataService,
-                membership_service_1.MemberShipService,
-                notification_service_1.NotificationService,
+                index_1.DataService,
+                index_1.MemberShipService,
+                index_1.NotificationService,
             ]
         })
     ], MyAccountModule);
