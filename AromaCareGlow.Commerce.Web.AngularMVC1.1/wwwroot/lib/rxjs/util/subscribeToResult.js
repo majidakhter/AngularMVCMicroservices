@@ -1,12 +1,13 @@
 "use strict";
-var root_1 = require('./root');
-var isArrayLike_1 = require('./isArrayLike');
-var isPromise_1 = require('./isPromise');
-var isObject_1 = require('./isObject');
-var Observable_1 = require('../Observable');
-var iterator_1 = require('../symbol/iterator');
-var InnerSubscriber_1 = require('../InnerSubscriber');
-var observable_1 = require('../symbol/observable');
+Object.defineProperty(exports, "__esModule", { value: true });
+var root_1 = require("./root");
+var isArrayLike_1 = require("./isArrayLike");
+var isPromise_1 = require("./isPromise");
+var isObject_1 = require("./isObject");
+var Observable_1 = require("../Observable");
+var iterator_1 = require("../symbol/iterator");
+var InnerSubscriber_1 = require("../InnerSubscriber");
+var observable_1 = require("../symbol/observable");
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
     if (destination.closed) {
@@ -19,6 +20,7 @@ function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
             return null;
         }
         else {
+            destination.syncErrorThrowable = true;
             return result.subscribe(destination);
         }
     }
@@ -68,7 +70,7 @@ function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     }
     else {
         var value = isObject_1.isObject(result) ? 'an invalid object' : "'" + result + "'";
-        var msg = ("You provided " + value + " where a stream was expected.")
+        var msg = "You provided " + value + " where a stream was expected."
             + ' You can provide an Observable, Promise, Array, or Iterable.';
         destination.error(new TypeError(msg));
     }

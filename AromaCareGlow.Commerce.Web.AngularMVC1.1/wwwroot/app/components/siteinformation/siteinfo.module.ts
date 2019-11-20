@@ -1,7 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { MapModule } from '../../customcomponent/map-component/map.module';
 import { DataService, MemberShipService, NotificationService } from '../../core/services/index';
 import { mysiteRouting } from './routes';
 import { UseConditionComponent, SiteMapComponent, ShippingReturnComponent, PrivacyNoticeComponent, AboutusComponent, ContactusComponent, SiteInfoComponent } from './index';
@@ -10,7 +10,8 @@ import { UseConditionComponent, SiteMapComponent, ShippingReturnComponent, Priva
     imports: [
         CommonModule,
         FormsModule,
-        mysiteRouting
+        mysiteRouting,
+        MapModule
     ],
     declarations: [
         SiteInfoComponent,

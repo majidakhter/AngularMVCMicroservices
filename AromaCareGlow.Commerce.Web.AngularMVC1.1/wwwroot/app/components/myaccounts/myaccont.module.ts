@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { DataService, MemberShipService, NotificationService } from '../../core/services/index';
+import { DataService, MemberShipService, NotificationService, LoggerService } from '../../core/services/index';
 
 //import { ConfirmationDialogModule } from '../../customcomponent/confirmation-dialog/confirmation-dialog.module';
 //import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
@@ -45,6 +45,7 @@ import { myaccountRouting } from './routes';
         DataService,
         MemberShipService,
         NotificationService,
+        LoggerService
         //ConfirmationDialogService
         
     ]

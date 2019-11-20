@@ -1,26 +1,33 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var root_1 = require('../util/root');
-var Observable_1 = require('../Observable');
-var iterator_1 = require('../symbol/iterator');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var root_1 = require("../util/root");
+var Observable_1 = require("../Observable");
+var iterator_1 = require("../symbol/iterator");
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
  * @hide true
  */
-var IteratorObservable = (function (_super) {
+var IteratorObservable = /** @class */ (function (_super) {
     __extends(IteratorObservable, _super);
     function IteratorObservable(iterator, scheduler) {
-        _super.call(this);
-        this.scheduler = scheduler;
+        var _this = _super.call(this) || this;
+        _this.scheduler = scheduler;
         if (iterator == null) {
             throw new Error('iterator cannot be null.');
         }
-        this.iterator = getIterator(iterator);
+        _this.iterator = getIterator(iterator);
+        return _this;
     }
     IteratorObservable.create = function (iterator, scheduler) {
         return new IteratorObservable(iterator, scheduler);
@@ -76,7 +83,7 @@ var IteratorObservable = (function (_super) {
     return IteratorObservable;
 }(Observable_1.Observable));
 exports.IteratorObservable = IteratorObservable;
-var StringIterator = (function () {
+var StringIterator = /** @class */ (function () {
     function StringIterator(str, idx, len) {
         if (idx === void 0) { idx = 0; }
         if (len === void 0) { len = str.length; }
@@ -96,7 +103,7 @@ var StringIterator = (function () {
     };
     return StringIterator;
 }());
-var ArrayIterator = (function () {
+var ArrayIterator = /** @class */ (function () {
     function ArrayIterator(arr, idx, len) {
         if (idx === void 0) { idx = 0; }
         if (len === void 0) { len = toLength(arr); }

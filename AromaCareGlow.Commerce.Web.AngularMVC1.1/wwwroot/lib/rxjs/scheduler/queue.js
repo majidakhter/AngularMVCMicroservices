@@ -1,6 +1,7 @@
 "use strict";
-var QueueAction_1 = require('./QueueAction');
-var QueueScheduler_1 = require('./QueueScheduler');
+Object.defineProperty(exports, "__esModule", { value: true });
+var QueueAction_1 = require("./QueueAction");
+var QueueScheduler_1 = require("./QueueScheduler");
 /**
  *
  * Queue Scheduler

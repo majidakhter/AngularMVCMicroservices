@@ -1,5 +1,6 @@
 "use strict";
-var find_1 = require('./find');
+Object.defineProperty(exports, "__esModule", { value: true });
+var findIndex_1 = require("../operators/findIndex");
 /**
  * Emits only the index of the first value emitted by the source Observable that
  * meets some condition.
@@ -35,7 +36,7 @@ var find_1 = require('./find');
  * @owner Observable
  */
 function findIndex(predicate, thisArg) {
-    return this.lift(new find_1.FindValueOperator(predicate, this, true, thisArg));
+    return findIndex_1.findIndex(predicate, thisArg)(this);
 }
 exports.findIndex = findIndex;
 //# sourceMappingURL=findIndex.js.map

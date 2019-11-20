@@ -1,5 +1,6 @@
 "use strict";
-var isArray_1 = require('../util/isArray');
+Object.defineProperty(exports, "__esModule", { value: true });
+var isArray_1 = require("../util/isArray");
 function isNumeric(val) {
     // parseFloat NaNs numeric-cast false positives (null|true|false|"")
     // ...but misinterprets leading-number strings, particularly hex literals ("0x...")

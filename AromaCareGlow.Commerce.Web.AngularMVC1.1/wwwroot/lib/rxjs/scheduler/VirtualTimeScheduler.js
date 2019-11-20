@@ -1,21 +1,27 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var AsyncAction_1 = require('./AsyncAction');
-var AsyncScheduler_1 = require('./AsyncScheduler');
-var VirtualTimeScheduler = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var AsyncAction_1 = require("./AsyncAction");
+var AsyncScheduler_1 = require("./AsyncScheduler");
+var VirtualTimeScheduler = /** @class */ (function (_super) {
     __extends(VirtualTimeScheduler, _super);
     function VirtualTimeScheduler(SchedulerAction, maxFrames) {
-        var _this = this;
         if (SchedulerAction === void 0) { SchedulerAction = VirtualAction; }
         if (maxFrames === void 0) { maxFrames = Number.POSITIVE_INFINITY; }
-        _super.call(this, SchedulerAction, function () { return _this.frame; });
-        this.maxFrames = maxFrames;
-        this.frame = 0;
-        this.index = -1;
+        var _this = _super.call(this, SchedulerAction, function () { return _this.frame; }) || this;
+        _this.maxFrames = maxFrames;
+        _this.frame = 0;
+        _this.index = -1;
+        return _this;
     }
     /**
      * Prompt the Scheduler to execute all of its queued actions, therefore
@@ -46,16 +52,17 @@ exports.VirtualTimeScheduler = VirtualTimeScheduler;
  * @ignore
  * @extends {Ignored}
  */
-var VirtualAction = (function (_super) {
+var VirtualAction = /** @class */ (function (_super) {
     __extends(VirtualAction, _super);
     function VirtualAction(scheduler, work, index) {
         if (index === void 0) { index = scheduler.index += 1; }
-        _super.call(this, scheduler, work);
-        this.scheduler = scheduler;
-        this.work = work;
-        this.index = index;
-        this.active = true;
-        this.index = scheduler.index = index;
+        var _this = _super.call(this, scheduler, work) || this;
+        _this.scheduler = scheduler;
+        _this.work = work;
+        _this.index = index;
+        _this.active = true;
+        _this.index = scheduler.index = index;
+        return _this;
     }
     VirtualAction.prototype.schedule = function (state, delay) {
         if (delay === void 0) { delay = 0; }

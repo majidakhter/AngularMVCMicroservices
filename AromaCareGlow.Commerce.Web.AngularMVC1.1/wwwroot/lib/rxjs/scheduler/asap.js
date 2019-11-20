@@ -1,6 +1,7 @@
 "use strict";
-var AsapAction_1 = require('./AsapAction');
-var AsapScheduler_1 = require('./AsapScheduler');
+Object.defineProperty(exports, "__esModule", { value: true });
+var AsapAction_1 = require("./AsapAction");
+var AsapScheduler_1 = require("./AsapScheduler");
 /**
  *
  * Asap Scheduler

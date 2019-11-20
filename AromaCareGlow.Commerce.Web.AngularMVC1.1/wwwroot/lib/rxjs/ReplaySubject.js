@@ -1,28 +1,35 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Subject_1 = require('./Subject');
-var queue_1 = require('./scheduler/queue');
-var Subscription_1 = require('./Subscription');
-var observeOn_1 = require('./operator/observeOn');
-var ObjectUnsubscribedError_1 = require('./util/ObjectUnsubscribedError');
-var SubjectSubscription_1 = require('./SubjectSubscription');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var Subject_1 = require("./Subject");
+var queue_1 = require("./scheduler/queue");
+var Subscription_1 = require("./Subscription");
+var observeOn_1 = require("./operators/observeOn");
+var ObjectUnsubscribedError_1 = require("./util/ObjectUnsubscribedError");
+var SubjectSubscription_1 = require("./SubjectSubscription");
 /**
  * @class ReplaySubject<T>
  */
-var ReplaySubject = (function (_super) {
+var ReplaySubject = /** @class */ (function (_super) {
     __extends(ReplaySubject, _super);
     function ReplaySubject(bufferSize, windowTime, scheduler) {
         if (bufferSize === void 0) { bufferSize = Number.POSITIVE_INFINITY; }
         if (windowTime === void 0) { windowTime = Number.POSITIVE_INFINITY; }
-        _super.call(this);
-        this.scheduler = scheduler;
-        this._events = [];
-        this._bufferSize = bufferSize < 1 ? 1 : bufferSize;
-        this._windowTime = windowTime < 1 ? 1 : windowTime;
+        var _this = _super.call(this) || this;
+        _this.scheduler = scheduler;
+        _this._events = [];
+        _this._bufferSize = bufferSize < 1 ? 1 : bufferSize;
+        _this._windowTime = windowTime < 1 ? 1 : windowTime;
+        return _this;
     }
     ReplaySubject.prototype.next = function (value) {
         var now = this._getNow();
@@ -92,7 +99,7 @@ var ReplaySubject = (function (_super) {
     return ReplaySubject;
 }(Subject_1.Subject));
 exports.ReplaySubject = ReplaySubject;
-var ReplayEvent = (function () {
+var ReplayEvent = /** @class */ (function () {
     function ReplayEvent(time, value) {
         this.time = time;
         this.value = value;

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * An execution context and a data structure to order tasks and schedule their
  * execution. Provides a notion of (potentially virtual) time, through the
@@ -15,7 +16,7 @@
  *
  * @class Scheduler
  */
-var Scheduler = (function () {
+var Scheduler = /** @class */ (function () {
     function Scheduler(SchedulerAction, now) {
         if (now === void 0) { now = Scheduler.now; }
         this.SchedulerAction = SchedulerAction;

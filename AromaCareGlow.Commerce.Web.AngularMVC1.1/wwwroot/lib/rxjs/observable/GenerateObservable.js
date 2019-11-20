@@ -1,26 +1,33 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Observable_1 = require('../Observable');
-var isScheduler_1 = require('../util/isScheduler');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../Observable");
+var isScheduler_1 = require("../util/isScheduler");
 var selfSelector = function (value) { return value; };
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
  * @hide true
  */
-var GenerateObservable = (function (_super) {
+var GenerateObservable = /** @class */ (function (_super) {
     __extends(GenerateObservable, _super);
     function GenerateObservable(initialState, condition, iterate, resultSelector, scheduler) {
-        _super.call(this);
-        this.initialState = initialState;
-        this.condition = condition;
-        this.iterate = iterate;
-        this.resultSelector = resultSelector;
-        this.scheduler = scheduler;
+        var _this = _super.call(this) || this;
+        _this.initialState = initialState;
+        _this.condition = condition;
+        _this.iterate = iterate;
+        _this.resultSelector = resultSelector;
+        _this.scheduler = scheduler;
+        return _this;
     }
     GenerateObservable.create = function (initialStateOrOptions, condition, iterate, resultSelectorOrObservable, scheduler) {
         if (arguments.length == 1) {
@@ -39,7 +46,8 @@ var GenerateObservable = (function (_super) {
                 iterate: this.iterate,
                 condition: this.condition,
                 resultSelector: this.resultSelector,
-                state: state });
+                state: state
+            });
         }
         var _a = this, condition = _a.condition, resultSelector = _a.resultSelector, iterate = _a.iterate;
         do {

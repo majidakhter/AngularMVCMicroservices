@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
+var map_module_1 = require("../../customcomponent/map-component/map.module");
 var index_1 = require("../../core/services/index");
 var routes_1 = require("./routes");
 var index_2 = require("./index");
@@ -20,7 +21,8 @@ var SiteInfoModule = /** @class */ (function () {
             imports: [
                 common_1.CommonModule,
                 forms_1.FormsModule,
-                routes_1.mysiteRouting
+                routes_1.mysiteRouting,
+                map_module_1.MapModule
             ],
             declarations: [
                 index_2.SiteInfoComponent,

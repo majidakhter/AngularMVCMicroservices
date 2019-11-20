@@ -1,13 +1,19 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var isFunction_1 = require('./util/isFunction');
-var Subscription_1 = require('./Subscription');
-var Observer_1 = require('./Observer');
-var rxSubscriber_1 = require('./symbol/rxSubscriber');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var isFunction_1 = require("./util/isFunction");
+var Subscription_1 = require("./Subscription");
+var Observer_1 = require("./Observer");
+var rxSubscriber_1 = require("./symbol/rxSubscriber");
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -18,7 +24,7 @@ var rxSubscriber_1 = require('./symbol/rxSubscriber');
  *
  * @class Subscriber<T>
  */
-var Subscriber = (function (_super) {
+var Subscriber = /** @class */ (function (_super) {
     __extends(Subscriber, _super);
     /**
      * @param {Observer|function(value: T): void} [destinationOrNext] A partially
@@ -29,36 +35,37 @@ var Subscriber = (function (_super) {
      * Observer.
      */
     function Subscriber(destinationOrNext, error, complete) {
-        _super.call(this);
-        this.syncErrorValue = null;
-        this.syncErrorThrown = false;
-        this.syncErrorThrowable = false;
-        this.isStopped = false;
+        var _this = _super.call(this) || this;
+        _this.syncErrorValue = null;
+        _this.syncErrorThrown = false;
+        _this.syncErrorThrowable = false;
+        _this.isStopped = false;
         switch (arguments.length) {
             case 0:
-                this.destination = Observer_1.empty;
+                _this.destination = Observer_1.empty;
                 break;
             case 1:
                 if (!destinationOrNext) {
-                    this.destination = Observer_1.empty;
+                    _this.destination = Observer_1.empty;
                     break;
                 }
                 if (typeof destinationOrNext === 'object') {
                     if (destinationOrNext instanceof Subscriber) {
-                        this.destination = destinationOrNext;
-                        this.destination.add(this);
+                        _this.destination = destinationOrNext;
+                        _this.destination.add(_this);
                     }
                     else {
-                        this.syncErrorThrowable = true;
-                        this.destination = new SafeSubscriber(this, destinationOrNext);
+                        _this.syncErrorThrowable = true;
+                        _this.destination = new SafeSubscriber(_this, destinationOrNext);
                     }
                     break;
                 }
             default:
-                this.syncErrorThrowable = true;
-                this.destination = new SafeSubscriber(this, destinationOrNext, error, complete);
+                _this.syncErrorThrowable = true;
+                _this.destination = new SafeSubscriber(_this, destinationOrNext, error, complete);
                 break;
         }
+        return _this;
     }
     Subscriber.prototype[rxSubscriber_1.rxSubscriber] = function () { return this; };
     /**
@@ -151,13 +158,13 @@ exports.Subscriber = Subscriber;
  * @ignore
  * @extends {Ignored}
  */
-var SafeSubscriber = (function (_super) {
+var SafeSubscriber = /** @class */ (function (_super) {
     __extends(SafeSubscriber, _super);
     function SafeSubscriber(_parentSubscriber, observerOrNext, error, complete) {
-        _super.call(this);
-        this._parentSubscriber = _parentSubscriber;
+        var _this = _super.call(this) || this;
+        _this._parentSubscriber = _parentSubscriber;
         var next;
-        var context = this;
+        var context = _this;
         if (isFunction_1.isFunction(observerOrNext)) {
             next = observerOrNext;
         }
@@ -168,15 +175,16 @@ var SafeSubscriber = (function (_super) {
             if (observerOrNext !== Observer_1.empty) {
                 context = Object.create(observerOrNext);
                 if (isFunction_1.isFunction(context.unsubscribe)) {
-                    this.add(context.unsubscribe.bind(context));
+                    _this.add(context.unsubscribe.bind(context));
                 }
-                context.unsubscribe = this.unsubscribe.bind(this);
+                context.unsubscribe = _this.unsubscribe.bind(_this);
             }
         }
-        this._context = context;
-        this._next = next;
-        this._error = error;
-        this._complete = complete;
+        _this._context = context;
+        _this._next = next;
+        _this._error = error;
+        _this._complete = complete;
+        return _this;
     }
     SafeSubscriber.prototype.next = function (value) {
         if (!this.isStopped && this._next) {

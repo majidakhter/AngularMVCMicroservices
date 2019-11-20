@@ -1,6 +1,6 @@
 "use strict";
-var BehaviorSubject_1 = require('../BehaviorSubject');
-var multicast_1 = require('./multicast');
+Object.defineProperty(exports, "__esModule", { value: true });
+var publishBehavior_1 = require("../operators/publishBehavior");
 /**
  * @param value
  * @return {ConnectableObservable<T>}
@@ -8,7 +8,7 @@ var multicast_1 = require('./multicast');
  * @owner Observable
  */
 function publishBehavior(value) {
-    return multicast_1.multicast.call(this, new BehaviorSubject_1.BehaviorSubject(value));
+    return publishBehavior_1.publishBehavior(value)(this);
 }
 exports.publishBehavior = publishBehavior;
 //# sourceMappingURL=publishBehavior.js.map

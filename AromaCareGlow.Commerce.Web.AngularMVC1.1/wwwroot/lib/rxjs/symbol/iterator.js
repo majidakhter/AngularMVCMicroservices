@@ -1,5 +1,6 @@
 "use strict";
-var root_1 = require('../util/root');
+Object.defineProperty(exports, "__esModule", { value: true });
+var root_1 = require("../util/root");
 function symbolIteratorPonyfill(root) {
     var Symbol = root.Symbol;
     if (typeof Symbol === 'function') {

@@ -1,6 +1,6 @@
 ﻿import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthGuard } from '../../core/services/auth.guard';
 import {
     MyAccountComponent, AddressComponent, OrderComponent, DownloadableProductComponent, ProductReviewComponent, RewardPointComponent, StockSubscriptionComponent,
     ShoppingCartComponent, WishListComponent, ChangePasswordComponent, AddressViewComponent
@@ -10,6 +10,7 @@ export const accountRoutes: Routes = [
     {
         path: 'myaccounts',
         component: MyAccountComponent,
+        canActivate: [AuthGuard],
         children: [
             { path: 'address', component: AddressComponent },
             { path: 'order', component: OrderComponent },

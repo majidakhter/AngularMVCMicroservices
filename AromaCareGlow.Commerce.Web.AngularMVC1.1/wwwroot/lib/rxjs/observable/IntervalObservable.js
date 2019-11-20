@@ -1,31 +1,38 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var isNumeric_1 = require('../util/isNumeric');
-var Observable_1 = require('../Observable');
-var async_1 = require('../scheduler/async');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var isNumeric_1 = require("../util/isNumeric");
+var Observable_1 = require("../Observable");
+var async_1 = require("../scheduler/async");
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
  * @hide true
  */
-var IntervalObservable = (function (_super) {
+var IntervalObservable = /** @class */ (function (_super) {
     __extends(IntervalObservable, _super);
     function IntervalObservable(period, scheduler) {
         if (period === void 0) { period = 0; }
         if (scheduler === void 0) { scheduler = async_1.async; }
-        _super.call(this);
-        this.period = period;
-        this.scheduler = scheduler;
+        var _this = _super.call(this) || this;
+        _this.period = period;
+        _this.scheduler = scheduler;
         if (!isNumeric_1.isNumeric(period) || period < 0) {
-            this.period = 0;
+            _this.period = 0;
         }
         if (!scheduler || typeof scheduler.schedule !== 'function') {
-            this.scheduler = async_1.async;
+            _this.scheduler = async_1.async;
         }
+        return _this;
     }
     /**
      * Creates an Observable that emits sequential numbers every specified

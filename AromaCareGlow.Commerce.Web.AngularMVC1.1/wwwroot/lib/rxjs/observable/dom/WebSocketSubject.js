@@ -1,45 +1,53 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Subject_1 = require('../../Subject');
-var Subscriber_1 = require('../../Subscriber');
-var Observable_1 = require('../../Observable');
-var Subscription_1 = require('../../Subscription');
-var root_1 = require('../../util/root');
-var ReplaySubject_1 = require('../../ReplaySubject');
-var tryCatch_1 = require('../../util/tryCatch');
-var errorObject_1 = require('../../util/errorObject');
-var assign_1 = require('../../util/assign');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var Subject_1 = require("../../Subject");
+var Subscriber_1 = require("../../Subscriber");
+var Observable_1 = require("../../Observable");
+var Subscription_1 = require("../../Subscription");
+var root_1 = require("../../util/root");
+var ReplaySubject_1 = require("../../ReplaySubject");
+var tryCatch_1 = require("../../util/tryCatch");
+var errorObject_1 = require("../../util/errorObject");
+var assign_1 = require("../../util/assign");
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
  * @hide true
  */
-var WebSocketSubject = (function (_super) {
+var WebSocketSubject = /** @class */ (function (_super) {
     __extends(WebSocketSubject, _super);
     function WebSocketSubject(urlConfigOrSource, destination) {
+        var _this = this;
         if (urlConfigOrSource instanceof Observable_1.Observable) {
-            _super.call(this, destination, urlConfigOrSource);
+            _this = _super.call(this, destination, urlConfigOrSource) || this;
         }
         else {
-            _super.call(this);
-            this.WebSocketCtor = root_1.root.WebSocket;
-            this._output = new Subject_1.Subject();
+            _this = _super.call(this) || this;
+            _this.WebSocketCtor = root_1.root.WebSocket;
+            _this._output = new Subject_1.Subject();
             if (typeof urlConfigOrSource === 'string') {
-                this.url = urlConfigOrSource;
+                _this.url = urlConfigOrSource;
             }
             else {
                 // WARNING: config object could override important members here.
-                assign_1.assign(this, urlConfigOrSource);
+                assign_1.assign(_this, urlConfigOrSource);
             }
-            if (!this.WebSocketCtor) {
+            if (!_this.WebSocketCtor) {
                 throw new Error('no WebSocket constructor can be found');
             }
-            this.destination = new ReplaySubject_1.ReplaySubject();
+            _this.destination = new ReplaySubject_1.ReplaySubject();
         }
+        return _this;
     }
     WebSocketSubject.prototype.resultSelector = function (e) {
         return JSON.parse(e.data);

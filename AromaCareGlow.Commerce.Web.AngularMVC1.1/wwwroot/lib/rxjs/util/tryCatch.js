@@ -1,5 +1,6 @@
 "use strict";
-var errorObject_1 = require('./errorObject');
+Object.defineProperty(exports, "__esModule", { value: true });
+var errorObject_1 = require("./errorObject");
 var tryCatchTarget;
 function tryCatcher() {
     try {

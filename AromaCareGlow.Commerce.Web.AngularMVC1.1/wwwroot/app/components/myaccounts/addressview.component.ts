@@ -1,7 +1,8 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Address } from '../../core/domain/address';
-import { NotificationService } from '../../core/services/notification.service';
+
+import { NotificationService, LoggerService } from '../../core/services/index';
 //import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
 @Component({
     selector: 'myaccount',
@@ -11,7 +12,7 @@ export class AddressViewComponent implements OnInit {
     private _address1: Address;
 
     constructor(
-        public router: Router, private confirmModelService: NotificationService) { }
+        public router: Router, private confirmModelService: NotificationService, private _logger: LoggerService) { }
 
     ngOnInit() {
         this._address1 = new Address('', '', '', null, null, '', '', '', '', '', '','','');
@@ -31,7 +32,7 @@ export class AddressViewComponent implements OnInit {
             //            _removeResult.Succeeded = res.Succeeded;
             //            _removeResult.Message = res.Message;
             //        },
-            //            error => console.error('Error: ' + error),
+            //            error => this._logger.log(error),
             //            () => {
             //                if (_removeResult.Succeeded) {
             //                    this.notificationService.printSuccessMessage(photo.Title + ' removed from gallery.');

@@ -1,7 +1,8 @@
 "use strict";
-var Subscriber_1 = require('../Subscriber');
-var rxSubscriber_1 = require('../symbol/rxSubscriber');
-var Observer_1 = require('../Observer');
+Object.defineProperty(exports, "__esModule", { value: true });
+var Subscriber_1 = require("../Subscriber");
+var rxSubscriber_1 = require("../symbol/rxSubscriber");
+var Observer_1 = require("../Observer");
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {

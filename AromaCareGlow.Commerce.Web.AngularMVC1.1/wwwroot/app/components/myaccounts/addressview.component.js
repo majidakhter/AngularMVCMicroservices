@@ -12,12 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var address_1 = require("../../core/domain/address");
-var notification_service_1 = require("../../core/services/notification.service");
+var index_1 = require("../../core/services/index");
 //import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
 var AddressViewComponent = /** @class */ (function () {
-    function AddressViewComponent(router, confirmModelService) {
+    function AddressViewComponent(router, confirmModelService, _logger) {
         this.router = router;
         this.confirmModelService = confirmModelService;
+        this._logger = _logger;
     }
     AddressViewComponent.prototype.ngOnInit = function () {
         this._address1 = new address_1.Address('', '', '', null, null, '', '', '', '', '', '', '', '');
@@ -35,7 +36,7 @@ var AddressViewComponent = /** @class */ (function () {
             //            _removeResult.Succeeded = res.Succeeded;
             //            _removeResult.Message = res.Message;
             //        },
-            //            error => console.error('Error: ' + error),
+            //            error => this._logger.log(error),
             //            () => {
             //                if (_removeResult.Succeeded) {
             //                    this.notificationService.printSuccessMessage(photo.Title + ' removed from gallery.');
@@ -52,7 +53,7 @@ var AddressViewComponent = /** @class */ (function () {
             selector: 'myaccount',
             templateUrl: './app/components/myaccounts/addressview.component.html'
         }),
-        __metadata("design:paramtypes", [router_1.Router, notification_service_1.NotificationService])
+        __metadata("design:paramtypes", [router_1.Router, index_1.NotificationService, index_1.LoggerService])
     ], AddressViewComponent);
     return AddressViewComponent;
 }());

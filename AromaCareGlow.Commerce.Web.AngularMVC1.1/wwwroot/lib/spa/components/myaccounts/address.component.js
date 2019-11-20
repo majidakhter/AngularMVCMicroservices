@@ -13,14 +13,14 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var address_1 = require("../../core/domain/address");
 var operationResult_1 = require("../../core/domain/operationResult");
-var membership_service_1 = require("../../core/services/membership.service");
-var notification_service_1 = require("../../core/services/notification.service");
+var index_1 = require("../../core/services/index");
 var statelist_1 = require("../../core/common/statelist");
 var AddressComponent = (function () {
-    function AddressComponent(membershipService, notificationService, router) {
+    function AddressComponent(membershipService, notificationService, router, _logger) {
         this.membershipService = membershipService;
         this.notificationService = notificationService;
         this.router = router;
+        this._logger = _logger;
     }
     AddressComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -53,7 +53,7 @@ var AddressComponent = (function () {
             .subscribe(function (res) {
             _addressSaveResult.Succeeded = res.Succeeded;
             _addressSaveResult.Message = res.Message;
-        }, function (error) { return console.error('Error: ' + error); }, function () {
+        }, function (error) { return _this._logger.log(error); }, function () {
             if (_addressSaveResult.Succeeded) {
                 _this.notificationService.printSuccessMessage('Dear ' + _this._address.Email + ', please login with your credentials');
                 sessionStorage.setItem('customeraddress', JSON.stringify(_this._address));
@@ -70,8 +70,8 @@ var AddressComponent = (function () {
             selector: 'address',
             templateUrl: './app/components/myaccounts/address.component.html'
         }),
-        __metadata("design:paramtypes", [membership_service_1.MemberShipService,
-            notification_service_1.NotificationService, router_1.Router])
+        __metadata("design:paramtypes", [index_1.MemberShipService,
+            index_1.NotificationService, router_1.Router, index_1.LoggerService])
     ], AddressComponent);
     return AddressComponent;
 }());

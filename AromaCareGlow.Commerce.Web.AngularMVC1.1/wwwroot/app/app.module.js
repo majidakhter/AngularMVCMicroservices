@@ -35,6 +35,7 @@ var account_module_1 = require("./components/accounts/account.module");
 var myaccont_module_1 = require("./components/myaccounts/myaccont.module");
 var siteinfo_module_1 = require("./components/siteinformation/siteinfo.module");
 var customerservice_module_1 = require("./components/customerservices/customerservice.module");
+var map_module_1 = require("./customcomponent/map-component/map.module");
 var routes_1 = require("./routes");
 var AppBaseRequestOptions = /** @class */ (function (_super) {
     __extends(AppBaseRequestOptions, _super);
@@ -56,16 +57,20 @@ var AppModule = /** @class */ (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                routes_1.routing,
                 account_module_1.AccountModule,
                 ng_bootstrap_1.NgbModule,
                 siteinfo_module_1.SiteInfoModule,
                 customerservice_module_1.CustomerServiceModule,
                 animations_1.BrowserAnimationsModule,
                 myaccont_module_1.MyAccountModule,
+                map_module_1.MapModule,
+                routes_1.routing
+                //RouterModule.forRoot({ preloadingStrategy: PreloadModulesStrategy })
+                //ConfirmationDialogModule
             ],
             declarations: [app_component_1.AppComponent, index_1.HomeComponent, index_1.MenComponent, index_1.WomenComponent, index_1.ProductComponent, index_1.CategoryComponent, index_2.AccordionItemComponent, index_2.AccordionComponent, index_1.VendorAccountComponent],
-            providers: [index_3.DataService, index_3.MemberShipService, index_3.UtilityService, index_3.NotificationService, index_3.Configuration,
+            providers: [index_3.DataService, index_3.MemberShipService, index_3.UtilityService, index_3.NotificationService, index_3.Configuration, index_3.AuthGuard,
+                //PreloadModulesStrategy,
                 { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
                 { provide: http_2.RequestOptions, useClass: AppBaseRequestOptions }],
             bootstrap: [app_component_1.AppComponent]

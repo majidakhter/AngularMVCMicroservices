@@ -1,24 +1,31 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Observable_1 = require('../Observable');
-var subscribeToResult_1 = require('../util/subscribeToResult');
-var OuterSubscriber_1 = require('../OuterSubscriber');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../Observable");
+var subscribeToResult_1 = require("../util/subscribeToResult");
+var OuterSubscriber_1 = require("../OuterSubscriber");
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
  * @hide true
  */
-var IfObservable = (function (_super) {
+var IfObservable = /** @class */ (function (_super) {
     __extends(IfObservable, _super);
     function IfObservable(condition, thenSource, elseSource) {
-        _super.call(this);
-        this.condition = condition;
-        this.thenSource = thenSource;
-        this.elseSource = elseSource;
+        var _this = _super.call(this) || this;
+        _this.condition = condition;
+        _this.thenSource = thenSource;
+        _this.elseSource = elseSource;
+        return _this;
     }
     IfObservable.create = function (condition, thenSource, elseSource) {
         return new IfObservable(condition, thenSource, elseSource);
@@ -30,14 +37,15 @@ var IfObservable = (function (_super) {
     return IfObservable;
 }(Observable_1.Observable));
 exports.IfObservable = IfObservable;
-var IfSubscriber = (function (_super) {
+var IfSubscriber = /** @class */ (function (_super) {
     __extends(IfSubscriber, _super);
     function IfSubscriber(destination, condition, thenSource, elseSource) {
-        _super.call(this, destination);
-        this.condition = condition;
-        this.thenSource = thenSource;
-        this.elseSource = elseSource;
-        this.tryIf();
+        var _this = _super.call(this, destination) || this;
+        _this.condition = condition;
+        _this.thenSource = thenSource;
+        _this.elseSource = elseSource;
+        _this.tryIf();
+        return _this;
     }
     IfSubscriber.prototype.tryIf = function () {
         var _a = this, condition = _a.condition, thenSource = _a.thenSource, elseSource = _a.elseSource;

@@ -1,8 +1,9 @@
 "use strict";
-var isScheduler_1 = require('../util/isScheduler');
-var isArray_1 = require('../util/isArray');
-var ArrayObservable_1 = require('./ArrayObservable');
-var combineLatest_1 = require('../operator/combineLatest');
+Object.defineProperty(exports, "__esModule", { value: true });
+var isScheduler_1 = require("../util/isScheduler");
+var isArray_1 = require("../util/isArray");
+var ArrayObservable_1 = require("./ArrayObservable");
+var combineLatest_1 = require("../operators/combineLatest");
 /* tslint:enable:max-line-length */
 /**
  * Combines multiple Observables to create an Observable whose values are
@@ -115,7 +116,7 @@ var combineLatest_1 = require('../operator/combineLatest');
 function combineLatest() {
     var observables = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        observables[_i - 0] = arguments[_i];
+        observables[_i] = arguments[_i];
     }
     var project = null;
     var scheduler = null;

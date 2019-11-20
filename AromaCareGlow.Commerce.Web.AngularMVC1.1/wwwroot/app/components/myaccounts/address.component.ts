@@ -2,8 +2,9 @@
 import { Router } from '@angular/router';
 import { Address } from '../../core/domain/address';
 import { OperationResult } from '../../core/domain/operationResult';
-import { MemberShipService } from '../../core/services/membership.service';
-import { NotificationService } from '../../core/services/notification.service';
+
+import { MemberShipService, NotificationService, LoggerService } from '../../core/services/index';
+
 import { STATELIST, COUNTRYLIST } from '../../core/common/statelist'
 @Component({
     selector: 'address',
@@ -14,7 +15,7 @@ export class AddressComponent {
     selectedCountry: string;
     selectedState: string;
     constructor(public membershipService: MemberShipService,
-        public notificationService: NotificationService, public router: Router
+        public notificationService: NotificationService, public router: Router, private _logger: LoggerService
         ) {
 
     }
@@ -54,7 +55,7 @@ export class AddressComponent {
                 _addressSaveResult.Message = res.Message;
 
             },
-                error => console.error('Error: ' + error),
+            error => this._logger.log(error),
                 () => {
                     if (_addressSaveResult.Succeeded) {
                         this.notificationService.printSuccessMessage('Dear ' + this._address.Email + ', please login with your credentials');

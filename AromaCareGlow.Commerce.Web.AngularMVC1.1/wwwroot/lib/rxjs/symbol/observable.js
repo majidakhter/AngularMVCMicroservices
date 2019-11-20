@@ -1,5 +1,6 @@
 "use strict";
-var root_1 = require('../util/root');
+Object.defineProperty(exports, "__esModule", { value: true });
+var root_1 = require("../util/root");
 function getSymbolObservable(context) {
     var $$observable;
     var Symbol = context.Symbol;

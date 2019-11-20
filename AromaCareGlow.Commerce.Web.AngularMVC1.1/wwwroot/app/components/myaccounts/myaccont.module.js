@@ -46,6 +46,8 @@ var MyAccountModule = /** @class */ (function () {
                 index_1.DataService,
                 index_1.MemberShipService,
                 index_1.NotificationService,
+                index_1.LoggerService
+                //ConfirmationDialogService
             ]
         })
     ], MyAccountModule);

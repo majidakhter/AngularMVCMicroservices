@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
 var index_1 = require("./components/index");
 var appRoutes = [
+    //{ path: '', pathMatch: 'full', redirectTo: '/home' },
+    //{ path: 'order/:id', data: { preload: true }, loadChildren: () => import('./components/myaccounts/myaccount.module').then(m => m.MyAccountModule) },
     {
         path: '',
         redirectTo: '/home',

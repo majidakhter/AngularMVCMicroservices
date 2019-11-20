@@ -1,23 +1,30 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Observable_1 = require('./Observable');
-var Subscriber_1 = require('./Subscriber');
-var Subscription_1 = require('./Subscription');
-var ObjectUnsubscribedError_1 = require('./util/ObjectUnsubscribedError');
-var SubjectSubscription_1 = require('./SubjectSubscription');
-var rxSubscriber_1 = require('./symbol/rxSubscriber');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("./Observable");
+var Subscriber_1 = require("./Subscriber");
+var Subscription_1 = require("./Subscription");
+var ObjectUnsubscribedError_1 = require("./util/ObjectUnsubscribedError");
+var SubjectSubscription_1 = require("./SubjectSubscription");
+var rxSubscriber_1 = require("./symbol/rxSubscriber");
 /**
  * @class SubjectSubscriber<T>
  */
-var SubjectSubscriber = (function (_super) {
+var SubjectSubscriber = /** @class */ (function (_super) {
     __extends(SubjectSubscriber, _super);
     function SubjectSubscriber(destination) {
-        _super.call(this, destination);
-        this.destination = destination;
+        var _this = _super.call(this, destination) || this;
+        _this.destination = destination;
+        return _this;
     }
     return SubjectSubscriber;
 }(Subscriber_1.Subscriber));
@@ -25,15 +32,16 @@ exports.SubjectSubscriber = SubjectSubscriber;
 /**
  * @class Subject<T>
  */
-var Subject = (function (_super) {
+var Subject = /** @class */ (function (_super) {
     __extends(Subject, _super);
     function Subject() {
-        _super.call(this);
-        this.observers = [];
-        this.closed = false;
-        this.isStopped = false;
-        this.hasError = false;
-        this.thrownError = null;
+        var _this = _super.call(this) || this;
+        _this.observers = [];
+        _this.closed = false;
+        _this.isStopped = false;
+        _this.hasError = false;
+        _this.thrownError = null;
+        return _this;
     }
     Subject.prototype[rxSubscriber_1.rxSubscriber] = function () {
         return new SubjectSubscriber(this);
@@ -128,12 +136,13 @@ exports.Subject = Subject;
 /**
  * @class AnonymousSubject<T>
  */
-var AnonymousSubject = (function (_super) {
+var AnonymousSubject = /** @class */ (function (_super) {
     __extends(AnonymousSubject, _super);
     function AnonymousSubject(destination, source) {
-        _super.call(this);
-        this.destination = destination;
-        this.source = source;
+        var _this = _super.call(this) || this;
+        _this.destination = destination;
+        _this.source = source;
+        return _this;
     }
     AnonymousSubject.prototype.next = function (value) {
         var destination = this.destination;

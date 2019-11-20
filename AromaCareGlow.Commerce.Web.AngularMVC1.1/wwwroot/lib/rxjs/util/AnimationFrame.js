@@ -1,6 +1,7 @@
 "use strict";
-var root_1 = require('./root');
-var RequestAnimationFrameDefinition = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var root_1 = require("./root");
+var RequestAnimationFrameDefinition = /** @class */ (function () {
     function RequestAnimationFrameDefinition(root) {
         if (root.requestAnimationFrame) {
             this.cancelAnimationFrame = root.cancelAnimationFrame.bind(root);

@@ -1,6 +1,7 @@
 "use strict";
-var AnimationFrameAction_1 = require('./AnimationFrameAction');
-var AnimationFrameScheduler_1 = require('./AnimationFrameScheduler');
+Object.defineProperty(exports, "__esModule", { value: true });
+var AnimationFrameAction_1 = require("./AnimationFrameAction");
+var AnimationFrameScheduler_1 = require("./AnimationFrameScheduler");
 /**
  *
  * Animation Frame Scheduler

@@ -1,11 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
+var auth_guard_1 = require("../../core/services/auth.guard");
 var index_1 = require("./index");
 exports.accountRoutes = [
     {
         path: 'myaccounts',
         component: index_1.MyAccountComponent,
+        canActivate: [auth_guard_1.AuthGuard],
         children: [
             { path: 'address', component: index_1.AddressComponent },
             { path: 'order', component: index_1.OrderComponent },

@@ -1,10 +1,11 @@
 "use strict";
-var isArray_1 = require('./util/isArray');
-var isObject_1 = require('./util/isObject');
-var isFunction_1 = require('./util/isFunction');
-var tryCatch_1 = require('./util/tryCatch');
-var errorObject_1 = require('./util/errorObject');
-var UnsubscriptionError_1 = require('./util/UnsubscriptionError');
+Object.defineProperty(exports, "__esModule", { value: true });
+var isArray_1 = require("./util/isArray");
+var isObject_1 = require("./util/isObject");
+var isFunction_1 = require("./util/isFunction");
+var tryCatch_1 = require("./util/tryCatch");
+var errorObject_1 = require("./util/errorObject");
+var UnsubscriptionError_1 = require("./util/UnsubscriptionError");
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -17,7 +18,7 @@ var UnsubscriptionError_1 = require('./util/UnsubscriptionError');
  *
  * @class Subscription
  */
-var Subscription = (function () {
+var Subscription = /** @class */ (function () {
     /**
      * @param {function(): void} [unsubscribe] A function describing how to
      * perform the disposal of resources when the `unsubscribe` method is called.

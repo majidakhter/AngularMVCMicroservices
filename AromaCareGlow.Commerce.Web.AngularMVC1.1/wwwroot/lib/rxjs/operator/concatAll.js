@@ -1,5 +1,6 @@
 "use strict";
-var mergeAll_1 = require('./mergeAll');
+Object.defineProperty(exports, "__esModule", { value: true });
+var concatAll_1 = require("../operators/concatAll");
 /* tslint:enable:max-line-length */
 /**
  * Converts a higher-order Observable into a first-order Observable by
@@ -50,7 +51,7 @@ var mergeAll_1 = require('./mergeAll');
  * @owner Observable
  */
 function concatAll() {
-    return this.lift(new mergeAll_1.MergeAllOperator(1));
+    return concatAll_1.concatAll()(this);
 }
 exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map

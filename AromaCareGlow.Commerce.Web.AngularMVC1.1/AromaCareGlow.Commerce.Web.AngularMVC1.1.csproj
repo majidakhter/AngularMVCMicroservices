@@ -65,12 +65,16 @@
     <Content Remove="wwwroot\app\core\domain\operationResult.ts" />
     <Content Remove="wwwroot\app\core\domain\product.ts" />
     <Content Remove="wwwroot\app\core\domain\registration.ts" />
+    <Content Remove="wwwroot\app\core\services\auth.guard.ts" />
     <Content Remove="wwwroot\app\core\services\data.service.ts" />
+    <Content Remove="wwwroot\app\core\services\deactivate.authguard.ts" />
     <Content Remove="wwwroot\app\core\services\index.ts" />
+    <Content Remove="wwwroot\app\core\services\logger.service.ts" />
     <Content Remove="wwwroot\app\core\services\membership.service.ts" />
     <Content Remove="wwwroot\app\core\services\notification.service.ts" />
     <Content Remove="wwwroot\app\core\services\service.constant.ts" />
     <Content Remove="wwwroot\app\core\services\utility.service.ts" />
+    <Content Remove="wwwroot\app\core\stratagies\preload-modules.strategy.ts" />
     <Content Remove="wwwroot\app\customcomponent\accordion\accordion.component.ts" />
     <Content Remove="wwwroot\app\customcomponent\animation.ts" />
     <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.component.ts" />
@@ -78,6 +82,13 @@
     <Content Remove="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.service.ts" />
     <Content Remove="wwwroot\app\customcomponent\grid-component\customgrid.component.ts" />
     <Content Remove="wwwroot\app\customcomponent\index.ts" />
+    <Content Remove="wwwroot\app\customcomponent\map-component\map.component.ts" />
+    <Content Remove="wwwroot\app\customcomponent\map-component\map.module.ts" />
+    <Content Remove="wwwroot\app\customcomponent\map-component\mapPoint.component.ts" />
+    <Content Remove="wwwroot\app\customcomponent\tooltip-component\tooltip.module.ts" />
+    <Content Remove="wwwroot\app\customcomponent\tooltip.component.ts" />
+    <Content Remove="wwwroot\app\environments\environment.prod.ts" />
+    <Content Remove="wwwroot\app\environments\environment.ts" />
   </ItemGroup>
  
   <ItemGroup>
@@ -161,12 +172,16 @@
     <TypeScriptCompile Include="wwwroot\app\core\domain\operationResult.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\product.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\domain\registration.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\auth.guard.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\data.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\deactivate.authguard.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\services\logger.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\membership.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\notification.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\service.constant.ts" />
     <TypeScriptCompile Include="wwwroot\app\core\services\utility.service.ts" />
+    <TypeScriptCompile Include="wwwroot\app\core\stratagies\preload-modules.strategy.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\accordion\accordion.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\animation.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.component.ts" />
@@ -174,6 +189,13 @@
     <TypeScriptCompile Include="wwwroot\app\customcomponent\confirmation-dialog\confirmation-dialog.service.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\grid-component\customgrid.component.ts" />
     <TypeScriptCompile Include="wwwroot\app\customcomponent\index.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\map-component\map.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\map-component\map.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\map-component\mapPoint.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\tooltip-component\tooltip.component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\customcomponent\tooltip-component\tooltip.module.ts" />
+    <TypeScriptCompile Include="wwwroot\app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="wwwroot\app\environments\environment.ts" />
   </ItemGroup>
 
 </Project>

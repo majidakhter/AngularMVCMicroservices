@@ -8,7 +8,10 @@ import { Configuration } from './service.constant'
 @Injectable()
 export class MemberShipService {
   
+   
 
+    // store the URL so we can redirect after logging in
+    redirectUrl: string;
     constructor(public accountService: DataService, private configuration: Configuration) {
 
     }

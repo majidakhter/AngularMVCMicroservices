@@ -8,3 +8,5 @@ __export(require("./membership.service"));
 __export(require("./notification.service"));
 __export(require("./utility.service"));
 __export(require("./service.constant"));
+__export(require("./auth.guard"));
+__export(require("./logger.service"));

@@ -1,22 +1,28 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Observable_1 = require('../Observable');
-var Subscription_1 = require('../Subscription');
-var SubscriptionLoggable_1 = require('./SubscriptionLoggable');
-var applyMixins_1 = require('../util/applyMixins');
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("../Observable");
+var Subscription_1 = require("../Subscription");
+var SubscriptionLoggable_1 = require("./SubscriptionLoggable");
+var applyMixins_1 = require("../util/applyMixins");
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
  * @extends {Ignored}
  */
-var ColdObservable = (function (_super) {
+var ColdObservable = /** @class */ (function (_super) {
     __extends(ColdObservable, _super);
     function ColdObservable(messages, scheduler) {
-        _super.call(this, function (subscriber) {
+        var _this = _super.call(this, function (subscriber) {
             var observable = this;
             var index = observable.logSubscribedFrame();
             subscriber.add(new Subscription_1.Subscription(function () {
@@ -24,10 +30,11 @@ var ColdObservable = (function (_super) {
             }));
             observable.scheduleMessages(subscriber);
             return subscriber;
-        });
-        this.messages = messages;
-        this.subscriptions = [];
-        this.scheduler = scheduler;
+        }) || this;
+        _this.messages = messages;
+        _this.subscriptions = [];
+        _this.scheduler = scheduler;
+        return _this;
     }
     ColdObservable.prototype.scheduleMessages = function (subscriber) {
         var messagesLength = this.messages.length;

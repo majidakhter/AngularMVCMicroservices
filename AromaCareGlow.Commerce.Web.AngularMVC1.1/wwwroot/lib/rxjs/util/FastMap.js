@@ -1,5 +1,6 @@
 "use strict";
-var FastMap = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var FastMap = /** @class */ (function () {
     function FastMap() {
         this.values = {};
     }

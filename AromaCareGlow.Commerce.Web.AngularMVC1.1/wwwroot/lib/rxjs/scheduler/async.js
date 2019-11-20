@@ -1,6 +1,7 @@
 "use strict";
-var AsyncAction_1 = require('./AsyncAction');
-var AsyncScheduler_1 = require('./AsyncScheduler');
+Object.defineProperty(exports, "__esModule", { value: true });
+var AsyncAction_1 = require("./AsyncAction");
+var AsyncScheduler_1 = require("./AsyncScheduler");
 /**
  *
  * Async Scheduler
