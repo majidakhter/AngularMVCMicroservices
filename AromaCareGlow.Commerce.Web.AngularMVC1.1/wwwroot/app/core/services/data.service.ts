@@ -1,6 +1,5 @@
 ﻿import { Http, Response } from '@angular/http';
-import { Injectable, Inject } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DataService {

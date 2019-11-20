@@ -1,5 +1,4 @@
-﻿import { Component, Input, Output, HostBinding, EventEmitter, OnInit } from '@angular/core';
-import {trigger, state, transition, animate, style, group} from '@angular/animations';
+﻿import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-accordion-item',

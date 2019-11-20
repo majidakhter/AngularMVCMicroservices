@@ -1,7 +1,5 @@
 ﻿import { Component, ContentChildren, QueryList, AfterContentInit, OnInit } from '@angular/core';
-import { trigger, state, transition, animate, style, group } from '@angular/animations';
 import { AccordionItemComponent } from '../accordion-item/accordion-item.component';
-import { fadeAnimation } from '../animation';
 @Component({
     selector: 'app-accordion',
     templateUrl: './app/customcomponent/accordion/accordion.component.html',
