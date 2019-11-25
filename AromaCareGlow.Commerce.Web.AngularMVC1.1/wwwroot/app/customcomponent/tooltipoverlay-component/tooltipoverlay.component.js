@@ -10,16 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var ShoppingCartComponent = (function () {
-    function ShoppingCartComponent() {
+var TooltipOverlayComponent = /** @class */ (function () {
+    function TooltipOverlayComponent() {
+        this.text = '';
     }
-    ShoppingCartComponent = __decorate([
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], TooltipOverlayComponent.prototype, "text", void 0);
+    TooltipOverlayComponent = __decorate([
         core_1.Component({
-            selector: 'order',
-            templateUrl: './app/components/myaccounts/shoppingcart.component.html'
-        }),
-        __metadata("design:paramtypes", [])
-    ], ShoppingCartComponent);
-    return ShoppingCartComponent;
+            selector: 'highlight-tooltip',
+            templateUrl: './app/customcomponent/tooltipoverlay-component/tooltipoverlay.component.html',
+            styles: ['./app/customcomponent/tooltipoverlay-component/tooltipoverlay.component.css']
+        })
+    ], TooltipOverlayComponent);
+    return TooltipOverlayComponent;
 }());
-exports.ShoppingCartComponent = ShoppingCartComponent;
+exports.TooltipOverlayComponent = TooltipOverlayComponent;
+//# sourceMappingURL=tooltipoverlay.component.js.map

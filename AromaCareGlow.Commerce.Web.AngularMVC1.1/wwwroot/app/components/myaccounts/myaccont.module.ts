@@ -9,7 +9,7 @@ import { DataService, MemberShipService, NotificationService, LoggerService } fr
 //import { ConfirmationDialogService } from '../../customcomponent/confirmation-dialog/confirmation-dialog.service';
 import {
     MyAccountComponent, AddressComponent, OrderComponent, DownloadableProductComponent, ProductReviewComponent, RewardPointComponent, StockSubscriptionComponent,
-    ShoppingCartComponent, WishListComponent, ChangePasswordComponent, AddressViewComponent
+     WishListComponent, ChangePasswordComponent, AddressViewComponent
 } from './index';
 
 import { CustomGridComponent } from '../../customcomponent/grid-component/customgrid.component';
@@ -33,7 +33,6 @@ import { myaccountRouting } from './routes';
         ProductReviewComponent,
         RewardPointComponent,
         StockSubscriptionComponent,
-        ShoppingCartComponent,
         WishListComponent,
         ChangePasswordComponent,
         AddressViewComponent,

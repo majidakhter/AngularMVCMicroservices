@@ -15,86 +15,84 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>Product</th>
-                                            <th>Quantity</th>
-                                            <th>SizeSize</th>
-                                            <th>Price</th>
+                                            <th class="col-md-3"></th>
+                                            <th class="col-md-3">Product</th>
+                                            <th class="col-md-2">Price</th>
+                                            <th class="col-md-2">Quantity</th>
+                                            <th class="col-md-2">Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngFor="let item of basket.items">
+                                        <tr>
+                                            <td class="col-md-3">
+                                                <img class="esh-basket-image" src="{{item.pictureUrl}}" />
+                                            </td>
+                                            <td class="col-md-4">
+                                                 {{item.productName}}
+                                            </td>
+                                            <td class="col-md-2">
+                                                <p>{{item.unitPrice | number:'.2-2'}}</p>
+                                            </td>
+                                            <td class="col-md-1">
+                                                <div>
+                                                    <div>
+                                                        <!--<input type="text" value="1">-->
+                                                        <input id="quantity"
+                                                               type="number"
+                                                               min="1"
+                                                               [(ngModel)]="item.quantity"
+                                                               (change)="itemQuantityChanged(item)" />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="col-md-2">{{(item.unitPrice * item.quantity) | number:'.2-2'}}</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                           <div >
+                             <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="col-md-3"></th>
+                                            <th class="col-md-3"></th>
+                                            <th class="col-md-2"></th>
+                                            <th class="col-md-2"></th>
+                                            <th class="col-md-2"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                <img src="../../images/cart/1.jpg" alt="">
-                                                <div>
-                                                    <h4>Animal Print Dress</h4>
-                                                    <p>$45.90</p>
-                                                </div>
+                                            <td class="col-md-3">
+                                                
                                             </td>
-                                            <td>
-                                                <div>
-                                                    <div>
-                                                        <input type="text" value="1">
-                                                    </div>
-                                                </div>
+                                            <td class="col-md-4">
+                                                 
                                             </td>
-                                            <td><h4>Size M</h4></td>
-                                            <td><h4>$45.90</h4></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../../images/cart/2.jpg" alt="">
-                                                <div>
-                                                    <h4>Ruffle Pink Top</h4>
-                                                    <p>$45.90</p>
-                                                </div>
+                                            <td class="col-md-2">
+                                                <button class="btn esh-basket-checkout" (click)="update($event)">Update</button>
                                             </td>
-                                            <td>
-                                                <div>
-                                                    <div>
-                                                        <input type="text" value="1">
-                                                    </div>
-                                                </div>
+                                            <td class="col-md-1">
+                                                <h4> Total:</h4>
                                             </td>
-                                            <td><h4>Size M</h4></td>
-                                            <td><h4>$45.90</h4></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../../images/cart/3.jpg" alt="">
-                                                <div>
-                                                    <h4>Skinny Jeans</h4>
-                                                    <p>$45.90</p>
-                                                </div>
+                                            <td class="col-md-2">
+                                            <h4> {{totalPrice | number:'.2-2'}}</h4>
                                             </td>
-                                            <td>
-                                                <div>
-                                                    <div>
-                                                        <input type="text" value="1">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><h4>Size M</h4></td>
-                                            <td><h4>$45.90</h4></td>
+                                           
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div>
-                                <h6>Total <span>$99.90</span></h6>
+                                       
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 pull-right" style="margin-top:20px">
-                        <div class="form-group">
-                            <input type="text" placeholder="Enter promo code">
-                            <button>Submit</button>
-                        </div>
-
-                        <a [routerLink]="['/accounts/checkout']"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Check Out</a>
-
-                        <a href="">Continue shopping</a>
+                    <div class="col-lg-4" style="margin-top:20px">
+                        <div (click)="checkOut($event)" class="btn btn-default btn-link">Checkout</div>
+                        <!--<div (click)="ContinueShopping($event)" class="btn btn-default btn-link">Continue shopping</div>-->
                     </div>
                 </div>
+                
             </div>
        
         <!-- cart section end -->
@@ -105,67 +103,56 @@
                     <h2>Continue Shopping</h2>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6">
-                        <div>
-                            <div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-body">
                                 <div>New</div>
                                 <img src="../../images/product/img1.jpg" alt="">
                                 <div>
-                                    <a href="#"><i></i><span>ADD TO CART</span></a>
-                                    <a href="#"><i></i></a>
+                                    <button class="btn btn-primary btn-sm" (click)="addToCart(item)">
+                                        ADD TO CART
+                                    </button>
                                 </div>
                             </div>
-                            <div class="pi-text">
+                            <div class="panel-footer">
                                 <h6>$35,00</h6>
                                 <p>Black and White Stripes Dress</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div>
-                            <div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-body">
                                 <img src="../../images/product/img2.jpg" alt="">
                                 <div class="pi-links">
-                                    <a href="#"><i></i><span>ADD TO CART</span></a>
-                                    <a href="#"><i></i></a>
+                                    <button class="btn btn-primary btn-sm" (click)="addToCart(item)">
+                                        ADD TO CART
+                                    </button>
                                 </div>
                             </div>
-                            <div class="pi-text">
+                            <div class="panel-footer">
                                 <h6>$35,00</h6>
                                 <p>Flamboyant Pink Top </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel panel-default text-center">
                             <div>
                                 <img src="../../images/product/img3.jpg" alt="">
                                 <div>
-                                    <a href="#"><i></i><span>ADD TO CART</span></a>
-                                    <a href="#"><i></i></a>
+                                    <button class="btn btn-primary btn-sm" (click)="addToCart(item)">
+                                        ADD TO CART
+                                    </button>
                                 </div>
                             </div>
-                            <div>
+                            <div class="panel-footer">
                                 <h6>$35,00</h6>
                                 <p>Flamboyant Pink Top </p>
                             </div>
                         </div>
                     </div>
-                    <!--<div class="col-lg-3 col-sm-6">
-                        <div >
-                            <div>
-                                <img src="../../images/product/y1.jpg" alt="">
-                                <div >
-                                    <a href="#" ><i></i><span>ADD TO CART</span></a>
-                                    <a href="#" ><i class="flaticon-heart"></i></a>
-                                </div>
-                            </div>
-                            <div >
-                                <h6>$35,00</h6>
-                                <p>Flamboyant Pink Top </p>
-                            </div>
-                        </div>
-                    </div>-->
+                   
                 </div>
             </div>
         

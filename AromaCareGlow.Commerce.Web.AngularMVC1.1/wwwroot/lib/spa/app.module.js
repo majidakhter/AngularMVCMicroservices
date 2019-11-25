@@ -33,6 +33,8 @@ var myaccont_module_1 = require("./components/myaccounts/myaccont.module");
 var siteinfo_module_1 = require("./components/siteinformation/siteinfo.module");
 var customerservice_module_1 = require("./components/customerservices/customerservice.module");
 var map_module_1 = require("./customcomponent/map-component/map.module");
+//import { ToolTipModule } from './customcomponent/tooltip-component/tooltip.module';
+var overlay_1 = require("@angular/cdk/overlay");
 var routes_1 = require("./routes");
 var AppBaseRequestOptions = (function (_super) {
     __extends(AppBaseRequestOptions, _super);
@@ -61,12 +63,14 @@ var AppModule = (function () {
                 animations_1.BrowserAnimationsModule,
                 myaccont_module_1.MyAccountModule,
                 map_module_1.MapModule,
+                //ToolTipModule,
+                overlay_1.OverlayModule,
                 routes_1.routing
                 //RouterModule.forRoot({ preloadingStrategy: PreloadModulesStrategy })
                 //ConfirmationDialogModule
             ],
             declarations: [app_component_1.AppComponent, index_1.HomeComponent, index_1.MenComponent, index_1.WomenComponent, index_1.ProductComponent, index_1.CategoryComponent, index_2.AccordionItemComponent, index_2.AccordionComponent, index_1.VendorAccountComponent],
-            providers: [index_3.DataService, index_3.MemberShipService, index_3.UtilityService, index_3.NotificationService, index_3.Configuration, index_3.AuthGuard,
+            providers: [index_3.DataService, index_3.MemberShipService, index_3.UtilityService, index_3.NotificationService, index_3.Configuration, index_3.AuthGuard, index_3.ShoppingCartService, index_3.ShoppingCartWrapperService, index_3.StorageService,
                 //PreloadModulesStrategy,
                 { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
                 { provide: http_2.RequestOptions, useClass: AppBaseRequestOptions }],

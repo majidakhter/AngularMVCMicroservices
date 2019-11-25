@@ -11,6 +11,5 @@ __export(require("./myaccount.component"));
 __export(require("./order.component"));
 __export(require("./productreview.component"));
 __export(require("./rewardpoint.component"));
-__export(require("./shoppingcart.component"));
 __export(require("./stocksubscription.component"));
 __export(require("./wishlist.component"));

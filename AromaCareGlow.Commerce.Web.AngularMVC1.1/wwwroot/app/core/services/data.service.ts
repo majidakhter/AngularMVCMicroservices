@@ -32,4 +32,7 @@ export class DataService {
         return this.http.delete(resource)
             .map(response => <any>(<Response>response).json())
     }
+    getResponse(url: string) {
+        return this.http.get(url).map(response => (<Response>response));
+    }
 }

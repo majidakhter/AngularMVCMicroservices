@@ -38,6 +38,9 @@ var DataService = /** @class */ (function () {
         return this.http.delete(resource)
             .map(function (response) { return response.json(); });
     };
+    DataService.prototype.getResponse = function (url) {
+        return this.http.get(url).map(function (response) { return response; });
+    };
     DataService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])

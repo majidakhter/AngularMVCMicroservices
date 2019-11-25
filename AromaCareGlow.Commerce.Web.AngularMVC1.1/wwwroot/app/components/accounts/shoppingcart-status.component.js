@@ -10,17 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var ShoppingCartComponent = /** @class */ (function () {
-    function ShoppingCartComponent() {
+var ShoppingCartStatusComponent = /** @class */ (function () {
+    function ShoppingCartStatusComponent() {
     }
-    ShoppingCartComponent = __decorate([
+    ShoppingCartStatusComponent = __decorate([
         core_1.Component({
             selector: 'order',
-            templateUrl: './app/components/myaccounts/shoppingcart.component.html'
+            templateUrl: './app/components/accounts/shoppingcart-status.component.html'
         }),
         __metadata("design:paramtypes", [])
-    ], ShoppingCartComponent);
-    return ShoppingCartComponent;
+    ], ShoppingCartStatusComponent);
+    return ShoppingCartStatusComponent;
 }());
-exports.ShoppingCartComponent = ShoppingCartComponent;
-//# sourceMappingURL=shoppingcart.component.js.map
+exports.ShoppingCartStatusComponent = ShoppingCartStatusComponent;
+//# sourceMappingURL=shoppingcart-status.component.js.map

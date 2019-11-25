@@ -15,7 +15,6 @@ exports.accountRoutes = [
             { path: 'productreview', component: index_1.ProductReviewComponent },
             { path: 'rewardpoint', component: index_1.RewardPointComponent },
             { path: 'stocksubscription', component: index_1.StockSubscriptionComponent },
-            { path: 'shoppingcart', component: index_1.ShoppingCartComponent },
             { path: 'wishlist', component: index_1.WishListComponent },
             { path: 'changepassword', component: index_1.ChangePasswordComponent },
             { path: 'addressview', component: index_1.AddressViewComponent }

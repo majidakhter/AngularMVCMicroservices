@@ -26,6 +26,8 @@ var tsProject = ts.createProject('./wwwroot/tsconfig.json');
 gulp.task('setup-vendors', function (done) {
     gulp.src([
         'node_modules/jquery/dist/jquery.*js',
+        'node_modules/jquery-ui-dist/jquery-ui.*js',
+        'node_modules/underscore/underscore.*js',
         'bower_components/bootstrap/dist/js/bootstrap*.js',
         'node_modules/fancybox/dist/js/jquery.fancybox.pack.js',
         'bower_components/alertify.js/lib/alertify.min.js',
@@ -41,6 +43,8 @@ gulp.task('setup-vendors', function (done) {
         'bower_components/alertify.js/themes/alertify.core.css',
         'bower_components/alertify.js/themes/alertify.bootstrap.css',
         'bower_components/alertify.js/themes/alertify.default.css',
+        './wwwroot/css/style.css',
+        'node_modules/@angular/cdk/overlay-prebuilt.css'
     ]).pipe(gulp.dest(paths.cssVendors));
 
     gulp.src([

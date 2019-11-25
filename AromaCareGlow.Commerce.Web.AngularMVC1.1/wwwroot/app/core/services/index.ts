@@ -5,3 +5,6 @@ export * from './utility.service';
 export * from './service.constant';
 export * from './auth.guard';
 export * from './logger.service';
+export * from './storage.service';
+export * from './shoppingcart.service';
+export * from './shoppingcart.wrapper.service';

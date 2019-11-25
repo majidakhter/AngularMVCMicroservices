@@ -6,6 +6,5 @@ export * from './myaccount.component';
 export * from './order.component';
 export * from './productreview.component';
 export * from './rewardpoint.component';
-export * from './shoppingcart.component';
 export * from './stocksubscription.component';
 export * from './wishlist.component';

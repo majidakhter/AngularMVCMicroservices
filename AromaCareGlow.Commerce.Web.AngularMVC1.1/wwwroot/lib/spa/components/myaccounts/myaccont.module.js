@@ -36,7 +36,6 @@ var MyAccountModule = (function () {
                 index_2.ProductReviewComponent,
                 index_2.RewardPointComponent,
                 index_2.StockSubscriptionComponent,
-                index_2.ShoppingCartComponent,
                 index_2.WishListComponent,
                 index_2.ChangePasswordComponent,
                 index_2.AddressViewComponent,

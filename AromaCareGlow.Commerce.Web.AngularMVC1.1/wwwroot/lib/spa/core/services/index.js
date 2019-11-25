@@ -10,3 +10,6 @@ __export(require("./utility.service"));
 __export(require("./service.constant"));
 __export(require("./auth.guard"));
 __export(require("./logger.service"));
+__export(require("./storage.service"));
+__export(require("./shoppingcart.service"));
+__export(require("./shoppingcart.wrapper.service"));
