@@ -1,0 +1,166 @@
+@import "../../../themes/wf-default/colors";
+@import "../../../../node_modules/@api-wfm/web-theme/src/styles/0-settings/typography.scss";
+
+$primaryDark : map-get($wfm-colors, primary-dark);
+$focusSecondary : map-get($wfm-colors, focus-secondary);
+$divider : map-get($wfm-colors, primary-medium-40);
+$primary-dark-75 : map-get($wfm-colors, primary-dark-75);
+$default-light : map-get($wfm-colors, default-light);
+
+::ng-deep{
+    .wfm-popover-top-arrow, 
+    .wfm-popover-bottom-arrow, 
+    .wfm-popover-right-arrow,
+    .wfm-popover-left-arrow{
+    display: none;
+    background: none;
+    border: none;
+  }
+  .mat-menu-panel .mat-menu-content, .mat-menu-panel :not(:empty).mat-menu-content {
+    position: relative;
+  }
+}
+.activity-popover {
+    width: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 390px;
+    min-height: 260px;
+    height: 260px;
+    .activity-popover-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $default-light;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        width: inherit;
+        z-index: 9;
+    }
+    .activity-popover-body {
+        margin-top: 50px;
+    }
+    i.icon-ge-warning {
+        display: inline-block;
+        margin-top: 4px;
+        color: map-get($wfm-colors, alert-warning);
+        padding-bottom: 3px;
+    }
+    .day-format {
+        font-size: medium;
+        color: $primaryDark;
+        padding-left: 13px;
+    }
+    .activity-change-title {
+        padding-top: 10px;
+        font-size:  $headings-size-medium;
+        color: $primaryDark;
+        font-weight: bold;
+        padding-left: 13px;
+    }
+    .no-default-activity {
+        padding-top: 5px;
+        font-size:  medium;
+        color: $primaryDark;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+    .other-shifts-title, .preferred-shifts-title {
+        font-size: medium;
+        color: $primaryDark;
+        font-weight: bold;
+        padding-top: 10px;
+        display: block;
+        padding-left: 13px;
+    }
+    hr {
+        border: 1.2px solid $divider;
+        margin: 1px 0 10px 0;
+    }
+    .activity-profile-heading{
+        font-size: medium;
+        color: $primaryDark;
+        font-weight: bold;
+        padding-left: 13px;
+    }
+    .activity-start-end-time-changeShift {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 0 25px 10px 30px;
+        span {
+            font-size: medium;
+            color: $primaryDark;
+        }
+        &:hover {
+            background-color: $focusSecondary;
+        }
+    }
+
+    .no-shifts-available{
+        display: flex;
+        flex-direction: column;
+        padding: 0 25px 10px 30px;
+        color: $primary-dark-75;
+    }
+
+    .activity-start-end-time-addShift {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 0 25px 10px 15px;
+        span {
+            font-size: medium;
+            color: $primaryDark;
+        }
+        &:hover {
+            background-color: $focusSecondary;
+        }
+    }
+    .no-activity{
+        padding: 10px;
+        color: $primary-dark-75;
+    }
+    .no-shifts-available{
+        display: flex;
+        flex-direction: column;
+        padding: 0 25px 10px 30px;
+        color: $primary-dark-75;
+    }
+
+    .retract-scheduled-shift-title {
+        font-size: medium;
+        color: $primaryDark;
+        font-weight: bold;
+        padding-left: 13px;
+        padding-bottom: 5px;
+    }
+    .retract-shift-details {
+        display: flex;
+        flex-direction: column;
+        padding-left: 13px;
+        .retract-role {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .retract-button-text {
+                color: $primaryDark;
+                font-size: 1rem;
+                font-weight: bold;
+                padding-right: 10px;
+                &:hover{
+                    color: $primary-dark-75;
+                    cursor: pointer;
+                }
+                .icon-wfm-remove_circle {
+                    vertical-align: middle;
+                }
+                .retract-icon-selfschedule {
+                    vertical-align: middle;
+                    padding-top: 2px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

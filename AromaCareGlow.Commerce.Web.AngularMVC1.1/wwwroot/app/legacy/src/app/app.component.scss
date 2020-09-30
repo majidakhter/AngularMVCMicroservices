@@ -1,0 +1,96 @@
+
+@import "~@api-wfm/web-theme/src/styles/0-settings/colors.scss";
+
+.quick-schedule-contaier{
+    background-color: $primary-medium-40;
+    padding-bottom: 10px;
+    
+
+    .quick-view-side-menu{
+        width: 60px;
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                width: 65px;
+                height: 65px;
+                font-size: 11px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon-ge  {
+                    text-align: center;
+                    display: block;
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+            }
+
+            li.active {
+                background-color: $default-medium;
+                color: #ffffff;
+            }
+        }
+    }
+    .quick-schedule-wrapper{
+        width: calc(100% - 70px);
+        background-color: $default-light;  
+
+        .quick-schedule-left-panel{
+            border-right: 1px solid $default-medium-35;
+            width: 75%;
+
+            .quick-schedule-scrollable{
+                height: 60vh;
+                overflow-y: scroll;
+                padding-right: 10px;
+                width: calc(100% - 10px);
+            }
+
+            .today-btn{
+                border: 1px solid $default-medium-35;
+                background: none;
+                border-radius: 3px;
+                padding: 5px 20px;
+            }
+
+            .quick-view-week-cells {
+                table{
+                width: 100%;
+                border-collapse: collapse;
+
+                th{
+                    text-align: center;
+                    font-weight: 400;
+                }
+                td {
+                    border: 1px solid #ddd;
+                    padding: 0;
+                    margin: 0;
+                    border-collapse: collapse;
+                    height: 100px;
+                    width: calc(100% / 7);
+                    }
+                }
+            }
+        }
+        .quick-schedule-right-panel{
+
+
+            .add-buttons {
+                a{
+                    margin: 0 10px;
+                    color: #62b9d1;
+                }
+            }
+            .calander-date-details{
+                border-top:1px solid $default-medium-35;
+                padding-top: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "production": false,
+    "isStandalone": true,
+    "baseApiPath": "https://localhost:44308/",
+    "loginUser": {
+    "username": "apattan@symplr.com",
+    "password": "api",
+    "timeout": "1:00:00"
+    },
+    "logger": {
+    "logUrl": "/api/local/logs",
+    "logLevel": "NgxLoggerLevel.WARN",
+    "serverLogLevel": "NgxLoggerLevel.OFF"
+    },
+    "auth": {
+    "clientId": "f2f697dd-2c7b-448d-850e-af3aae7ed928",
+    "clientSecret": "y:v7_a7.?iL7KV3d-4rD_Dh8dyjP6.CM",
+    "realm": "https://apiazuredevge.onmicrosoft.com",
+    "directory": "147a2b71-5ce9-4933-94c4-2054328de565",
+    "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Imh1Tjk1SXZQZmVocTM0R3pCRFoxR1hHaXJuTSIsImtpZCI6Imh1Tjk1SXZQZmVocTM0R3pCRFoxR1hHaXJuTSJ9.eyJhdWQiOiJodHRwczovL2FwaWF6dXJlZGV2Z2Uub25taWNyb3NvZnQuY29tL3dmbS90bS9kZXYxL3dlYi1zZXJ2aWNlcyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzE0N2EyYjcxLTVjZTktNDkzMy05NGM0LTIwNTQzMjhkZTU2NS8iLCJpYXQiOjE1OTY1MjMyMjYsIm5iZiI6MTU5NjUyMzIyNiwiZXhwIjoxNTk2NTI3MTI2LCJhaW8iOiJFMkJnWUpnaHMrUEI3RysrYzJhZnlBNFdrMHd6QlFBPSIsImFwcGlkIjoiMWQwMjRlZmYtZTlkYy00ZTQzLTk4MzktMTJlYWFhYzU5YWRhIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTQ3YTJiNzEtNWNlOS00OTMzLTk0YzQtMjA1NDMyOGRlNTY1LyIsIm9pZCI6IjE4MGMzOTE4LTRiNTItNDdjMS1iNDc2LTk4ZTM4ZGFiZjExNiIsInJoIjoiMC5BU2dBY1N0NkZPbGNNMG1VeENCVU1vM2xaZjlPQWgzYzZVTk9tRGtTNnFyRm10b29BQUEuIiwicm9sZXMiOlsiQ2FsbFNlY3VyZUVuZHBvaW50cyJdLCJzdWIiOiIxODBjMzkxOC00YjUyLTQ3YzEtYjQ3Ni05OGUzOGRhYmYxMTYiLCJ0aWQiOiIxNDdhMmI3MS01Y2U5LTQ5MzMtOTRjNC0yMDU0MzI4ZGU1NjUiLCJ1dGkiOiJSTm00ZGtWSkFFYWVvNGpUS3dnRUFBIiwidmVyIjoiMS4wIn0.NaOEZam5asTSaqyK0oC_dtKttQ1f4mFPOIk2MVp26SzjTH43st9Quxs4bvEiebvQDFfyB9OUktTPoO8vcCmJ7xnhVJ0WJWjlnjkDNgE-0_CgcI3EHEo19XU82sUznMXH6-ZuuPWeOv5yuoCBonvI6EfjzlNNYMezdIuaALWxd74nmn3ZCjxBeFZhQjQTn2KuDtBfRBWzlp8t3dKqd4rQuXDwOwnC6qrp4kpG1kqVQ_MDud2gW5Eqx7zzC1XiFpqab5hCrCmEE-fSZz2KncI29fmdFJCCG6-gS_txW1gfYFAyP9OafilannotaUu3L4iNBPwNlyXM7FP_YkuslgyHFg"
+    },
+    "env": "local"
+   }

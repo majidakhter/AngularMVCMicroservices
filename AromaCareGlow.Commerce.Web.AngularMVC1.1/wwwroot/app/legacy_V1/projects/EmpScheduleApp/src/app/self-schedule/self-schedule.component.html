@@ -1,0 +1,55 @@
+<div>
+  <h2 class="selfScheduleHeader">
+    {{ "self-schedule-period.self-schedule" | translate }}
+  </h2>
+  <wf-modal role="Modal" class="daily-schedule-modal">
+    <wf-self-schedule-preference></wf-self-schedule-preference>
+  </wf-modal>
+  <div
+    class="ui-g"
+    *ngIf="
+      checkSchedulePeriod == selfScheduledPeriodMode.Exist &&
+      groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Exist &&
+      !isAccessPeriodStartInFuture
+    "
+  >
+    <div *ngIf="isPreferenceAvailable" class="ui-g-9">
+      <wf-self-schedule-period
+        (IsSelectedSelfScheduleExits)="IsSelectedSelfScheduleExits($event)"
+      ></wf-self-schedule-period>
+    </div>
+    <div
+      *ngIf="isPreferenceAvailable && isSelectedSelfScheduleExits"
+      class="ui-g-3"
+    >
+      <wf-self-schedule-details></wf-self-schedule-details>
+    </div>
+  </div>
+  <div
+    class="no-scheddule"
+    *ngIf="
+      selfSchedulePeriodDetails &&
+      (checkSchedulePeriod == selfScheduledPeriodMode.NotExist ||
+        groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Closed)
+    "
+  >
+    <span class="icon-ge-info_sm display">
+      <h5 class="p-10">
+        {{ "self-schedule-period.no-self-schedule-period" | translate }}
+      </h5>
+    </span>
+  </div>
+  <div
+    class="no-scheddule"
+    *ngIf="
+      selfSchedulePeriodDetails &&
+      (checkSchedulePeriod == selfScheduledPeriodMode.Setup ||
+        groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Opens ||
+        isAccessPeriodStartInFuture)
+    "
+  >
+    <span class="icon-ge-info_sm display">
+      <h5 class="p-10">{{ selfScheduleOpens }}</h5>
+    </span>
+  </div>
+</div>

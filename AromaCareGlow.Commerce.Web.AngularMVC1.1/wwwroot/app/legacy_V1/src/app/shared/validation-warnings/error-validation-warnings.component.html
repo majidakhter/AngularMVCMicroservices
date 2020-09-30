@@ -1,0 +1,15 @@
+<div class="wf-error-validation-warnings">
+  <ng-container *ngIf="isValidationError; else descriptiontemplate">
+    <div class="warnings-container">
+      {{ getContent() }}
+    </div>
+    <ul>
+      <li *ngFor="let message of errorValidationWarning.validationMessages">
+        {{ message.description }}
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #descriptiontemplate>
+    {{ errorValidationWarning?.validationMessages[0]?.description }}
+  </ng-template>
+</div>

@@ -1,0 +1,45 @@
+<div class="fonts">
+  <div class="h-align">
+    <div class="ui-g text-padding">
+      <div class="ui-g-7" id="preference-popup-title"><span>{{'self-schedule-preference.schedule-preference-today' | translate}}</span></div>
+      <div class="ui-g-5">
+        <button class="float-right priority-button button" [disabled]='isApplyButtonDisabled'
+          (click)="savePreferenceSetting()">{{'self-schedule-preference.apply' | translate}}</button>
+        <button class="float-right secondary-button" [disabled]='isCancelButtonDisabled'
+          (click)="closeApprovalModal()">{{'self-schedule-preference.cancel' | translate}}</button></div>
+    </div>
+  </div>
+  <hr class="h-row">
+  <p class="text-padding">{{getSchedulePeriodDuration()}}</p>
+  <section class="ui-g text-padding">
+    <div class="cell-align">
+      <div class="cell-border each-cell-title">{{'self-schedule-preference.location' | translate}}</div>
+      <div class="content-padding">{{organizationUnitName}}</div>
+    </div>
+    <div class="cell-align roles-cell">
+      <div class="cell-border each-cell-title">{{'self-schedule-preference.preferred-role' | translate}}</div>
+      <div *ngFor="let item of profiles">
+        <label class="radio" name="profile">{{item.code}} : {{item.name}}
+          <input type="radio" [(ngModel)]="profileCode" value={{item.code}} name="radioProfile"
+            (change)="getActivities(item.id)">
+          <span class="check"></span>
+        </label>
+      </div>
+      <div class="content-padding" *ngIf="profilesNotFound">
+        {{'self-schedule-preference.qualified-profiles-not-avaiable' | translate}}
+      </div>
+    </div>
+    <div class="cell-align">
+      <div class="cell-border each-cell-title">{{'self-schedule-preference.preferred-shift' | translate}}</div>
+      <div class="content-padding" *ngIf='isActivityMatched'>{{'self-schedule-preference.no-shift' | translate}}</div>
+      <div class= "preferredShifts" *ngFor="let activity of activityList">
+        <p-checkbox name="groupname" value={{activity.id}}
+        [(ngModel)]="preferredShifts" (onChange)="getApplyButtonStatus()"></p-checkbox>
+        <span class="activity-code-range">
+          {{ getTimeRange(activity) }} <br>
+          {{ '(' + activity.code + ')' }}
+        </span>
+      </div>
+    </div>
+  </section>
+</div>

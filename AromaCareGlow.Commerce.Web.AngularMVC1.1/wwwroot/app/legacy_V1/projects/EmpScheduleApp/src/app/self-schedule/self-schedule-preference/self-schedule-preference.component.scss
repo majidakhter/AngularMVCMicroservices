@@ -1,0 +1,214 @@
+
+@import "../../../../../../src/themes/wf-default/colors";
+
+$primaryMedium40 : map-get($wfm-colors, primary-medium-40);
+$primaryDark75 : map-get($wfm-colors, primary-dark-75);
+$geAquaBlue: map-get($ge-aqua-blue, 500);
+$defaultLight : map-get($wfm-colors, default-light);
+$modal-padding: 20px;
+
+.fonts {
+  font-size: 14px;
+  color: $primaryDark75;
+}
+
+.text-padding {
+  padding-left: 10px;
+}
+
+.v-align {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 15px;
+  color: $primaryDark75;
+  padding: 0px;
+}
+
+.h-row {
+  display: flex;
+  background-color: $primaryMedium40;
+  margin: 0 (-($modal-padding)) 10px (-($modal-padding));
+  height: 1px;
+  box-sizing: content-box;
+  border-width: 0;
+}
+
+.cell-align {
+  border: 1px solid $primaryMedium40;
+  margin-right: 20px;
+  width: 31.4%;
+  height: 260px;
+  overflow: auto;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.cell-border {
+  border-bottom: 1px solid $primaryMedium40;
+  padding: 5px;
+}
+
+.float-right {
+  float: right;
+  margin-right: 10px;
+  &:first-of-type {
+    margin-right: 5px;
+  }
+}
+
+.content-padding {
+  padding: 5px;
+}
+
+.secondary-button {
+  border: none;
+}
+
+#preference-popup-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 12px;
+}
+
+.each-cell-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.roles-cell .radio input {
+  width: auto;
+}
+
+.radio {
+  display: block;
+  position: relative;
+  font-size: 14px;
+  padding-left: 25px;
+  margin: 10px 0px 0px 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: auto;
+}
+
+/* create custom radio */
+.radio .check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: $defaultLight;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked~.check {
+  background-color: $defaultLight;
+  border: 1px solid #ccc;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked~.check:after {
+  display: block;
+}
+
+/* radio style */
+.radio .check:after {
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.radio:last-child {
+  margin-bottom: 10px;
+}
+.code-wrap{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.preferredShifts {
+  margin: 8px 0 8px 10px;
+}
+
+span.activity-code-range {
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 8px;
+}
+ 
+::ng-deep {
+  body .preferredShifts .ui-chkbox, body .preferredShifts .ui-chkbox .ui-chkbox-box {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    vertical-align: top;
+    top: 2px;
+  }
+ 
+  body .ui-chkbox .ui-chkbox-box .ui-chkbox-icon {
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    font-size: 17px;
+  }
+  
+  body .preferredShifts .ui-chkbox .ui-chkbox-box, body .preferredShifts .ui-chkbox .ui-chkbox-box:not(.ui-state-disabled):hover {
+    border: 1px solid #ccc;
+    border-radius: 1px;
+  }
+  
+  body .preferredShifts .ui-chkbox .ui-chkbox-box.ui-state-active, body .preferredShifts .ui-chkbox .ui-chkbox-box.ui-state-active:not(.ui-state-disabled):hover {
+    border-color: #ccc;
+    background-color: $defaultLight;
+    color: #000000;
+  }
+ 
+  body .preferredShifts .ui-chkbox .ui-chkbox-box {
+    box-shadow: none;
+  }
+}
+
+@media only screen and (max-height: 768px) and (max-width: 1024px) {
+  .cell-align {
+    margin-right: 10px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+@media only screen and (max-height: 768px) and (max-width: 1280px) {
+  .cell-align {
+    margin-right: 15px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

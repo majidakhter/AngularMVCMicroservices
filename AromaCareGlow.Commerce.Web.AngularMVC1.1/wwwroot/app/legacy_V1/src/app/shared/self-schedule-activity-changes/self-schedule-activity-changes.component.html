@@ -1,0 +1,102 @@
+<div class="activity-popover" *ngIf="changeActivityDetails != undefined">
+  <div class="activity-popover-header">
+  <span class="day-format">{{ changeActivityDetails.changeActivityDetailHeaderDate }}</span>
+  <div class="activity-change-title">{{ changeActivityDetails?.changeActivityDetailHeaderTitle | translate}}</div>
+  </div>
+
+  <div class="activity-popover-body">
+  <!-- For Change Shift Details -->
+  <ng-container
+    *ngIf="changeActivityDetails.changeActivityDetailButton && changeActivityDetails.changeActivityDetailButton.isActive">
+    <!-- Code for Preferred-shifts category starts  -->
+    <span class="preferred-shifts-title">{{ changeActivityDetails.preferredShiftsTitle | translate}}</span>
+    <hr class="divider" *ngIf="changeActivityDetails.preferredShiftsTitle?.length > 0" />
+    <div class="no-shifts-available" *ngIf="changeActivityDetails.preferredShifts?.length == 0; else preferredShiftsTemplate">
+      {{'self-schedule-preference.no-shifts-available' | translate}}
+    </div>
+    <ng-template #preferredShiftsTemplate>
+      <div *ngFor="let shift of changeActivityDetails.preferredShifts; let i = index">
+        <span *ngIf="i == 0" class="activity-profile-heading">{{shift.activity.profile.code}}</span>
+        <div class="activity-start-end-time-changeShift" (click)="changeShift(shift.activity)">
+          <span>{{ shift.timings }}</span>
+          <span>{{ shift.activityCode }} {{ shift.needs.length > 0 ? ' - ' + shift.needs : ''  }}</span>
+        </div>
+      </div>
+    </ng-template>
+    <!-- Code for Preferred-shifts category ends  -->
+
+    <!-- Code for Other-shifts Category starts -->
+    <span class="other-shifts-title">{{ changeActivityDetails.changeActivityDetailShiftTitle | translate}}</span>
+    <hr class="divider" *ngIf="changeActivityDetails.changeActivityDetailShiftTitle?.length > 0" />
+    <div class="no-shifts-available" *ngIf="changeActivityDetails.changeActivityDetailShifts?.length == 0; else otherShiftsTemplate">
+      {{'self-schedule-preference.no-shifts-available' | translate}}
+    </div>
+    <ng-template #otherShiftsTemplate>
+      <div *ngFor="let profileAndshift of changeActivityDetails.changeActivityDetailShifts">
+        <span *ngIf="profileAndshift.activities?.length > 0"
+          class="activity-profile-heading">{{profileAndshift.profileCode}}</span>
+        <div class="activity-start-end-time-changeShift" *ngFor="let shift of profileAndshift.activities"
+          (click)="changeShift(shift.activity)">
+          <span>{{ shift.timings }}</span>
+          <span>{{ shift.activityCode }} {{ shift.needs.length > 0 ? ' - ' + shift.needs : ''  }}</span>
+        </div>
+      </div>
+    </ng-template>
+    <!-- Code for Other-shifts Category ends -->
+  </ng-container>
+
+  <!-- For Add Shift Details -->
+  <ng-container
+    *ngIf="changeActivityDetails.changeActivityDetailButton && !changeActivityDetails.changeActivityDetailButton.isActive">
+    <!-- Code for Preferred-shifts category starts  -->
+    <div class="activity-change-title" *ngIf="changeActivityDetails.defaultShifts?.length === 0">
+      <i class="icon-ge-warning"></i> <span class="no-default-activity">{{'self-schedule-preference.default-shift-not-available' | translate}} </span></div>
+    <span class="preferred-shifts-title">{{ changeActivityDetails?.preferredShiftsTitle | translate}}</span>
+    <hr  class="divider" *ngIf="changeActivityDetails.preferredShiftsTitle?.length > 0"/>
+    <div *ngFor="let shift of changeActivityDetails.changeActivityDetailShifts; let i=index"
+      (click)="changeShift(shift)">
+      <span *ngIf="i == 0" class="activity-profile-heading">{{shift.profileName}}</span>
+      <div class="activity-start-end-time-changeShift">
+        <span>{{ shift.timings }}</span>
+        <span>{{ shift.activityCode }} {{ shift.needs.length > 0 ? ' - ' + shift.needs : ''  }}</span>
+      </div>
+    </div>
+    <div class="no-shifts-available" *ngIf="changeActivityDetails.changeActivityDetailShifts?.length == 0">
+      {{'self-schedule-preference.no-shifts-available' | translate}}</div>
+    <!-- Code for Preferred-shifts category ends  -->
+
+    <!-- Code for Other-shifts Category starts -->
+    <span class="other-shifts-title">{{ changeActivityDetails.changeActivityDetailShiftTitle | translate}}</span>
+    <hr class="divider" />
+    <div *ngFor="let profileAndshift of changeActivityDetails.otherActivityDetails | keyvalue">
+      <span class="activity-profile-heading">{{profileAndshift.key}}</span>
+      <div class="activity-start-end-time-changeShift" *ngFor="let item of profileAndshift.value" (click)="changeShift(item)">
+        <span>{{ item.timings }}</span>
+        <span>{{ item.activityCode }} {{ item.needs.length > 0 ? ' - ' + item.needs : ''  }}</span>
+      </div>
+    </div>
+    <div class="no-shifts-available" *ngIf="!((changeActivityDetails.otherActivityDetails | keyvalue)?.length)">
+      {{'self-schedule-preference.no-shifts-available' | translate}}</div>
+  </ng-container>
+
+  <!-- Code for Other-shifts Category ends -->
+  <div *ngIf="changeActivityDetails.changeActivityDetailButton && changeActivityDetails.changeActivityDetailButton.isActive">
+    <span class="retract-scheduled-shift-title">{{ changeActivityDetails.changeActivityDetailButton.title | translate }}</span>
+    <hr class="divider" />
+    <div class="retract-shift-details" id="left">
+      <div class="retract-role">
+        <span>{{ changeActivityDetails.changeActivityDetailButton.role }}</span>
+        <span class="retract-button-text" (click)="retractSelfScheduleActivity()">
+          <i class="retract-icon-selfschedule icon-wfm-ico_cross_rnd_sm"></i>
+          {{ changeActivityDetails.changeActivityDetailButton.buttonName | translate}}
+        </span>
+      </div>
+      <span>{{ changeActivityDetails.changeActivityDetailButton.shifts.timings }}</span>
+      <span>{{ changeActivityDetails.changeActivityDetailButton.shifts.activity }}
+        {{ changeActivityDetails.changeActivityDetailButton.shifts.needs.length > 0 ? ' - ' + changeActivityDetails.changeActivityDetailButton.shifts.needs : ''  }}
+      </span>
+      <span>{{ changeActivityDetails.changeActivityDetailButton.departmentAndFacility }}</span>
+    </div>
+  </div>
+  </div>
+</div>

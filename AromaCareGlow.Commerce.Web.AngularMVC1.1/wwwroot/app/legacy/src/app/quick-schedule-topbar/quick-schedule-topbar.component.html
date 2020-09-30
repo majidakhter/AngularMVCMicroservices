@@ -1,0 +1,24 @@
+<div class="topbar-container w-100 d-flex justify-content-start">
+    <div class="top-bar-icon d-flex align-items-center justify-content-center ">
+         <i class="icon-ge icon-wfm-user"></i></div>
+    <div class="top-bar-contents d-flex justify-content-start">
+        <div class="w-20">
+            <div class="name ellipsis">{{employee?.firstName}}</div>
+            <div class="name mb-5 ellipsis">{{employee?.lastName}}</div>
+            <div class="label-text"> {{"employee.approvedHours" | translate}} </div>
+            <div class="content-text">{{employee?.employment.profession.approvedHours}}</div>
+        </div>
+        <div class="w-25">
+            <div class="label-text">{{"employee.facility" | translate}}</div>
+            <div class="content-text mb-10 ellipsis">{{employee?.employment.location.facility.name}}</div>
+            <div class="label-text">{{"employee.jobClass" | translate}}</div>
+            <div class="content-text ellipsis">{{employee?.employment.profession.jobClass.name}}</div>
+        </div>
+        <div class="w-25">
+            <div class="label-text">{{"employee.department" | translate}}</div>
+            <div class="content-text mb-10 ellipsis">{{employee?.employment.location.department.name}}</div>
+            <div class="label-text">{{"employee.shift" | translate}}</div>
+            <div class="content-text ellipsis">{{employee?.employment.profession.shift.name}}</div>
+        </div>
+    </div>
+</div>

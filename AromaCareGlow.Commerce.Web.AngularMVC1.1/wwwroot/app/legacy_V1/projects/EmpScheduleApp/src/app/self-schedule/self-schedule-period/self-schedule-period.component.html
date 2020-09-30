@@ -1,0 +1,187 @@
+<div col-sm class="calendar-container">
+  <div
+    class="loading-container"
+    wfLoadingPlaceholder
+    [class.disabled]="isLoading"
+    [loadingValue]="!isLoading"
+  ></div>
+  <div class="sticky-header">
+    <div class="topbar-container">
+      <div class="topbar-lhs">
+        <div>
+          <div class="self-schedule-header"></div>
+          <div *ngIf="selfSchedulePeriods?.length > 1">
+            <p-dropdown
+              dropdownIcon="pi pi-caret-down"
+              [options]="selfSchedulePeriods"
+              class="custom-dropdown"
+              [(ngModel)]="schedulePeriodsIndex"
+              id="multipleSelfSchedule"
+              (onChange)="onChangeSchedulePeriod($event)"
+            >
+            </p-dropdown>
+          </div>
+          <div *ngIf="selfSchedulePeriods?.length == 1">
+            {{ "self-schedule-period.schedule-period-label" | translate
+            }}{{ selfSchedulePeriods[0].label }}
+          </div>
+          <div
+            class="days-remaining"
+            *ngIf="
+              groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Exist
+            "
+          >
+            {{ schedulePeriod.statusMessage }}
+          </div>
+        </div>
+      </div>
+      <div class="topbar-rhs">
+        <div
+          class="display topbar-rhs-content"
+          *ngIf="groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Exist"
+        >
+          <wf-self-schedule-commitments
+            *ngIf="CommitmentShifts"
+            [commitments]="CommitmentShifts"
+            [schedulePeriod]="schedulePeriod"
+          >
+          </wf-self-schedule-commitments>
+          <div class="topbar-rhs-issues">
+            <div class="no-issues" *ngIf="employeeScheduleExceptionCount === 0">
+              <i class="icon-wfm-check-round"></i>
+              <span>{{ "self-schedule-period.noIssues" | translate }}</span>
+            </div>
+            <div class="failed-to-load-data" *ngIf="failedToLoadData">
+              <i class="icon-ge-warning"></i>
+              <span>{{
+                "self-schedule-period.failedToLoadData" | translate
+              }}</span>
+            </div>
+            <div
+              class="number-of-issues"
+              *ngIf="employeeScheduleExceptionCount > 0"
+              (click)="showHideExceptions()"
+            >
+              <div
+                class="issue-spinner"
+                wfLoadingPlaceholder
+                [loadingValue]="loadingIssuesSpinner"
+              ></div>
+              <div *ngIf="loadingIssuesSpinner" class="issue-count">
+                <span class="issue-num">{{
+                  employeeScheduleExceptionCount
+                }}</span
+                ><span><i class="icon-ge-warning"></i></span>
+              </div>
+              <div class="dropdown-block">
+                <span>{{ "self-schedule-period.issues" | translate }}</span>
+                <div *ngIf="!toggleExceptionFlag">
+                  <i class="icon-ge-chevron_down"></i>
+                </div>
+                <div *ngIf="toggleExceptionFlag">
+                  <i class="icon-ge-chevron_up"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="no-scheddule"
+    *ngIf="
+      groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Opens ||
+      groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Closed
+    "
+  >
+    <span class="icon-ge-info_sm display">
+      <h5 class="p-10">{{ schedulePeriod.statusMessage }}</h5>
+    </span>
+  </div>
+
+  <div
+    class="issues-slider"
+    [ngClass]="toggleExceptionFlag ? 'visible' : 'hidden'"
+  >
+    <p-tabView>
+      <p-tabPanel
+        *ngFor="let issueType of employeeScheduleExceptions | keyvalue"
+        [header]="getIssueTypeCount(issueType)"
+      >
+        <ng-container
+          *ngFor="let exceptionDefinition of issueType.value | keyvalue"
+        >
+          <div class="each-issue" *ngIf="exceptionDefinition.key! !== 'count'">
+            <span class="issue-description">
+              {{ exceptionDefinition.key }}
+              {{
+                exceptionDefinition.value.count > 1
+                  ? "(" + exceptionDefinition.value.count + " instances)"
+                  : ""
+              }}
+            </span>
+            <span
+              class="issue-dates"
+              *ngIf="exceptionDefinition.value !== 'count'"
+            >
+              <p
+                *ngFor="
+                  let month of exceptionDefinition.value
+                    | keyvalue: defaultOrder;
+                  index as i
+                "
+                [innerHTML]="getFormattedMonths(month.key, month.value)"
+              ></p>
+            </span>
+          </div>
+        </ng-container>
+      </p-tabPanel>
+    </p-tabView>
+    <div class="collapse-div-icon">
+      <span (click)="showHideExceptions()"
+        ><i class="icon-ge-chevron_up"></i>Collapse</span
+      >
+    </div>
+  </div>
+  <div class="scrollable-content">
+    <div
+      class="self-scheduling-filters"
+      *ngIf="groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Exist"
+    >
+      <wf-self-schedule-header></wf-self-schedule-header>
+    </div>
+    <div *ngIf="groupSelfScheduleStatus == groupSelfScheduledPeriodMode.Exist">
+      <wf-schedule-calendar
+        [calendarWeeks]="calendarWeeks"
+        [selectedDay]="selectedDay"
+        [clickHandler]="selectDay"
+        [showMore]="true"
+        [showBtn]="addActivityBtn"
+      >
+      </wf-schedule-calendar>
+    </div>
+  </div>
+  <div>
+    <wf-modal role="Modal" class="success-validation-modal" #successModal>
+      <success-validation-modal (close)="close()"> </success-validation-modal>
+    </wf-modal>
+  </div>
+  <div>
+    <wf-modal role="Modal" class="validation-modal" #validationModal>
+      <wf-schedule-validation-warnings-modal
+        (submitValidation)="saveActivity($event)"
+        [scheduleValidationWarnings]="scheduleValidationWarnings"
+        #modalContent
+      >
+      </wf-schedule-validation-warnings-modal>
+    </wf-modal>
+  </div>
+  <div>
+    <wf-modal role="Modal" class="needs-validation-modal" #needsModal>
+      <needs-validation-modal (close)="close()" [selectedDate]="startDate" 
+        [addShiftCoverage]="addShiftCoverage">
+      </needs-validation-modal>
+    </wf-modal>
+  </div>
+</div>

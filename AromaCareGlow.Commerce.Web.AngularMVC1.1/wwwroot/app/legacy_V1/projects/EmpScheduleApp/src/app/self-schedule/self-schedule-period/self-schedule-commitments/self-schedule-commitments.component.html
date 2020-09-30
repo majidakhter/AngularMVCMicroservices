@@ -1,0 +1,33 @@
+<div class="commitments">
+  <div class="comm-disp">
+    <span *ngIf='targetHours > 0 && !isRefreshPending; else actual'
+      class="comm-count">{{actualHours}}/{{targetHours}}</span>
+    <ng-template #actual>
+      <span *ngIf='!isRefreshPending && targetHours <= 0'
+        class="comm-count">{{actualHours}}</span>
+    </ng-template>
+  <div class="comm-spinner" wfLoadingPlaceholder [class.disabled]="!isRefreshPending" [loadingValue]="!isRefreshPending"></div>
+  <div>{{'self-schedule-period.totalhours' | translate}}</div>
+  </div>
+  <div class="comm-disp">
+    <span *ngIf='targetShifts > 0 && !isRefreshPending; else weekendShifts'
+      class="comm-count">{{actualShifts}}/{{targetShifts}}</span>
+    <ng-template #weekendShifts>
+      <span *ngIf='!isRefreshPending && targetShifts <= 0; else commitmentSpinner'
+        class="comm-count">{{actualShifts}}</span>
+    </ng-template>
+    <div class="comm-spinner" wfLoadingPlaceholder [loadingValue]="!isRefreshPending"></div>
+    <div>{{'self-schedule-period.weekendshifts' | translate}}</div>
+  </div>
+  <div class="comm-disp"><span class="comm-count">{{totalShifts}}</span>
+    <div>{{'self-schedule-period.shifts' | translate}}</div>
+  </div>
+  <div class="comm-disp" *ngIf="totalOnCallHours > 0"><span class="comm-count">{{totalOnCallHours}} <span
+        class="comm-hours">{{'self-schedule-period.timeOfhours' | translate}}</span></span>
+    <div>{{'self-schedule-period.onCall' | translate}}</div>
+  </div>
+  <div class="comm-disp" *ngIf="totalTimeOffHours > 0"><span class="comm-count">{{totalTimeOffHours}} <span
+        class="comm-hours">{{'self-schedule-period.timeOfhours' | translate}}</span></span>
+    <div>{{'self-schedule-period.timeoff' | translate}}</div>
+  </div>
+</div>

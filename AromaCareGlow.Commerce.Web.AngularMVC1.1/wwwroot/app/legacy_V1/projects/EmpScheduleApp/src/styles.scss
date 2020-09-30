@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../../../src/themes/variables';
+@import '../../../src/themes/wf-default/colors';
+@import '../../../src/themes/wf-default/ge-font.scss';
+@import './assets/fonts/ge-icon.css';
+@import '../../../node_modules/angular-calendar/css/angular-calendar.css';
+@import '@api-wfm/ng-sympl-ux/styles.scss';
+
+body{
+    margin: 0px;
+    background-color:map-get($ge-accent, A100);
+    overflow: hidden;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+$modal-padding: 20px;
+$modal-shadow-color: rgba(0, 0, 0, .4);
+
+
+wf-modal {
+
+  .modal-backdrop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    background: map-get($wfm-colors, primary-black);
+    opacity: .5;
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wf-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: map-get($wfm-colors, default-light) 100%;
+    box-shadow: 0 16px 20px $modal-shadow-color;
+    border-radius: 3px;
+    padding: $modal-padding;
+
+    .modal-close {
+      background: inherit;
+      padding: 0;
+      line-height: normal;
+      font-size: 15pt;
+      float: right;
+      cursor: pointer;
+    }
+
+    section {
+      &::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+
+    section.modal-title {
+      padding-bottom: 10px;
+      h3 {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+
+    section.modal-content {
+      padding: 10px 0 20px;
+      font-size: 1.6rem;
+    }
+
+    hr {
+      background-color: map-get($wfm-colors, primary-medium-40);
+      margin: 0 (-($modal-padding));
+      height: 1px;
+      box-sizing: content-box;
+      border-width: 0;
+    }
+
+    section.modal-buttons {
+      padding: $modal-padding 0 0;
+
+      .button-container {
+        float: right;
+
+        button {
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.loading-background {
+  z-index: 999;
+}
+
+.date-range {
+  padding-right: 25px;
+  display: inline-block;
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+  .date-range {
+    padding-right: 10px;
+  }
+}

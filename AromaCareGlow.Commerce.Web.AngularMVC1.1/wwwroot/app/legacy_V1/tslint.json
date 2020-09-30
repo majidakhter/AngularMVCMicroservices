@@ -1,0 +1,10 @@
+{
+  "rulesDirectory": [
+    "node_modules/codelyzer",
+    "node_modules/@api-wfm/lint"
+  ],
+  "extends": [
+    "./node_modules/@api-wfm/lint/tslint.json"
+  ],
+  "rules": {}
+}

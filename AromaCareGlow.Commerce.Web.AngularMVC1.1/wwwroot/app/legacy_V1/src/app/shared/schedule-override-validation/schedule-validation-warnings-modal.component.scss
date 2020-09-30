@@ -1,0 +1,67 @@
+
+
+.summary-banner {
+      min-height: 60px;
+      h2 {
+        white-space: normal;
+      }
+  
+      .button {
+        padding-top: 0;
+        padding-right: 0;
+        margin-top: 0;
+      }
+  
+      .banner-title {
+        padding: 0px;
+      }
+    }
+    .scroll-area{
+      overflow-y: auto;
+     }
+     :host ::ng-deep wf-employee-validation-warnings.validationMsgs{
+      ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin: 0px;
+        padding-left: 20px;
+        margin: 0px;
+        
+        li {
+        margin-bottom: 0px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        }
+    }
+     }
+    .validation-warnings-grid {
+      height: 100%;
+      font-size: 14px;
+    }
+    .action-row {
+      padding-top: 12px;
+      margin-left: 0px;
+      margin-right: 0px;
+      border-top: 1px solid lightgray;
+      margin-bottom: 13px;
+    }
+    .secondary-button {
+      margin-right: 5px;
+    }
+    wf-modal.wf-modal{
+      .modal-content{
+        padding:0 !important;
+        color: red;
+      }
+      }
+      :host ::ng-deep wf-modal.wf-modal{
+      .modal-content{
+        padding:0 !important;
+        color: red;
+      }
+      }
+
+      :host ::ng-deep .wfm-table div{
+        max-height: 240px;
+        font-weight: 400;
+      }

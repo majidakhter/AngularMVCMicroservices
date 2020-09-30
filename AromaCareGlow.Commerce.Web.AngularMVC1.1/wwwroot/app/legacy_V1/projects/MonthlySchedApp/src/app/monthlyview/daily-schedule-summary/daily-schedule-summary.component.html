@@ -1,0 +1,39 @@
+<div class="date-text">
+  {{selectedDayForSummary | dateformat: "DATE_MONTH_DAY_YEAR"}}
+</div>
+<div class="secondary-text" *ngIf="scheduledActivityCount > 0">
+  <div no-padding>
+    {{scheduledActivityCount}}
+    {{(scheduledActivityCount === 1 ? 'schedule.scheduled-activity' : 'schedule.scheduled-activities') | translate}}
+  </div>
+</div>
+<div class="secondary-text" *ngIf="requestedActivityCount > 0">
+  <div no-padding>
+    {{requestedActivityCount}}
+    {{(requestedActivityCount === 1 ? 'schedule.requested-activity' : 'schedule.requested-activities') | translate}}
+  </div>
+</div>
+<div class="secondary-text" *ngIf="payCodeCount > 0">
+  <div no-padding>
+    {{payCodeCount}}
+    {{(payCodeCount === 1 ? 'schedule.pay-code-text' : 'schedule.pay-codes') | translate}}
+  </div>
+</div>
+<div class="secondary-text" *ngIf="openShiftCount != null && openShiftCount > 0">
+  <div no-padding>
+    {{openShiftCount}}
+    {{(openShiftCount === 1 ? 'schedule.open-shift' : 'schedule.open-shifts') | translate}}
+  </div>
+</div>
+<div class="secondary-text" *ngIf="requestorTradeCount > 0">
+  <div no-padding>
+    {{requestorTradeCount}}
+    {{(requestorTradeCount === 1 ? 'schedule.trade-requested' : 'schedule.trades-requested') | translate}}
+  </div>
+</div>
+<div class="secondary-text" *ngIf="acceptorTradeCount > 0">
+  <div no-padding>
+    {{acceptorTradeCount}}
+    {{(acceptorTradeCount === 1 ? 'schedule.trade-request' : 'schedule.trade-requests') | translate}}
+  </div>
+</div>

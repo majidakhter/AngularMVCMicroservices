@@ -1,0 +1,137 @@
+
+
+//unique class specified here so it doesn't collide with the themes coming in from the shared components repo
+.search-list-custom {
+  position: relative;
+
+  .search-box {
+    width: 100%;
+    z-index: 2;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  input.search-box {
+    height: 25px;
+    z-index: 3;
+    font-size: 14px;
+    padding: 2px 25px 2px 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+  }
+
+  .li-row {
+    padding-left: 5%;
+    padding-top: 3%;
+    padding-right: 2%;
+    padding-bottom: 3%;
+    font-size: 13px;
+  }
+
+  .search-box-clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    height: 28px;
+    padding-right: 2px;
+    z-index: 4;
+    color: #6f7276;
+
+    .icon-ge-cross {
+      line-height: 1.5;
+    }
+
+    &activated {
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  input.ng-invalid:not(form).ng-touched.empty {
+    &:focus {
+      border: solid 1px #00d9ff !important; //  sass-lint:disable-line no-important
+      box-shadow: 0 0 3px #00d9ff !important; //  sass-lint:disable-line no-important
+    }
+  }
+
+  .dropdown-expander {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    padding-right: 2px;
+    z-index: 4;
+    color: #6f7276;
+
+    .icon-ge-dropdown {
+      font-size: 23px;
+    }
+  }
+
+  .dropdown-button {
+    border: 0;
+    border-color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    margin: 5px 0;
+    overflow-y: auto;
+    z-index: 101;
+    border: 1px solid #6f7276;
+    background-color: #ffffff;
+    cursor: pointer;
+
+    &[hidden] {
+      border: 0;
+    }
+
+    .search-list-item {
+      padding: 0;
+
+      &:hover {
+        background-color: #e0f3f8;
+      }
+
+      ion-row {
+        padding: 1rem;
+      }
+
+      ion-col {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .selected {
+    background-color: #e0f3f8;
+  }
+
+  .show-more {
+    text-align: center;
+    padding: 5px;
+    color: #1d9dbe;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

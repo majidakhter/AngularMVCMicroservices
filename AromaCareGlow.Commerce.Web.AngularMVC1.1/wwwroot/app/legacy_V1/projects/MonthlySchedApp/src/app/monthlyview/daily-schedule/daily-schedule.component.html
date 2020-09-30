@@ -1,0 +1,499 @@
+<div class="container" [class.popover-hide-scroll]="scrollDisplay">
+  <section class="editHeader">
+    <section class="event">
+      <wf-daily-schedule-summary [selectedDayForSummary]="selectedDayForSummary" [openShiftCount]="openShiftCount"
+        [scheduledActivityCount]="scheduledActivityCount" [requestedActivityCount]="requestedActivityCount"
+        [requestorTradeCount]="requestorTradeCount" [acceptorTradeCount]="acceptorTradeCount"
+        [payCodeCount]="payCodeCount">
+      </wf-daily-schedule-summary>
+    </section>
+    <section class="button-group" *ngIf="!showAddActivityForm">
+      <div class="h-align inline-right" *ngIf="currentMode==dailyFormMode.View && showPayCodeBtn">
+        <button class="link-button" (click)="addEvent(false)"><i class="icon-ge-add-circled"></i>
+          <span class="valign"> {{'dailySchedule.addPayCode' | translate}}</span>
+        </button>
+      </div>
+      <div class="h-align inline-left" *ngIf="currentMode==dailyFormMode.View && showAddActivityBtn">
+        <button class="link-button" (click)="addEvent(true)"><i class="icon-ge-add-circled"></i>
+          <span class="valign"> {{'dailySchedule.addActivityCode' | translate}}</span>
+        </button>
+      </div>
+    </section>
+    <hr>
+  </section>
+
+  <ng-container *ngIf="currentMode === dailyFormMode.EditActivity; then editActivityTemplate"></ng-container>
+  <ng-container *ngIf="currentMode === dailyFormMode.EditPaycode; then editPayCodeTemplate"></ng-container>
+  <ng-container *ngIf="currentMode === dailyFormMode.View; then viewTemplate"></ng-container>
+  <ng-container *ngIf="currentMode === dailyFormMode.ViewTrade; then tradeTemplate"></ng-container>
+  <ng-container *ngIf="currentMode === dailyFormMode.ViewTradeDetails; then tradeDetail"></ng-container>
+
+  <ng-template #viewTemplate>
+    <div align-items-center class="quickview">
+      <div class="heading" col-auto>
+        <div *ngIf="schedules?.length===0" class="f-color">
+          {{ 'schedule.no-events' | translate }}
+        </div>
+        <div *ngIf="schedules">
+          <div *ngFor="let schedule of schedules">
+            <wf-quick-view-schedule [event]="schedule" [authorization]="authorization" (editEvent)="editEvent()">
+            </wf-quick-view-schedule>
+          </div>
+        </div>
+        <div *ngIf="openShifts && openShifts.length" class="open-shifts-view">
+          <h4 class="open-shift-heading">
+            {{ 'quick-view-open-shift.open-shifts-header' | translate: { shiftCount: openShifts.length } }}</h4>
+          <div *ngFor="let openShift of openShifts">
+            <wf-quick-view-open-shift [shift]="openShift">
+            </wf-quick-view-open-shift>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #editActivityTemplate>
+    <section class="scrollable-panel" *ngIf="showAddActivityForm">
+      <div align-items-center>
+        <div class="heading" col-auto>
+          <h6>
+            <strong>{{ (formModel.guid ? 'dailySchedule.editActivity' : 'dailySchedule.addActivity' ) | translate }}</strong>
+            <button *ngIf="formModel.guid" type="button" class="convert link-button text-right"
+              (click)="convertToPayCode(formModel.guid)">{{'dailySchedule.convertToPayCode'
+              | translate }}
+            </button>
+          </h6>
+        </div>
+      </div>
+      <form (ngSubmit)="onSubmit()" #activityForm="ngForm">
+        <section no-padding>
+          <div class="row">
+            <div>
+              <div for="facility" class="label"
+                [ngClass]="facility && (facility.valid || facility.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="facility && !facility.valid && facility.touched">
+                {{ levelHierarchy.trunk.name }} <span
+                  [ngClass]="{ 'invisible': facility && (facility.valid || facility.untouched) }">{{'dailySchedule.required'
+                | translate}}</span>
+              </div>
+              <wf-search-list [getItems]="getFacilities" [(ngModel)]="formModel.facility"
+                (ngModelChange)="onFacilityChanged($event)" id="facility" name="facility" #facility="ngModel"
+                #facilityComponent required>
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <div for="department" class="label"
+                [ngClass]="department && (department.valid || department.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="department && !department.valid && department.touched">
+                {{ levelHierarchy.branch.name }} <span
+                  [ngClass]="{ 'invisible': department && (department.valid || department.untouched) }">{{'dailySchedule.required'
+                | translate}}</span>
+              </div>
+              <wf-search-list [getItems]="getDepartments" [disabled]="!formModel.facility"
+                [(ngModel)]="formModel.department" (ngModelChange)="onDepartmentChanged($event)" id="department"
+                name="department" #department="ngModel" #departmentComponent required>
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <div for="unit" class="label label-md">
+                {{ levelHierarchy.leaf.name }}
+              </div>
+              <wf-search-list [getItems]="getUnits" [disabled]="!formModel.department" [(ngModel)]="formModel.unit"
+                (ngModelChange)="onUnitChanged($event)" id="unit" name="unit" #unit="ngModel" #unitComponent>
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 inline-right">
+              <div for="position" class="label"
+                [ngClass]="position && (position.valid || position.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="position && !position.valid && position.touched" required>
+                {{'dailySchedule.position' | translate}} <span
+                  [ngClass]="{ 'invisible': position && (position.valid || position.untouched) }">{{'dailySchedule.required'
+                | translate}}</span>
+              </div>
+              <wf-search-list [getItems]="getPositions" [disabled]="positionDisabled" [(ngModel)]="formModel.position"
+                (ngModelChange)="onPositionChanged($event)" id="position" name="position" #position="ngModel"
+                #positionComponent required>
+              </wf-search-list>
+            </div>
+            <div class="col-6 inline-left">
+              <div for="profile" class="label"
+                [ngClass]="profile && (profile.valid || profile.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="profile && !profile.valid && profile.touched" required>
+                {{'dailySchedule.role' | translate}} <span
+                  [ngClass]="{ 'invisible': profile && (profile.valid || profile.untouched) }">{{'dailySchedule.required'
+                | translate}}</span>
+              </div>
+              <wf-search-list [getItems]="getProfiles" [disabled]="!formModel.position" [(ngModel)]="formModel.profile"
+                id="profile" name="profile" #profile="ngModel" #profileComponent required>
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row">
+            <div for="activityCode" class="label"
+              [ngClass]="activity && (activity.valid || activity.untouched) ? 'required label-md':'error'"
+              [class.ng-invalid]="activity && !activity.valid && activity.touched" required>
+              {{'dailySchedule.activity' | translate}} <span
+                [ngClass]="{ 'invisible': activity && (activity.valid || activity.untouched) }">{{'dailySchedule.required'
+              | translate}}</span>
+            </div>
+            <wf-search-list [getItems]="getActivities" [disabled]="activityDisabled" [(ngModel)]="formModel.activity"
+              (ngModelChange)="onActivityChanged($event)" id="activity" name="activity" #activity="ngModel"
+              #activityComponent required>
+            </wf-search-list>
+          </div>
+          <div class="row" *ngIf="isExtraShift">
+            <div>
+              <label for="extraShift" class="label">
+                {{'dailySchedule.isExtraShift' | translate}}
+              </label>
+            </div>
+            <div>
+              <label for="extraShiftNo">
+                <input type="radio" id="extraShiftNo" class="extraShiftInput" name="extraShift" [value]="false"
+                  [(ngModel)]="formModel.isExtraShift">
+                {{'button.no' | translate}}
+              </label>
+              <label for="extraShiftYes">
+                <input type="radio" id="extraShiftYes" class="extraShiftInput" name="extraShift" [value]="true"
+                  [(ngModel)]="formModel.isExtraShift">
+                {{'button.yes' | translate}}
+              </label>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-6 inline-right">
+              <div class="label label-md required" for="date">{{ 'dailySchedule.date' | translate}}
+              </div>
+              <div>
+                <wf-date-input (dateChanged)="setDate($event)" [dateValue]="selectedDate" [multiDateSelect]="false"
+                  [minDateValue]="minDateValue">
+                </wf-date-input>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 inline-right">
+              <div class="label label-md required" for="start" required>
+                {{ 'dailySchedule.startTime' | translate}}
+              </div>
+              <wf-time-input (timeChanged)="onTimeChange($event)" [timeValue]="selectedDate"></wf-time-input>
+            </div>
+            <div class="col-6 inline-left">
+              <div class="label label-md" for="end">{{ 'dailySchedule.endTime' | translate}}</div>
+              <input type="text" id="end" name="end" class="start-end-time" disabled
+                [ngModel]="formModel.endDate | dateformat:'TIME_24HOUR_SHORT'" #end="ngModel">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 inline-right">
+              <div for="hours" class="label"
+                [ngClass]="hours && (hours.valid || hours.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="hours.invalid && hours.touched">
+                {{'dailySchedule.hoursUnits' | translate}}
+                <span [ngClass]="{ 'invisible': hours.valid || hours.untouched }" *ngIf="hours.errors?.required">
+                  {{'dailySchedule.required' | translate}}
+                </span>
+                <span [ngClass]="{ 'invisible': hours.valid || hours.untouched }"
+                  *ngIf="!hours.valid && !hours.errors?.required">
+                  {{'dailySchedule.invalid' | translate}}
+                </span>
+              </div>
+              <input type="text" id="hours" name="hours"
+                pattern="^((0*)(?:[0-9]|1[0-9]|2[0-3])?(?:\.\d{1,})?|0*24(?:\.0+)?)$" [(ngModel)]="formModel.hours"
+                #hours="ngModel" required autocomplete="off">
+            </div>
+            <div class="col-6 inline-left">
+              <div for="lunch" class="label"
+                [ngClass]="lunch && (lunch.valid || lunch.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="lunch.invalid && lunch.touched" required>
+                {{'dailySchedule.lunchLength' | translate}}
+                <span [ngClass]="{ 'invisible': lunch.valid || lunch.untouched }" *ngIf="lunch.errors?.required">
+                  {{'dailySchedule.required' | translate}}
+                </span>
+                <span [ngClass]="{ 'invisible': lunch.valid || lunch.untouched }"
+                  *ngIf="!lunch.valid && !lunch.errors?.required">
+                  {{'dailySchedule.invalid' | translate}}
+                </span>
+              </div>
+              <input type="text" id="lunch" name="lunch" pattern="^((0*)(?:[0-8])?(?:\.\d{1,})?|0*9(?:\.0+)?)$"
+                [(ngModel)]="formModel.lunchHours" #lunch="ngModel" required autocomplete="off">
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-right">
+              <button *ngIf="formModel.guid && authorization['activity']['canDelete']" type="button"
+                class="secondary-button button" (click)="confirmDelete()"
+                [disabled]="!activityForm.form.valid || submitting">
+                {{ 'button.delete' | translate }}
+              </button>
+              <button type="button" class="primary-button button" [disabled]="submitting" (click)="closeForm()">{{'button.cancel'
+              | translate}}
+              </button>
+              <button type="submit" class="priority-button button" [disabled]="!activityForm.form.valid || submitting">
+                {{(formModel.guid ? 'button.save' : 'button.add') | translate }}
+              </button>
+            </div>
+          </div>
+        </section>
+      </form>
+      <div style="font-size: 10px;">
+        <wf-modal role="Modal" class="daily-schedule-modal">
+          <wf-schedule-validation-warnings-modal (submitValidation)="onSubmit($event)"
+            [scheduleValidationWarnings]="scheduleValidationWarnings" #modalContent>
+          </wf-schedule-validation-warnings-modal>
+        </wf-modal>
+      </div>
+      <div>
+        <wf-modal role="Modal" class="daily-schedule-modal" #deleteModal>
+          <div class="delete-modal-content-calendar" #modalContent>
+            {{'dailySchedule.confirm-delete-message' | translate}}
+          </div>
+        </wf-modal>
+      </div>
+    </section>
+  </ng-template>
+
+  <ng-template #editPayCodeTemplate>
+    <section class="scrollable-panel">
+      <div align-items-center>
+        <div class="heading" col-auto>
+          <h6>
+            <strong>{{ (formModel.guid ? 'dailySchedule.editPaycode' : 'dailySchedule.addPaycode' ) | translate }}</strong>
+          </h6>
+        </div>
+      </div>
+      <form (ngSubmit)="onSubmit()" #paycodeForm="ngForm">
+        <section no-padding>
+          <div class="row">
+
+            <div for="payCodeCode" class="label"
+              [ngClass]="payCode && (payCode.valid || payCode.untouched) ? 'required label-md':'error'"
+              [class.ng-invalid]="payCode && !payCode.valid && payCode.touched" required>
+              {{'schedule.pay-code-text' | translate}}
+              <span [ngClass]="{ 'invisible': payCode && (payCode.valid || payCode.untouched) }">{{'dailySchedule.required'
+                    | translate}}</span>
+            </div>
+            <wf-search-list [getItems]="getPayCodes" [(ngModel)]="formModel.payCode" id="payCode" name="payCode"
+              (ngModelChange)="onPayCodeChanged($event)" #payCode="ngModel" #payCodeComponent required>
+            </wf-search-list>
+
+          </div>
+          <div class="row">
+            <div class="col-6 inline-right">
+              <div class="label label-md required" for="date">{{ 'dailySchedule.date' | translate}}
+              </div>
+              <div>
+                <wf-date-input (dateChanged)="setDate($event)" [dateValue]="selectedDate"
+                  [multiDateSelect]="currentMode === dailyFormMode.EditPaycode && !formModel.guid"
+                  [minDateValue]="minDateValue">
+                </wf-date-input>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 inline-right">
+              <div class="label label-md required" for="start" required>
+                {{ 'dailySchedule.startTime' | translate}}
+              </div>
+              <wf-time-input (timeChanged)="onTimeChange($event)" [timeValue]="selectedDate"></wf-time-input>
+            </div>
+            <div class="col-6 inline-left">
+              <div class="label label-md" for="end">{{ 'dailySchedule.endTime' | translate}}</div>
+              <input type="text" id="end" name="end" class="start-end-time" disabled
+                [ngModel]="formModel.endDate | dateformat:'TIME_24HOUR_SHORT'" #end="ngModel">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7 inline-right">
+              <div for="hours" class="label"
+                [ngClass]="hours && (hours.valid || hours.untouched || hoursInputDisabled || !formModel.payCode?.areHoursRequired ) ? 'required label-md':'required error'"
+                [class.ng-invalid]="!hours.valid && hours.touched && formModel.payCode?.areHoursRequired"
+                [class.required]="formModel.payCode?.areHoursRequired" [class.disabled]="hoursInputDisabled">
+                {{'dailySchedule.hoursUnits' | translate}}
+                <span [ngClass]="{ 'invisible': hours.valid || hours.untouched || hoursInputDisabled }"
+                  *ngIf="hours.errors?.required">
+                  {{'errors.required' | translate}}
+                </span>
+                <span [ngClass]="{ 'invisible': hours.valid || hours.untouched || hoursInputDisabled }"
+                  *ngIf="!hours.valid && !hours.errors?.required">
+                  {{'errors.invalid' | translate}}
+                </span>
+              </div>
+              <input type="text" id="hours" name="hours" [(ngModel)]="formModel.hours" #hours="ngModel"
+                [required]="formModel.payCode?.areHoursRequired" autocomplete="off" [disabled]="hoursInputDisabled"
+                pattern="^((0*)(?:[0-9]|1[0-9]|2[0-3])?(?:\.\d{1,})?|0*24(?:\.0+)?)$">
+            </div>
+            <div class="col-7 inline-right">
+              <div for="amount" class="label"
+                [ngClass]="amount && (amount.valid || amount.untouched || amountInputDisabled || !formModel.payCode?.isAmountRequired ) ? 'required label-md':'required error'"
+                [class.ng-invalid]="!amount.valid && amount.touched && formModel.payCode?.isAmountRequired"
+                [class.required]="formModel.payCode?.isAmountRequired" [class.disabled]="amountInputDisabled">
+                {{'dailySchedule.amount' | translate}}
+                <span [ngClass]="{ 'invisible': amount.valid || amount.untouched || amountInputDisabled }"
+                  *ngIf="amount.errors?.required">
+                  {{'errors.required' | translate}}
+                </span>
+                <span [ngClass]="{ 'invisible': amount.valid || amount.untouched || amountInputDisabled }"
+                  *ngIf="!amount.valid && !amount.errors?.required">
+                  {{'errors.invalid' | translate}}
+                </span>
+              </div>
+              <input type="text" id="amount" name="amount" [(ngModel)]="formModel.amount" #amount="ngModel"
+                [required]="formModel.payCode?.isAmountRequired" autocomplete="off" [disabled]="amountInputDisabled"
+                pattern="^(0*((([0-8]{0,4})|(99[0-8]?9)|(9[0-8]99)|([0-8]?999)|(999[0-8]?)|([0-8]{0,2}99)|([0-8]?9[0-8]?9)|([0-8]?9{2}[0-8]?)|(9[0-8]{0,2}9)|(9[0-8]?9[0-8]?)|(99[0-8]{0,2})|([0-8]{0,3}9)|([0-8]{0,2}9[0-8]?)|([0-8]?9[0-8]{0,2})|(9[0-8]{0,3}))(\.[0-9]*)?|(9{4}(\.0*)?)))$">
+            </div>
+
+            <div class="col-7">
+              <div for="lunch" class="label" [ngClass]="lunch && (lunch.valid || lunch.untouched) ? 'label-md':'error'"
+                [class.ng-invalid]="lunch.invalid && lunch.touched">
+                {{'dailySchedule.lunchLength' | translate}}
+                <span [ngClass]="{ 'invisible': lunch.valid || lunch.untouched }"
+                  *ngIf="!lunch.valid && !lunch.errors?.required">
+                  {{'dailySchedule.invalid' | translate}}
+                </span>
+              </div>
+              <input type="text" id="lunch" name="lunch" pattern="^((0*)(?:[0-8])?(?:\.\d{1,})?|0*9(?:\.0+)?)$"
+                [(ngModel)]="formModel.lunchHours" #lunch="ngModel" autocomplete="off">
+            </div>
+          </div>
+          <div class="row" *ngIf="showQuickCode">
+            <div>
+              <div for="quickcode" class="label">
+                {{'dailySchedule.QuickCode' | translate}}
+              </div>
+              <wf-search-list [getItems]="getQuickCodes" [disabled]="false" [(ngModel)]="formModel.employment"
+                (ngModelChange)="onQuickcodeChanged($event)" id="quickcode" name="quickcode" #quickcode="ngModel"
+                #quickcodeComponent>
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <div for="facility" class="label"
+                [ngClass]="facility && (facility.valid || facility.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="facility && !facility.valid && facility.touched">
+                {{ levelHierarchy.trunk.name }} <span
+                  [ngClass]="{ 'invisible': facility && (facility.valid || facility.untouched) }">{{'dailySchedule.required'
+                  | translate}}</span>
+              </div>
+              <wf-search-list [getItems]="getFacilities" [(ngModel)]="formModel.facility"
+                (ngModelChange)="onFacilityChanged($event)" id="facility" name="facility" #facility="ngModel"
+                #facilityComponent required>
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <div for="department" class="label"
+                [ngClass]="department && (department.valid || department.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="department && !department.valid && department.touched">
+                {{ levelHierarchy.branch.name }} <span
+                  [ngClass]="{ 'invisible': department && (department.valid || department.untouched) }">{{'dailySchedule.required'
+                  | translate}}</span>
+              </div>
+              <wf-search-list [getItems]="getDepartments" [disabled]="!formModel.facility"
+                [(ngModel)]="formModel.department" (ngModelChange)="onDepartmentChanged($event)" id="department"
+                name="department" #department="ngModel" #departmentComponent required>
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <div for="unit" class="label label-md">
+                {{ levelHierarchy.leaf.name }}
+              </div>
+              <wf-search-list [getItems]="getUnits" [disabled]="!formModel.department" [(ngModel)]="formModel.unit"
+                (ngModelChange)="onUnitChanged($event)" id="unit" name="unit" #unit="ngModel" #unitComponent>
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 inline-right">
+              <div for="position" class="label">
+                {{'dailySchedule.position' | translate}}
+              </div>
+              <wf-search-list [getItems]="getPositions" [disabled]="positionDisabled" [(ngModel)]="formModel.position"
+                (ngModelChange)="onPositionChanged($event)" id="position" name="position" #position="ngModel" #positionComponent>
+              </wf-search-list>
+            </div>
+            <div class="col-6 inline-left">
+              <div for="jobClass" class="label"
+                [ngClass]="jobClass && (jobClass.valid || jobClass.untouched) ? 'required label-md':'error'"
+                [class.ng-invalid]="jobClass && !jobClass.valid && jobClass.touched" required>
+                {{'dailySchedule.jobClass' | translate}} <span
+                  [ngClass]="{ 'invisible': jobClass && (jobClass.valid || jobClass.untouched) }">{{'dailySchedule.required'
+                            | translate}}</span>
+              </div>
+              <wf-search-list [getItems]="getJobClass" [disabled]="jobclassDisabled" [(ngModel)]="formModel.jobClass"
+                id="jobClass" name="jobClass" #jobClass="ngModel" #jobClassComponent required (itemChanged)="onJobClassChanged()">
+              </wf-search-list>
+            </div>
+          </div>
+          <div class="row" *ngIf="showRequestedReason">
+            <div>
+              <div for="requestedReason" class="label label-md">
+                {{'dailySchedule.requestedReason' | translate}}
+              </div>
+              <textarea id="requestedReason" name="requestedReason" maxlength="260" autoResize="autoResize"
+                [(ngModel)]="formModel.requestedReason"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-right">
+              <button *ngIf="formModel.guid && authorization['payCode']['canDelete']" type="button"
+                class="secondary-button button" (click)="confirmDelete()"
+                [disabled]="!paycodeForm.form.valid || submitting">
+                {{ 'button.delete' | translate }}
+              </button>
+              <button type="button" class="primary-button button" [disabled]="submitting" (click)="closeForm()">{{'button.cancel'
+                | translate}}
+              </button>
+              <button type="submit" class="priority-button button" [disabled]="!paycodeForm.form.valid || submitting">
+                {{submitPaycode}}
+              </button>
+            </div>
+          </div>
+        </section>
+      </form>
+    </section>
+    <div style="font-size: 10px;">
+      <wf-modal role="Modal" class="daily-schedule-modal">
+        <wf-schedule-validation-warnings-modal (submitValidation)="onSubmit($event)"
+          [scheduleValidationWarnings]="scheduleValidationWarnings" #modalContent>
+        </wf-schedule-validation-warnings-modal>
+      </wf-modal>
+    </div>
+    <div>
+      <wf-modal role="Modal" class="daily-schedule-modal" #deleteModal>
+        <div class="delete-modal-content-calendar" #modalContent>
+          {{'dailySchedule.confirm-delete-message' | translate}}
+        </div>
+      </wf-modal>
+    </div>
+  </ng-template>
+
+  <ng-template #tradeTemplate>
+    <div class="quickview">
+      <section *ngIf="currentMode==dailyFormMode.ViewTrade">
+        <wf-trade-summary [levelHierarchy]="levelHierarchy" (closeTradeEvent)="onTradeSummaryClose()"
+          (popoverEvent)="popoverScroll($event)">
+        </wf-trade-summary>
+      </section>
+    </div>
+  </ng-template>
+
+  <ng-template #tradeDetail>
+    <div class="quickview">
+      <section *ngIf="currentMode==dailyFormMode.ViewTradeDetails">
+        <wf-trade-details></wf-trade-details>
+      </section>
+    </div>
+  </ng-template>
+</div>

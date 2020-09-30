@@ -1,0 +1,10 @@
+
+//import themes from custom components
+// @import 'app/app.component.scss-themes';
+
+// call this mixin from your theme to style all your custom components
+@mixin custom-components-theme($theme) {
+  //include the themes mixin from each of your components.
+  // @include anms-app-component-themes($themes);
+
+}

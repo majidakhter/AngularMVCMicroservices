@@ -1,0 +1,21 @@
+{
+  "production": false,
+  "isStandalone": true,
+  "baseApiPath": "https://localhost:44308/",
+  "loginUser": {
+    "username": "blue03",
+    "password": "api",
+    "timeout": "1:00:00"
+  },
+  "logger": {
+    "logUrl": "/api/local/logs",
+    "logLevel": "NgxLoggerLevel.WARN",
+    "serverLogLevel": "NgxLoggerLevel.OFF"
+  },
+  "auth": {
+    "clientId": "4d2e9369-bd3c-4ee7-a631-6046cb371384",
+    "clientSecret": "x7UZo2MT1xNLtryoeZ8GVKMb0MEG7b3g6fyBo0bdTE0=",
+    "realm": "https://apiazuredevge.onmicrosoft.com",
+    "directory": "147a2b71-5ce9-4933-94c4-2054328de565"
+  }
+}

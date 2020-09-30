@@ -1,0 +1,14 @@
+<div *ngIf="!employeeWarnings[0].otherException && employeeWarnings[0].overridable" class="warning_messages">
+  {{'trade.content-override-warnings' | translate}}
+</div>
+<div *ngIf="!employeeWarnings[0].otherException && !employeeWarnings[0].overridable" class="warning_messages">
+  {{'trade.content-not-saved' | translate}}
+</div>
+<section *ngFor="let warnings of employeeWarnings">
+  <div *ngIf="warnings.firstName">{{ warnings.firstName }} {{ warnings.lastName }}</div>
+  <ul *ngIf="warnings.warnings.length>1">
+    <li *ngFor="let warning of warnings.warnings" [innerHTML]="warning.description"></li>
+  </ul>
+  <div *ngIf="warnings.warnings.length==1" [innerHTML]="warnings.warnings[0].description">
+  </div>
+</section>

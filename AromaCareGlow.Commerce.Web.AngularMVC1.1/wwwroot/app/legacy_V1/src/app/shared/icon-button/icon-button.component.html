@@ -1,0 +1,7 @@
+<button class="button-clear secondary-button wf-icon-button" [disabled]="disabled">
+  <i class="{{iconClass}} icon-container left-button" *ngIf="iconPosition === 'left'"></i>
+  <span>{{ translate.instant(text) }}</span>
+  <i class="icon-ge-dropdown" *ngIf="dropdown"></i>
+  <i class="{{iconClass}} icon-container right-button" *ngIf="iconPosition !== 'left'"></i>
+
+</button>

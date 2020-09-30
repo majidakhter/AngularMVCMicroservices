@@ -1,0 +1,61 @@
+
+
+@import "../../../../../../src/themes/wf-default/colors";
+
+$navigation : map-get($wfm-colors, navigation-link);
+$divider : map-get($wfm-colors, primary-medium-40);
+$workingShift : map-get($wfm-colors, working-shift);
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.view-link {
+    cursor: pointer;
+    color: $navigation;
+    font-size: medium;
+    font-weight: 400;
+}
+
+.button-margin {
+    margin-left: 10px;
+}
+
+.schedule-content {
+    font-size: medium;
+    margin-bottom: 10px;
+}
+
+.span-space {
+    padding-right: 13%;
+}
+
+.eventType-space {
+    margin: 10px 0;
+    font-size: 17px;
+    line-height: 15px;
+}
+
+hr {
+    border: 1px solid $divider;
+    background-color: $divider;
+    margin-top: 20px;
+}
+
+.s-schedule {
+    color: $workingShift;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+.retractAlign{
+    float:right !important;
+}
+.event-detials-more{
+    padding-left: 10px;
+}
+.margin-left-10{
+    margin-left: 10px;
+}

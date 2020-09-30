@@ -1,0 +1,69 @@
+<div class="calendar-week" >
+  <div class="loading-container" wfLoadingPlaceholder [class.disabled]="showPageLoader" [loadingValue]="!showPageLoader"></div>
+  <div *ngFor="let calendarWeek of calendarWeeks">
+    <br />
+    <span
+      class="hoursStyle">{{calendarWeek.weeklyHours | number: '1.2'}}</span><span>{{ 'self-schedule-period.hours' | translate }}</span>
+    <br />
+  <div *ngFor="let day of calendarWeek.days" class="row-col">
+    {{day.date | dateformat: "DATE_DAY_OF_WEEK_DAY_OF_MONTH"}}
+  </div>
+  <div class="day" nowrap>
+      <div class="column"
+        *ngFor="let day of calendarWeek.days; trackBy: dayTrackBy"
+        [ngClass]="{'selected-day': selectedDay && day.date.isSame(selectedDay.date, 'day'),'greyOut': isNeedCountZero(day) }"
+        (click)="onClickHandler(day)">
+      <div class="day-wrapper">
+        <div *ngFor="let event of sortCalendarCells(day.events)" class="m-10 schedules">
+          <span class="event-title" [wf-tooltip] [tooltipTemplate]="toolTipTemplate(event)"
+            [tooltipPlacement]="TooltipPosition.AUTO">
+            <wfm-event-details [mappedEvent]="mapEvent(event)" [displayType]="summaryDisplay">
+            </wfm-event-details>
+              </span>
+          <span>
+            <button class="retractIcon" mat-icon-button [matMenuTriggerFor]="menu"
+                (click)="getOtherShiftsAvailable(event,day, $event)">
+                <i class="icon-ge-dropdown" *ngIf="event.source=='SelfScheduled'"></i>
+            </button>
+            <mat-menu #menu="matMenu" >
+                <div class="spinner-icon" *ngIf="showLoader">
+                  <i class="icon-wfm-spinner"></i>
+                </div>
+              <wf-self-schedule-activity-changes [changeActivityDetails]='changeActivityDetails'
+                  (changeShiftDetails)="changeShift({overrideValidation: false, activity: $event, day: day, changeShiftEvent: event })" 
+                  (retractSelfSchedule)="retractSelfSchedule(event)">
+                </wf-self-schedule-activity-changes>
+            </mat-menu>
+          </span>
+            
+        </div>
+      </div>
+        <div class="need" [class.needClr]="day.needCount === 0"> {{ day.needCount }}
+        {{ 'calendar-page.needed' | translate }} </div>
+        <div *ngIf="!isNeedCountZero(day)" class="event-inner-add-button" >
+          <div class="icon-ge-add add-btn" id="showAddShiftIcon" [matMenuTriggerFor]="addShiftMenu" (click)="getAllOtherAvailableShifts(day,$event)"></div>
+        </div>
+        <mat-menu #addShiftMenu="matMenu">
+          <div class="spinner-icon" *ngIf="addShiftLoader">
+            <i class="icon-wfm-spinner"></i>
+          </div>
+          <wf-self-schedule-activity-changes [changeActivityDetails]='addActivityDetails'
+          (changeShiftDetails)="addShift($event, day)"></wf-self-schedule-activity-changes>
+        </mat-menu>
+      </div>
+    </div>
+    </div>
+  <div>
+    <wf-modal role="Modal" class="validation-modal" #validationModal>
+      <wf-schedule-validation-warnings-modal (submitValidation)="changeShift({overrideValidation: true})"
+        [scheduleValidationWarnings]="scheduleValidationWarnings" #modalContent>
+      </wf-schedule-validation-warnings-modal>
+    </wf-modal>
+  </div>
+  <div>
+    <wf-modal role="Modal" class="overlap-validation-modal" #overlapModal>
+      <wf-overlap-shift-modal (close)="close()">
+      </wf-overlap-shift-modal>
+    </wf-modal>
+  </div>
+</div>

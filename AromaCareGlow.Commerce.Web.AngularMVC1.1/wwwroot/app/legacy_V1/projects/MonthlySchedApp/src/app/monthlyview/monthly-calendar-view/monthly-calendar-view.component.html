@@ -1,0 +1,56 @@
+<div class="cal-nav">
+  <div class="btn-group">
+    <button type="button" class="bt-prev" mwlCalendarPreviousView [(viewDate)]="viewDate" view="month"
+      (viewDateChange)="monthLoaded = false">
+      <span class="icon-ge-chevron_left"></span>
+    </button>
+    <h2 class="calendar-heading-text">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h2>
+    <button type="button" class="bt-next" mwlCalendarNextView [(viewDate)]="viewDate" view="month"
+      (viewDateChange)="monthLoaded = false">
+      <span class="icon-ge-chevron_right"></span>
+    </button>
+  </div>
+  <div *ngIf="canViewShifts">
+    <div *ngIf="openShifts.length > 0; else noOpenShifts" class="show-open-shifts">
+      <input type="checkbox" id="actionCheckbox" [(ngModel)]="showOpenShifts" (change)="showOpenShiftChange($event)">
+      <label for="actionCheckbox" class="enabled">{{'calendar-page.show-open-shifts' | translate}}</label>
+    </div>
+    <ng-template #noOpenShifts>
+      <div class="show-open-shifts">
+        <input type="checkbox" disabled>
+        <label class="disabled">{{'calendar-page.no-open-shifts' | translate}}</label>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<mwl-calendar-month-view id="calendarMonthView" [viewDate]="viewDate" [events]="calendarEvents" (dayClicked)="onDayClicked($event.day)"
+  [cellTemplate]="customCellTemplate" (beforeViewRender)="beforeMonthViewRender($event)">
+  <ng-template #customCellTemplate let-day="day" let-locale="locale">
+    <div class="cal-cell-top">
+      <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+    </div>
+    <span class="event" *ngFor="let event of day.events" mwlCalendarTooltip="true"
+      [tooltipTemplate]="cellTooltipTemplate" [tooltipEvent]="event">
+      <wfm-event-details [mappedEvent]="mapEvent(event.meta)" [displayType]="summaryDisplay">
+      </wfm-event-details>
+    </span>
+    <span *ngIf="showOpenShifts && getAvailableOpenShifts(day.date).length; let shifts" class="open-shifts">
+      {{(shifts === 1 ? 'calendar-page.available-shift' : 'calendar-page.available-shifts') | translate: { shifts: shifts } }}
+    </span>
+  </ng-template>
+</mwl-calendar-month-view>
+
+<ng-template #cellTooltipTemplate let-event="event" let-placement="placement">
+  <div class="cal-tooltip" [ngClass]="placement">
+    <div class="tooltip-arrow"></div>
+    <div class="tooltip-inner" [innerHTML]="getTooltipContent(event)"></div>
+  </div>
+</ng-template>
+
+<wf-modal role="Modal" class="daily-schedule-modal">
+  <wf-monthly-calendar-view-warnings-modal #modalContent></wf-monthly-calendar-view-warnings-modal>
+</wf-modal>
+
+<wf-modal role="Modal" class="open-self-schedule-modal" #openSelfScheduleModal>
+   <wf-open-current-self-schedule-modal [selfScheduleRange]="selfScheduleRange"></wf-open-current-self-schedule-modal> 
+</wf-modal>

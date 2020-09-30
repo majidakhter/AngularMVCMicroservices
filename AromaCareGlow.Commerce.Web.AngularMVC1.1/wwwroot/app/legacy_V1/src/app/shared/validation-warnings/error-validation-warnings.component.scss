@@ -1,0 +1,25 @@
+:host ::ng-deep {
+  .warning_messages {
+    padding-bottom: 10px;
+  }
+
+  .validation-warnings-grid {
+    height: 100%;
+  }
+
+  ul {
+    list-style: disc;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 17px;
+    font-size: 16px;
+    li {
+      margin-bottom: 0px;
+    }
+  }
+
+  .warnings-container {
+    padding-bottom: 15px;
+    font-size: 16px;
+  }
+}

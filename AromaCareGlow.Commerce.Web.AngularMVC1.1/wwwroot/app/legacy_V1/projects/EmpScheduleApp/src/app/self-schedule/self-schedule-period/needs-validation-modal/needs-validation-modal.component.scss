@@ -1,0 +1,20 @@
+
+@import "../../../../../../../src/themes/wf-default/colors";
+ 
+.font{
+    font-size: 15px;
+}
+.m-20{
+    margin: 20px 0px;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+.f-right{
+    float: right;
+    margin-top: 20px;
+}
+.shift-align{
+    margin: 20px 0px;
+    padding: 5px 10px;
+    background: map-get($wfm-colors, default-medium-15);
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 84.0.4147.105 (Windows 10)" package="" timestamp="2020-08-07T12:27:07" id="0" hostname="NIBLP572" tests="3" errors="0" failures="2" time="0.591">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/84.0.4147.105 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent should create the app" time="0.039" classname="AppComponent"/>
+  <testcase name="AppComponent should have as title 'QuickSchedule'" time="0.544" classname="AppComponent">
+    <failure type="">Error: Expected undefined to equal 'QuickSchedule'.
+    at &lt;Jasmine&gt;
+    at UserContext.apply (http://localhost:9876/_karma_webpack_/src/app/app.component.spec.ts:26:23)
+    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone.js:386:30)
+    at ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:43)
+</failure>
+  </testcase>
+  <testcase name="AppComponent should render title" time="0.008" classname="AppComponent">
+    <failure type="">TypeError: Cannot read property 'textContent' of null
+    at &lt;Jasmine&gt;
+    at UserContext.apply (http://localhost:9876/_karma_webpack_/src/app/app.component.spec.ts:33:51)
+    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone.js:386:30)
+    at ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:43)
+    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone.js:385:36)
+    at Zone.run (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone.js:143:47)
+    at runInTestZone (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:545:38)
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:560:24)
+    at &lt;Jasmine&gt;
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[Chrome Headless 84.0.4147.105 (Windows 10) ERROR
+  DisconnectedClient disconnected from CONNECTED state (ping timeout)
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

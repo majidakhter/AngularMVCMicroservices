@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage lines-valid="7" lines-covered="7" line-rate="1" branches-valid="0" branches-covered="0" branch-rate="1" timestamp="1596803227726" complexity="0" version="0.1">
+  <sources>
+    <source>C:\Repository\Regular\Applications\Web Portal\_Source\Areas\legacySchedule</source>
+  </sources>
+  <packages>
+    <package name="src" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="polyfills.ts" filename="src\polyfills.ts" line-rate="1" branch-rate="1">
+          <methods>
+          </methods>
+          <lines>
+            <line number="70" hits="1" branch="false"/>
+          </lines>
+        </class>
+        <class name="test.ts" filename="src\test.ts" line-rate="1" branch-rate="1">
+          <methods>
+          </methods>
+          <lines>
+            <line number="18" hits="1" branch="false"/>
+            <line number="23" hits="1" branch="false"/>
+            <line number="25" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="src.app" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="app.component.ts" filename="src\app\app.component.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="AppComponent" hits="3" signature="()V">
+              <lines>
+                <line number="11" hits="3"/>
+              </lines>
+            </method>
+            <method name="(anonymous_2)" hits="1" signature="()V">
+              <lines>
+                <line number="12" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="1" branch="false"/>
+            <line number="12" hits="1" branch="false"/>
+            <line number="16" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

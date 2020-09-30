@@ -1,0 +1,374 @@
+@import '../../../themes/wf-default/colors';
+$fontSize: 14px;
+$borderRadius: 2px;
+$disabledOpacity: 0.35;
+$white: map-get(
+  $map: $wfm-colors,
+  $key: default-light
+);
+$black: map-get(
+  $map: $wfm-colors,
+  $key: primary-black
+);
+$lightGray: map-get(
+  $map: $wfm-colors,
+  $key: light-gray
+);
+$dataAquaBlue: map-get(
+  $map: $wfm-colors,
+  $key: data-aqua-blue
+);
+$mediumGray2: map-get(
+  $map: $wfm-colors,
+  $key: medium-gray-2
+);
+$mediumGray: map-get(
+  $map: $wfm-colors,
+  $key: medium-gray
+);
+$dataDarkBlueGray: map-get(
+  $map: $wfm-colors,
+  $key: data-dark-blue-gray
+);
+$focusBlue: map-get(
+  $map: $wfm-colors,
+  $key: focus-blue
+);
+$dataSkyBlue: map-get(
+  $map: $wfm-colors,
+  $key: data-sky-blue
+);
+$infographicHighlight: map-get(
+  $map: $wfm-colors,
+  $key: infographic-highlight
+);
+$primaryMedium40: map-get(
+  $map: $wfm-colors,
+  $key: primary-medium-40
+);
+$focusPrimary: map-get(
+  $map: $wfm-colors,
+  $key: focus-primary
+);
+$defaultMedium35: map-get(
+  $map: $wfm-colors,
+  $key: default-medium-35
+);
+$primaryDark75: map-get(
+  $map: $wfm-colors,
+  $key: primary-dark-75
+);
+$defaultMedium: map-get(
+  $map: $wfm-colors,
+  $key: default-medium
+);
+
+// Header
+$headerBorderWidth: 0px;
+$headerBorderColor: $white;
+$headerBgColor: $white;
+$headerTextColor: $black;
+$headerFontWeight: bold;
+
+// Content
+$contentBorderWidth: 0px;
+$contentBorderColor: $lightGray;
+$contentBgColor: $white;
+$contentTextColor: $black;
+$tableHeaderFontColor: $mediumGray2;
+$navigationChevrons: $dataDarkBlueGray;
+
+// Active State
+$stateActiveBorderColor: $lightGray;
+$stateActiveBgColor: $dataAquaBlue;
+$stateActiveTextColor: $white;
+$stateDisabledBgColor: $lightGray;
+
+// Highlight State
+$stateHighlightBgColor: $white;
+$stateHighlightTextColor: $dataAquaBlue;
+
+// Focus State
+$stateFocusBorderColor: $focusBlue;
+
+// Hover State
+$stateHoverBgColor: $dataSkyBlue;
+$stateHoverTextColor: $black;
+
+// Forms
+$inputBgColor: $white;
+$inputTextColor: $black;
+$inputGroupTextColor: $black;
+$inputBorderColor: $mediumGray2;
+
+@mixin hover-element() {
+  background: map-get($map: $wfm-colors, $key: focus-secondary);
+  color: $stateHoverTextColor;
+
+  a {
+    color: $stateHoverTextColor;
+  }
+}
+
+:host ::ng-deep .ui-calendar {
+  display: flex;
+
+  .ui-widget {
+    font-size: $fontSize;
+    font-family: 'ge-inspira';
+
+    input,
+    select,
+    textarea,
+    button {
+      font-size: $fontSize;
+    }
+
+    :active {
+      outline: none;
+    }
+  }
+
+  .ui-widget-content {
+    border: $contentBorderWidth solid $primaryMedium40;
+    background: $contentBgColor;
+  }
+
+  .ui-widget-header {
+    border: $headerBorderWidth solid $headerBorderColor;
+    background: $headerBgColor;
+    color: $headerTextColor;
+    font-weight: $headerFontWeight;
+
+    a {
+      color: $headerTextColor;
+    }
+  }
+
+  .ui-state-default {
+    color: $contentTextColor;
+  }
+
+  .ui-state-highlight {
+    background: $stateHighlightBgColor;
+    color: $infographicHighlight;
+
+    a {
+      color: $infographicHighlight;
+    }
+  }
+
+  .ui-state-active {
+    border-color: $primaryMedium40;
+    background: $infographicHighlight;
+    color: $stateActiveTextColor;
+
+    a {
+      color: $stateActiveTextColor;
+    }
+  }
+
+  .ui-state-focus {
+    border-color: $focusPrimary;
+    box-shadow: 0 0 3px $focusPrimary;
+  }
+
+  .ui-calendar-button {
+    background-color: $inputBgColor;
+    border-style: solid;
+    border-color: $defaultMedium;
+    border-width: 1px 1px 1px 0;
+    height: 25px;
+  }
+
+  .ui-inputtext:focus + .ui-calendar-button {
+    border-color: $focusPrimary;
+  }
+
+  .ui-button:enabled:focus {
+    box-shadow: transparent;
+  }
+
+  .ui-button:enabled:active,
+  .ui-button:enabled:hover {
+    background-color: transparent !important;
+    color: $black;
+  }
+
+  .ui-inputtext:disabled + .ui-calendar-button {
+    border-color: rgba($defaultMedium35, 0.4);
+  }
+
+  .ui-inputtext:focus,
+  .ui-button,
+  .ui-button:enabled:hover,
+  .ui-button:enabled:focus,
+  .ui-button:enabled:active {
+    box-shadow: 0 0 0px $defaultMedium !important;
+    border-color: $defaultMedium !important;
+  }
+
+  .pi {
+    font-family: ge-icon !important;
+    display: inline-block;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1em;
+  }
+
+  .pi-calendar {
+    font-size: 1.1em;
+    margin-top: -0.4em;
+
+    &:before {
+      content: '\f108';
+    }
+  }
+
+  .ui-button-icon-only .pi {
+    margin-left: -0.4em;
+    margin-top: -0.4em;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .ui-datepicker {
+      width: 205px !important;
+    }
+  }
+
+  .ui-datepicker {
+    padding-top: 16px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-bottom: 11px;
+    width: 100%;
+    background: $contentBgColor;
+    width: 260px;
+    font-size: 0.9em !important;
+    border-width: 1px;
+    left: 0px !important;
+
+    .ui-datepicker-header {
+      padding: 0px;
+
+      .ui-datepicker-prev,
+      .ui-datepicker-next {
+        color: $primaryDark75;
+        font-size: 10px;
+        line-height: 0.5;
+      }
+
+      .ui-datepicker-prev:before {
+        padding-right: 2px;
+      }
+
+      .ui-datepicker-next:before {
+        padding-left: 14px;
+      }
+
+      .ui-datepicker-title {
+        margin: -10px 2.3em;
+        padding-bottom: 10px;
+      }
+
+      a {
+        color: $headerTextColor;
+        height: 0px;
+
+        &:hover {
+          @include hover-element();
+        }
+      }
+    }
+
+    .ui-datepicker-calendar {
+      th {
+        font-weight: normal;
+        font-size: 11px;
+        color: $defaultMedium;
+      }
+
+      td:not(.ui-datepicker-other-month) {
+        border: 1px solid $primaryMedium40;
+
+        a:not(.ui-datepicker-other-month):hover {
+          opacity: unset;
+          @include hover-element();
+        }
+      }
+
+      td {
+        font-size: 12px;
+        padding: 0;
+
+        color: $primaryMedium40 a {
+          text-align: center;
+          height: 32px;
+          width: 33px;
+          padding-top: 8px;
+          border: none;
+        }
+
+        a.ui-datepicker-other-month {
+          color: $defaultMedium35;
+          width: 34px;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+  height: 26px;
+  top: initial;
+}
+
+@supports (-moz-appearance: none) {
+  @media all and (min-width: 768px) {
+    :host ::ng-deep .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+      top: 0px;
+    }
+
+    :host ::ng-deep .ui-calendar .ui-button-icon-only .pi {
+      margin-left: -0.9em;
+    }
+  }
+
+  @media all and (min-width: 1920px) {
+    :host ::ng-deep .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+      top: 0px;
+    }
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) and (min-width: 1920px) {
+  :host ::ng-deep .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+    height: 25.5px;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) and (min-width: 1280px) and (min-height: 768px) {
+  :host ::ng-deep .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+    height: 26px;
+  }
+}
+
+.m-20 {
+  margin-top: 10px;
+  width: 26vw;
+}
+
+:host/deep/ .ng-tns-c16-6 .ui-inputtext .ui-widget .ui-state-default .ui-corner-all .ng-star-inserted {
+  border-width: '1px 0px 1px 1px';
+  width: '90%';
+  height: '26px';
+}
+
+.footer-10 {
+  margin: 10px 0px;
+}

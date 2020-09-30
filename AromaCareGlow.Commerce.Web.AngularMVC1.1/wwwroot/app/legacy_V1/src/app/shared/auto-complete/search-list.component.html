@@ -1,0 +1,45 @@
+<section ngControlGroup="searchListControlGroup" class="search-list-custom">
+  <input #searchInput tabindex="0" [required]="required" type="text" class="search-box" placeholder="{{placeholder}}"
+    [(ngModel)]="searchText" (ngModelChange)="onChange()" (focus)="onInputFocus()" (blur)="onInputBlur()"
+    [disabled]="disabled" [class.ng-invalid]="validate()" [ngClass]="{'empty': searchText==''}">
+  <button #clearButton *ngIf="searchText && !isDropdown" tabindex="-1" type="button"
+    class="search-box-clear  dropdown-button" ion-button icon-only clear (mousedown)="clearSelected(true, $event)"
+    [disabled]="disabled">
+    <i class="icon-sm icon-ge-cross"></i>
+  </button>
+
+  <button #dropdownButton *ngIf="isDropdown" tabindex="-1" type="button" class="dropdown-expander dropdown-button"
+    ion-button icon-only (mousedown)="toggleList(!isDisplayed)" clear [disabled]="disabled">
+    <i class="icon-sm icon-ge-dropdown"></i>
+  </button>
+
+  <!--the unselectable property prevents IE specifically from rescinding focus from the input element to the dropdown list-->
+  <ul tabindex="-1" #searchList [hidden]="!isDisplayed" class="dropdown" (mousedown)="$event.preventDefault()"
+    unselectable="on">
+    <li class="search-list-item" [hidden]="!isDisplayed" *ngFor="let item of displayedItems; let i = index"
+      [ngClass]="{'selected': i == selectedIndex }" (mousedown)="select(item)">
+      <div no-padding class="li-row">
+        <div>
+          <ng-container *ngIf="hideCode; then excludeCode; else includeCode"></ng-container>
+          <ng-template #includeCode>
+            <div text-wrap>
+              {{ item.code }} <span *ngIf="item.description || item.name">&nbsp; : &nbsp; {{
+                                item.description ?
+                                item.description : item.name }}</span>
+            </div>
+          </ng-template>
+          <ng-template #excludeCode>
+            <div text-wrap>
+              <span *ngIf="item.description || item.name">{{ item.description ?
+                                item.description : item.name }}</span>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </li>
+    <div class="show-more" (click)="showMore()"
+      *ngIf="maxItemsDisplayed && filteredItems?.length > (maxItemsDisplayed * displayedPages)">
+      {{ 'show-more' | translate }}
+    </div>
+  </ul>
+</section>

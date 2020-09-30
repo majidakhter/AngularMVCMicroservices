@@ -1,0 +1,411 @@
+
+@import "../../../../../../src/themes/wf-default/colors";
+
+$black: map-get($wfm-colors, default-dark);
+
+.calendar-container {
+  overflow: hidden;
+  padding: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .calendar-week {
+    padding: 0px 10px 10px 10px;
+  }
+  .sticky-header{
+    flex: 0 0 0;
+  }
+}
+
+.self-schedule-header {
+  padding-bottom: 2rem;
+}
+
+.hoursStyle {
+  font-weight: bold;
+}
+
+.div-font {
+  font-size: 10px;
+}
+
+.days-remaining {
+  margin-top: 10px;
+  font-size: 16px;
+  color: $black;
+}
+
+::ng-deep wf-modal.validation-modal section.modal-buttons {
+  display: block;
+}
+
+::ng-deep wf-modal.validation-modal .wf-modal {
+  padding: 20px;
+  width: auto;
+  min-height: auto;
+}
+
+::ng-deep wf-modal.validation-modal hr {
+  display: block;
+}
+
+::ng-deep wf-modal.needs-validation-modal hr {
+  display: block;
+}
+
+::ng-deep wf-modal.success-validation-modal section.modal-content {
+  padding: 10px 0 20px;
+}
+
+::ng-deep wf-modal.success-validation-modal section.modal-content hr {
+  display: block;
+  margin-top: 20px;
+}
+
+::ng-deep wf-modal.success-validation-modal .wf-modal {
+  width: 28%;
+  min-height: 20%;
+}
+
+::ng-deep wf-modal.needs-validation-modal .wf-modal {
+  width: 35%;
+  min-height: 20%;
+}
+
+::ng-deep wf-modal.validation-modal section.modal-buttons {
+  display: block;
+}
+
+::ng-deep wf-modal.validation-modal .wf-modal {
+  padding: 20px;
+}
+
+::ng-deep wf-modal.validation-modal hr {
+  display: block;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+/* style for validation issues container */
+.topbar-container {
+  display: flex;
+  padding: 0 10px;
+}
+
+.topbar-lhs {
+  float: left;
+  width: 30%;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: map-get($wfm-colors, primary-black);
+}
+
+.topbar-rhs {
+  float: right;
+  width: 70%;
+  .topbar-rhs-content {
+    padding-top: 20px;
+    justify-content: flex-end;
+  }
+}
+
+::ng-deep .custom-dropdown {
+  .ui-dropdown {
+    border: 2px solid map-get($wfm-colors, primary-medium-50);
+    .ui-inputtext {
+      color: $black;
+      font-size: 16px;
+      padding: 0.215em 0.429em;
+    }
+    .ui-dropdown-trigger {
+      color: $black;
+    }
+  }
+  .ui-corner-all {
+    border-radius: 0px;
+  }
+  .ui-corner-right {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+
+.topbar-rhs-issues {
+  float: right;
+  width: 65px;
+
+  .no-issues {
+    color: map-get($wfm-colors, default-medium);
+    font-size: 14px;
+    text-align: center;
+    i {
+      color: map-get($wfm-colors, alert-success);
+      font-size: 18px;
+      margin-bottom: 5px;
+      display: block;
+      &::before {
+        position: relative;
+        top: 4px;
+        right: 5px;
+      }
+    }
+  }
+
+  .failed-to-load-data {
+    color: map-get($wfm-colors, default-medium);
+    font-size: 14px;
+    text-align: right;
+
+    i {
+      font-size: 18px;
+      color: map-get($wfm-colors, alert-warning);
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+
+  .number-of-issues {
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .issue-count {
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+    }
+
+    .issue-num {
+      font-size: 24px;
+      padding-right: 5px;
+      padding-bottom: 3px;
+    }
+
+    i.icon-ge-warning {
+      display: block;
+      margin-top: 4px;
+      color: map-get($wfm-colors, alert-warning);
+      padding-bottom: 4px;
+    }
+  }
+
+  i {
+    &.icon-ge-chevron_up,
+    &.icon-ge-chevron_down {
+      font-size: 8px;
+    }
+  }
+
+  .dropdown-block {
+    color: map-get($wfm-colors, default-medium);
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .topbar-rhs-issues {
+    .no-issues {
+      i {
+        margin-top: -3px;
+      }
+    }
+    .issue-count {
+      i.icon-ge-warning {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+@-moz-document url-prefix() {
+  .topbar-rhs-issues {
+    .no-issues {
+      i {
+        margin-bottom: 4px !important;
+      }
+    }
+    .issue-count {
+      i.icon-ge-warning {
+        padding-bottom: 3px !important;
+      }
+    }
+  }
+}
+
+.issues-slider {
+  &.visible {
+    max-height: 500px;
+    flex: 0 0 auto;
+  }
+  width: 100%;
+  padding-left: 10px;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+
+  .collapse-div-icon {
+    text-align: right;
+    padding: 0 10px 10px 10px;
+    line-height: 1;
+    font-size: 14px;
+    border-bottom: 1px solid map-get($wfm-colors, default-medium-35);
+
+    span {
+      cursor: pointer;
+    }
+
+    i.icon-ge-chevron_up {
+      font-size: 8px;
+      position: relative;
+      right: 5px;
+      top: -1px;
+    }
+  }
+
+  p-tabPanel {
+    .each-issue {
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 14px;
+      display: table-row;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .issue-description {
+        display: table-cell;
+        width: auto;
+        vertical-align: top;
+        flex: auto;
+      }
+      .issue-dates {
+        display: table-cell;
+        vertical-align: top;
+        padding-left: 20px;
+        width: auto;
+        margin-right: 30px;
+        p{
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+  body .ui-tabview {
+    padding: 0;
+
+    .ui-tabview-panels {
+      background-color: transparent;
+      border: 0;
+      padding: 0 10px 10px 10px;
+      display: table;
+      width: 100%;
+      .ui-tabview-panel{
+        max-height: 15rem;
+        overflow-x: hidden;
+      }
+    }
+
+    &.ui-tabview-top .ui-tabview-nav {
+      border-bottom: 1px solid map-get($wfm-colors, default-medium-35);
+      border-radius: 0;
+      margin-bottom: 20px;
+      padding-top: 10px;
+    }
+
+    &.ui-tabview-top .ui-tabview-nav li {
+      background-color: transparent;
+      border: 0;
+      margin: 0;
+      padding: 0;
+
+      a {
+        color: map-get($wfm-colors, primary-dark);
+        font-weight: normal;
+        font-size: 15px;
+        padding: 0px 10px 8px 10px;
+      }
+
+      &:not(.ui-state-active):not(.ui-state-disabled):hover {
+        background-color: transparent;
+        border: 0;
+      }
+
+      &.ui-state-active {
+        background-color: transparent;
+        border-width: 0;
+        border-color: map-get($wfm-colors, primary-dark-75);
+
+        a {
+          color: map-get($wfm-colors, primary-dark);
+          font-weight: bold;
+          outline: none;
+          border-bottom: 1px solid map-get($wfm-colors, primary-dark-75);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border-width: 0;
+
+          a {
+            color: map-get($wfm-colors, primary-dark);
+            outline: none;
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.issue-spinner {
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.no-scheddule {
+  color: map-get($wfm-colors, alert-informational);
+  border-top: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.display {
+  display: flex;
+}
+
+.p-10 {
+  padding-left: 10px;
+}
+
+.scrollable-content {
+  flex: 1 1 auto;
+  height: 80%;
+  overflow: auto;
+}
+
+.self-scheduling-filters {
+  height: auto;
+  background-color: map-get($wfm-colors, primary-medium-10);
+  margin: 0px 10px 0px 10px;
+  display: flex;
+}
+
+wf-self-schedule-header {
+  display: flex;
+}

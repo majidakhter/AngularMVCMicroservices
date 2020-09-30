@@ -1,0 +1,54 @@
+<div *ngIf="activity && activity['code']" class="preference-item">
+    <div class="detail-font">
+        {{'self-schedule-details.scheduling-activity' | translate}}
+        &nbsp;&nbsp;
+        <label class="edit-link-default-dark" (click)="editPreference()"><i class="icon-ge-edit"></i>&nbsp;Edit</label>
+    </div>
+    <div class="detail-padding">
+        <div>{{profileCode}}</div>
+        <span *ngIf="(activityStaffingPlanCoverageArray.length === 1)">
+            <div>{{ getScheduleDisplayTime() }}</div>
+            <div>({{ activity['code']}})</div>
+        </span>
+        <div><span *ngIf="unit">{{unit}}, </span>{{department}}, {{facility}}</div>
+    </div>
+</div>
+<div *ngIf="activity && activity['code'] && (activityStaffingPlanCoverageArray.length > 1)" class="preference-item">
+    <div class="default-shift-header">
+        <span class="default-shift-title">{{'self-schedule-details.default-shift-title' | translate}}</span>
+        <span>({{'self-schedule-details.default-shift-info' | translate}})</span>
+    </div>
+    <div class="default-shift-body">
+        <div class="default-shift" (click)="toggleDropdown($event)">
+            <div>{{ getScheduleDisplayTime() }}
+                <br/>
+                ({{ activity['code']}})
+            </div>
+            <span class="default-shift-arrow">
+                <i class="icon-ge-dropdown"></i>
+            </span>
+        </div>
+        <div *ngIf="defaultShiftFlag" class="default-shift-dropdown">
+            <div *ngFor="let activityList of activityStaffingPlanCoverageArray">
+                <div class="default-shift-display"
+                [ngClass]="{'default-shift-highlight': (activity['code'] === activityList['activity']['code'] && getScheduleDisplayTime() === getScheduleDisplayTime(activityList['activity']))}"
+                (click)="onSelectShift(activityList['activity'])">
+                    {{ getScheduleDisplayTime(activityList['activity']) }}
+                    <br/>
+                    ({{ activityList['activity']['code'] }})
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="activity && activity['code'] && (activityStaffingPlanCoverageArray.length > 1)" class="preference-item">
+    <div class="detail-font">{{'self-schedule-details.needs-for' | translate}}</div>
+    <label class="radio" name="profile">
+        <input type="radio" name="options" [(ngModel)]="allAvailableShifts" value="0" (change)="onSelectionChange(allAvailableShifts)">{{'self-schedule-details.default-shift-radiobutton' | translate}}
+        <span class="check"></span>
+    </label>
+    <label class="radio" name="profile">
+        <input type="radio" name="options" [(ngModel)]="allAvailableShifts" value="1" (change)="onSelectionChange(allAvailableShifts)">{{'self-schedule-details.all-preferred-shifts' | translate}}
+        <span class="check"></span>
+    </label>
+</div>

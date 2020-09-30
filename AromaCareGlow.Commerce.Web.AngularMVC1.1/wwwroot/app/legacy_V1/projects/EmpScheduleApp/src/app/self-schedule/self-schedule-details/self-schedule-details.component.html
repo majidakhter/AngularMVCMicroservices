@@ -1,0 +1,34 @@
+<div class="p-details">
+    <div *ngIf="selectedDayForSummary" class="date-text">
+      {{ selectedDayForSummary | dateformat: "DATE_MONTH_DAY_YEAR" }}
+    </div>
+    <div *ngIf="activityCount > 0">
+      <div no-padding>
+        {{ activityCount }}
+        {{(activityCount === 1 ? 'schedule.activity' : 'schedule.activities') | translate }}
+      </div>
+    </div>
+    <div *ngIf="selfScheduledActivityCount > 0">
+      <div no-padding>
+        {{ selfScheduledActivityCount }}
+        {{(selfScheduledActivityCount === 1 ? 'schedule.self-scheduled-activity' : 'schedule.self-scheduled-activities') | translate }}
+      </div>
+    </div>
+    <div *ngIf="paycodeCount > 0">
+      <div no-padding>
+        {{ paycodeCount }}
+        {{(paycodeCount === 1 ? 'schedule.pay-code-text' : 'schedule.pay-codes') | translate}}
+      </div>
+    </div>
+    <div class="default" *ngIf="!schedules && activity && activity['code']">
+      <span>
+        {{'self-schedule-details.default-text' | translate}}
+      </span>
+    </div>
+    <div *ngIf="schedules">
+      <hr>
+      <div *ngFor="let schedule of schedules">
+        <wf-quick-view-schedule [event]="schedule">
+        </wf-quick-view-schedule>
+      </div>
+    </div>

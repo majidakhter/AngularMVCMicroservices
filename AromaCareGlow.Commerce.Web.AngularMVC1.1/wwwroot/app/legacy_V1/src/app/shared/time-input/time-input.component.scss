@@ -1,0 +1,23 @@
+@import "../../../themes/wf-default/colors";
+
+
+::ng-deep .ui-datepicker.ui-datepicker-timeonly .ui-timepicker{
+    padding: 0.5em 0;
+    font-size: smaller;
+}
+
+::ng-deep body .ui-widget{
+    font-family: 'ge-inspira';
+}
+
+::ng-deep body .ui-datepicker .ui-timepicker a{
+    color: #1D9DBE;
+}
+
+::ng-deep .ui-timepicker>div{
+    margin-left: initial;
+}
+
+::ng-deep body .ui-inputtext{
+    padding: 2px 0px 2px 10px;
+}

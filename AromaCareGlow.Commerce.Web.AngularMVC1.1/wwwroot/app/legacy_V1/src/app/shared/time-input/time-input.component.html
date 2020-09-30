@@ -1,0 +1,2 @@
+<p-calendar [ngModel]="timeValue" timeOnly="true" [(hourFormat)]="hourFormat" [(dateFormat)]="timeFormat" [showIcon]="false"
+  (onBlur)="timeBlurEvent($event.currentTarget.value)" [disabled]="isTimeInputDisabled" [style]="{'display':'initial','width':'100%'}" [inputStyle]="{'border-width':'1px 1px 1px 1px', 'width':'100%','height':'25px'}" (onFocus)="timeFocusEvent()" (onSelect)="timeChangedEvent($event)"></p-calendar>

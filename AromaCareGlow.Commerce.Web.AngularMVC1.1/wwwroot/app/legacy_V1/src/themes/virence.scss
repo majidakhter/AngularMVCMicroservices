@@ -1,0 +1,71 @@
+
+$virence-primary-map: (
+  50 : #e0ecee,
+  100 : #b3d0d5,
+  200 : #80b1b9,
+  300 : #4d919c,
+  400 : #267a87,
+  500 : #006272,  //primary
+  600 : #005a6a,
+  700 : #00505f,
+  800 : #004655,
+  900 : #003442,
+  A100 : #77dcff,
+  A200 : #44ceff,
+  A400 : #11c1ff,
+  A700 : #00b6f6,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$virence-accent-map: (
+  50 : #fffbe5,
+  100 : #fef4bd,
+  200 : #feed92,
+  300 : #fee566,
+  400 : #fde045,
+  500 : #fdda24,  //accent
+  600 : #fdd620,
+  700 : #fcd01b,
+  800 : #fccb16,
+  900 : #fcc20d,
+  A100 : #ffffff,
+  A200 : #fffcf3,
+  A400 : #ffeec0,
+  A700 : #ffe8a7,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$virence-primary: mat-palette($virence-primary-map);
+$virence-accent: mat-palette($virence-accent-map);
+
+$virence-theme: mat-light-theme($virence-primary, $virence-accent);

@@ -1,0 +1,254 @@
+
+
+@import "../../../themes/wf-default/colors";
+::ng-deep{ @import"../../../../node_modules/@api-wfm/ng-sympl-ux/src/lib/components/tooltip/tooltip.component.scss";};
+ 
+::ng-deep{  
+wf-tooltip.wf-tooltip.wf-tooltip-inner{
+&.wf-tooltip-inner-top {
+margin-top: 8px;
+    }
+&.wf-tooltip-inner-bottom {
+margin-top: -20px;
+    }
+&.wf-tooltip-inner-left {
+margin-top: -5px;
+margin-left: -8px;
+    }
+&.wf-tooltip-inner-right {
+margin-top: -5px;
+margin-left: 5px;
+    }
+  }
+wf-tooltip.wf-tooltip-inner.wf-tooltip-template{
+color: map-get($wfm-colors, default-dark);
+  }
+}
+
+span.event-title:hover, span.event-title:focus {
+  outline: 0;
+  border: none;
+}
+
+span.event-title{
+  margin-bottom:5px;
+  width: 100%;
+}
+
+@mixin spinner-icon() {
+  .icon-wfm-spinner {
+      display: inline-block;
+      -webkit-animation: spin 4s linear infinite;
+      -moz-animation: spin 4s linear infinite;
+      animation: spin 1.5s linear infinite;
+      background-repeat: no-repeat;
+      line-height: 0;
+      margin-left: 11em;
+      color: map-get($wfm-colors, default-medium);                  
+  }                                         
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }                  
+}
+
+$primaryMedium50: map-get($wfm-colors, primary-medium-50);
+$focusPrimary : map-get($wfm-colors, focus-primary);
+$focusSecondary : map-get($wfm-colors, focus-secondary);
+$infographicHighlight: map-get($wfm-colors, infographic-highlight);
+$workingShift : map-get($wfm-colors, working-shift);
+$infographicHighlight : map-get($wfm-colors, infographic-highlight);
+$defaultLight : map-get($wfm-colors, default-light);
+$primaryMedium10 : map-get($wfm-colors, primary-medium-10);
+$primaryLight : map-get($wfm-colors, primary-light);
+$primarymedium40 : map-get($wfm-colors, primary-medium-40);
+$primaryDark : map-get($wfm-colors, primary-dark);
+
+.day {
+  display: flex;
+  width: 100%;
+}
+
+.column {
+  cursor: pointer;
+  float: left;
+  width: 14%;
+  padding: 10px 5px 10px 0;
+  flex: 1;
+  min-height: 15vh;
+  font-size: 13px;
+  line-height: 15px;
+  border-top: 1px solid $primaryMedium50;
+  border-bottom: 1px solid $primaryMedium50;
+  border-left: 1px solid $primaryMedium50;
+  position: relative;
+
+  &.selected-day {
+    box-shadow: inset 0 0 0 2px rgba($focusPrimary, .3);
+  }
+
+  &:hover,
+  &:last-child:hover {
+    background-color: $focusSecondary;
+  }
+}
+
+.see-more {
+  color: $infographicHighlight;
+}
+
+.row-col {
+  float: left;
+  width: 14%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column:last-child {
+  border-right: 1px solid $primaryMedium50;
+}
+
+.m-10 {
+  margin-bottom: 7px;
+}
+
+.s-schedule {
+  color: $workingShift;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.warning-icon {
+  color: map-get($wfm-colors, alert-warning);
+  font-size: 9px;
+}
+
+.add-btn {
+    position: absolute;
+    width: 26px;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+    padding: 2px;
+}
+
+.icon-ge-add:before {
+  border-radius: 50%;
+  background-color: $infographicHighlight;
+  color: $defaultLight;
+  padding: 4px;
+}
+
+.need {
+  color: $workingShift;
+  position: absolute;
+  bottom: 5px;
+  padding-left:10px;
+}
+
+.day-wrapper {
+  padding-bottom: 5px;
+}
+
+.greyOut {
+  background: $primaryMedium10;
+  opacity: 0.8;
+}
+
+.needClr {
+  color: #748B99;
+}
+
+.schedules {
+  display: flex;
+}
+.retractIcon{
+  padding: 0px;
+  border :0px;
+  background: none;
+  height: 16px;
+}
+
+.retractIcon:focus {		
+  outline: none;		
+  border: none;		
+}
+
+.icon-ge-dropdown {
+  font-size: 22px;
+  line-height: 0.7;
+  cursor: pointer;
+}
+
+.s-schedule-space {
+  margin-top:5px;
+}
+
+::ng-deep {
+  .mat-menu-panel {
+    max-width: 309px !important;
+    overflow: hidden !important;
+    .mat-menu-content:not(:empty) {
+      padding: 10px 0 10px 0;
+    }
+
+    .spinner-icon {
+      @include spinner-icon();
+      position: sticky;
+      top: 43%;
+      margin-left: -20px;
+    }
+  }
+
+ .secondary-button {
+    border: none;
+    padding-left: 0 !important;
+    span {
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .icon-ge-dropdown {
+      cursor: pointer;
+      line-height: 0;
+      margin-left: 21px;
+    }
+    .right-button {
+      padding-left: 0 !important;
+    }
+  }
+}
+
+.calendar-week {
+  padding: 25px 10px 10px 10px;
+}
+
+.hoursStyle {
+  font-weight: bold;
+}
+
+.disabled{
+  pointer-events: none;
+}
+
+
+::ng-deep wf-modal.overlap-validation-modal section.modal-content {
+  padding: 10px 0 20px;
+}
+
+::ng-deep wf-modal.overlap-validation-modal section.modal-content hr {
+  display: block;
+  margin-top: 20px;
+}
+
+::ng-deep wf-modal.overlap-validation-modal .wf-modal {
+  width: 28%;
+  min-height: 20%;
+}

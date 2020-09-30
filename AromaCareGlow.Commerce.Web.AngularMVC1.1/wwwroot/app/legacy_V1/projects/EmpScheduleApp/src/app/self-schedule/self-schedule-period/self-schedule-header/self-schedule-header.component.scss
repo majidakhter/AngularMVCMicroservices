@@ -1,0 +1,143 @@
+
+
+@import "src/themes/wf-default/colors";
+$defaultLight: map-get($wfm-colors, default-light);
+$highlight: map-get($wfm-colors, highlight-primary);
+$defaultDark: map-get($wfm-colors, default-dark);
+
+.detail-font {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.edit-link-default-dark {
+  cursor: pointer;
+  color: $defaultDark;
+  font-size: medium;
+  font-weight: 400;
+  margin-right: auto;
+}
+
+.detail-padding {
+  padding: 5px 0px 5px 0px;
+}
+
+.preference-item {
+  padding: 16px 20px;
+  margin-right: 55px;
+}
+
+.default-shift-header {
+  padding: 0px;
+}
+
+.default-shift-title {
+  font-weight: bold;
+  font-size: 17px;
+  margin-right: 5px;
+}
+
+.default-shift-body {
+  position: relative;
+  padding: 4px 1px;
+}
+
+.default-shift-arrow {
+  display: block;
+  padding-left: 5px;
+  padding-top: 4px;
+}
+
+.default-shift {
+  cursor: pointer;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.default-shift-dropdown {
+  top: 20px;
+  left: -10px;
+  width: 250px;
+  position: absolute;
+  box-shadow: 0px 6px 7px 1px rgba(0, 0, 0, 0.4);
+  background-color: map-get($wfm-colors, default-light);
+  border: 1px solid map-get($wfm-colors, default-medium-35);
+  z-index: 1;
+}
+
+.default-shift-display {
+  color: map-get($wfm-colors, primary-dark);
+  padding: 10px 0px 10px 10px;
+  cursor: pointer;
+}
+
+.default-shift-display:hover {
+  background: map-get($wfm-colors, focus-secondary);
+  color: map-get($wfm-colors, default-dark);
+}
+
+.radio {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-top: 6px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: auto;
+}
+
+/* create custom radio */
+.radio .check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: $defaultLight;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+  background-color: $defaultLight;
+  border: 1px solid #ccc;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+  display: block;
+}
+
+/* radio style */
+.radio .check:after {
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $defaultDark;
+}
+
+.default-shift-highlight {
+  background: $highlight !important;
+  color: $defaultLight !important;
+}

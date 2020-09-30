@@ -1,0 +1,124 @@
+@import '../../../themes/wf-default/colors';
+
+.toast-container {
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  display : Block;
+  opacity : 1;
+  top : 0;
+}
+
+.error {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background-color: map-get($map: $wfm-colors, $key: alert-error);
+  .text{
+    color: map-get($map: $wfm-colors, $key: default-light);
+  }
+}
+
+.success {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background-color: map-get($map: $wfm-colors, $key: alert-success); 
+  color: map-get($map: $wfm-colors, $key: default-light);
+  .text{
+    color: map-get($map: $wfm-colors, $key: default-dark);
+  }
+}
+
+.information {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background-color: map-get($map: $wfm-colors, $key: infographic-notify-70); 
+  color: map-get($map: $wfm-colors, $key: default-light);
+  .text{
+    color: map-get($map: $wfm-colors, $key: default-dark);
+  }
+  .toast-title {
+    font-weight: normal;
+  }
+}
+
+.toast-message {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.toast-close{   border: none;
+  background:none;
+  color: map-get($map: $wfm-colors, $key: default-light);
+  margin: 10px 0px 0px 20px;
+} 
+
+.toast-dismiss {
+  background: transparent;
+  border: 0;
+  font-size: 21px;
+  padding: 2px;
+}
+
+.toast-grid {
+  padding: 10px 20px;
+}
+
+.toast-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+.toast-align-left{
+  text-align: left;
+}
+
+.toast-align-right{
+  text-align: right;
+}
+
+.toast-wd{
+  width: 4.3333% !important;
+  padding: 5px 10px 0px 0px;
+}
+
+.toast-m-align{
+  margin: 10px 0px;
+}
+
+.toast-closebtn{
+opacity: 0;
+visibility: hidden ;
+}
+
+.align-content{
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    float: right;
+    padding: 0px 20px;
+}
+.content-width{
+  width: 75%;
+}
+.btn-width{
+  width:20%;
+  margin-top:auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+ }
+.btn-align{
+  margin: 19px;
+ }
+.float-right{
+  float: right;
+}

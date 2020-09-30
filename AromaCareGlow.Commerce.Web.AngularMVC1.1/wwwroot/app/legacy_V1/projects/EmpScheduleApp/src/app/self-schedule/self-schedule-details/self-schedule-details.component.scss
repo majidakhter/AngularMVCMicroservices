@@ -1,0 +1,29 @@
+
+@import "../../../../../../src/themes/wf-default/colors";
+$divider : map-get($wfm-colors, primary-medium-40);
+$defaultLight : map-get($wfm-colors, default-light);
+
+.default {
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+}
+
+.heading {
+  margin-top: 5px;
+}
+
+.date-text {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+hr {
+  border: 1px solid $divider;
+  background-color: $divider;
+  margin-top: 20px;
+}
+
+.p-details {
+  padding: 0px 25px 0px 12px;
+}

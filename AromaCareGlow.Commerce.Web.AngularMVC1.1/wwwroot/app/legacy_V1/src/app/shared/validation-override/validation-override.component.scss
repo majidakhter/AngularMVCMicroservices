@@ -1,0 +1,38 @@
+@import "../../../themes/wf-default/colors";
+
+wf-validation-override {
+  .summary-banner {
+    min-height: 60px;
+    h2 {
+      white-space: normal;
+    }
+
+    .button {
+      padding-top: 0;
+      padding-right: 0;
+      margin-top: 0;
+    }
+
+    .banner-title {
+      padding: 0px;
+    }
+  }
+  .scroll-area{
+    overflow-y: auto;
+   }
+
+  .validation-warnings-grid {
+    height: 100%;
+    font-size: 14px;
+  }
+  .action-row {
+    padding-top: 12px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-top: 1px solid map-get($wfm-colors, primary-medium-10);
+    margin-bottom: 13px;
+  }
+  .secondary-button {
+    margin-right: 5px;
+  }
+}

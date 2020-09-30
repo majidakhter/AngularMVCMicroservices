@@ -1,0 +1,27 @@
+<div class="toast-container" [class.toast-closebtn]="closeBnr" *ngIf='message ? true : false'>
+    <div class="{{message.severity}}">
+        <div class="ui-g  ui-g-nopad">
+            <div class="content-width ui-g-nopad">
+                <div class="ui-g toast-m-align ui-g-nopad ">
+                    <div class="ui-g-1 toast-align-right toast-wd ui-g-nopad">
+                        <i class="icon-ge icon-xsm"
+                            [ngClass]="{'icon-ge-warning': message.severity === 'warning', 'icon-ge-x_error': message.severity === 'error', 'icon-ge-check' : message.severity === 'success', 'icon-ge-info_sm': message.severity === 'information' }"></i>
+                    </div>
+                    <div class="ui-g-10 ui-g-nopad text">
+                        <div class="toast-title toast-align-left">{{message.title}}</div>
+                        <div *ngFor="let message of message.message" class="align-left toast-message ">{{message}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-width">
+                <div class="align-content"><button class="primary-button button btn-align" (click)="navigate()"
+                        *ngIf="isSelfSchedule">{{'button.self-schedule-now' | translate}}</button>
+                </div>
+            </div>
+            <div *ngIf="showCloseBtn" class="ui-g-nopad float-right">
+                <button class="toast-close" value="close" (click)="closeBnr=true"><i
+                        class="toast-dismiss icon-ge icon-sm icon-ge-remove_circle"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

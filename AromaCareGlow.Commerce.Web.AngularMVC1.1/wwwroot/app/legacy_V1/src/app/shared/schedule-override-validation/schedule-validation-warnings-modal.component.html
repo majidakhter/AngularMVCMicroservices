@@ -1,0 +1,7 @@
+<div class="validation-warnings-grid" *ngIf="scheduleValidationWarnings">
+  <div class="wfm-table">
+    <div #scrollArea class="scroll-area">
+      <wf-error-validation-warnings [errorValidationWarning]="scheduleValidationWarnings.validationException" [isValidationError]="isValidationError"></wf-error-validation-warnings>
+    </div>
+  </div>
+ </div>

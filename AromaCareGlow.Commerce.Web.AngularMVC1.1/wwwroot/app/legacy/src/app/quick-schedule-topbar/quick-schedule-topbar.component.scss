@@ -1,0 +1,18 @@
+@import "~@api-wfm/web-theme/src/styles/0-settings/colors.scss";
+
+.topbar-container{
+    .top-bar-icon{
+        background-color: $primary-light;
+        width: 85px;
+        .icon-ge.icon-wfm-user {
+            color: $focus-secondary;
+            font-size: 55px;
+            margin-top: 10px;
+        }
+    }
+    .top-bar-contents{
+        width: calc(100% - 85px);
+        background-color: $focus-secondary;
+        padding: 10px 20px;
+    }
+}

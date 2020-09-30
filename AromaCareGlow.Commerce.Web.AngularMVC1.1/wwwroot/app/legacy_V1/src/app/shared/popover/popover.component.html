@@ -1,0 +1,12 @@
+<div class="popover-container wfm-popover {{cssClass}}"
+  [ngClass]="{'hidden' : loading, 'wfm-popover-above': above, 'wfm-popover-below': below, 'wfm-popover-beside':besideRight||besideLeft}"
+  [ngStyle]="{top: top, left: left}">
+  <div
+    [ngClass]="{'wfm-popover-above': above, 'wfm-popover-below': below, 'wfm-popover-beside':besideRight||besideLeft}">
+    <ng-template #popoverContainer></ng-template>
+    <div [ngClass]="{'wfm-popover-right-arrow': besideLeft}" [ngStyle]="{top:arrowTop}"></div>
+    <div [ngClass]="{'wfm-popover-left-arrow': besideRight}" [ngStyle]="{top:arrowTop}"></div>
+    <div [ngClass]="{'wfm-popover-top-arrow': below, 'wfm-popover-bottom-arrow': above}"
+      [ngStyle]="{left:arrowLeft}"></div>
+  </div>
+</div>

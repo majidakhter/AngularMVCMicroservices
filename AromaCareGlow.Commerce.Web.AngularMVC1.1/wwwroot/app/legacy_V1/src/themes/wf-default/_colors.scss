@@ -1,0 +1,119 @@
+
+$wfm-colors: (
+  /*alert colors*/
+  alert-success: #60BD0F, //Formerly SUCCESS-GREEN * Used to highlight successful actions & content
+  alert-error: #B6001A, //Formerly RED-ERROR * Used to highlight content requireing user attention immediately
+  alert-warning: #FAC000, //Formerly ORANGE-WARNING * Used to highlight content requiring user attention.
+  alert-informational: #3E87E8, //Formerly INFO * Used to highlight content that is informational.
+  /*focus & highlight states*/
+  highlight-recent: #136E85, //Formerly DATA-BLUE-GRAY * Used to highlight the most recent items on a list.
+  highlight-primary: #007ad9,
+  focus-background: #136E85, //Formerly DATA-BLUE-GRAY * Used for focus indicator backgrounds in general.
+  focus-primary: #00D9FF, //Formerly FOCUS-BLUE * Used for on-focus only
+  focus-secondary: #E0F3F8, //Formerly DATA-SKY-BLUE * Used as a highlight or hover on drop-down forms.
+  focus-accent: #136E85, //Formerly DATA-DARK-BLUE * Used as an accent for indicating focus.
+  /*buttons, text & links*/
+  navigation-link: #1D9DBE, //Formerly DATA-AQUA-BLUE * Used for links that navigate to other locations.
+  /*infographics*/
+  infographic-highlight: #1D9DBE, //Formerly DATA-AQUA-BLUE *
+  infographic-notify: #268FC8, //Formerly OCEAN-BLUE
+  infographic-notify-70: #5DA5DA, //Formerly DATA-BLUE
+  infographic-alert: #E8A736, //Formerly DATA-ORANGE
+  working-shift: #268FC8, //Represents working shifts in infographics
+  non-productive-shift: #9B27AF, //Represents non-productive shifts in infographics
+  on-call-shift: #E8A736, //Represents on-call shifts in infographics
+  unavailability-shift: #E8728A, //Represents unavailability in infographics
+  availability-shift: #000000, //Represents availability in infographics
+  trade-shift: #637BC5, //Represents trades in infographics
+  open-shift: #60BD0F, //Represents open-shifts in infographics
+  /*shades of gray*/
+  medium-gray-2: #6F7276,
+  medium-gray: #D1D0D8,
+  light-gray: #DCE3E9,
+  white-gray: #F8F8FA,
+  pale-gray: #F0F4F7,
+  medium-cool-gray: #748B99,
+  cool-gray: #B5C2CB,
+  /*warm tones*/
+  default-dark: #000000, //Formerly BLACK * Used for supporting text
+  default-medium: #6F7576, //Formerly MEDIUM-GRAY2 * Used for supporting text and elements such as arrows, details, tc.
+  default-medium-35: #D1D0D8, //Formerly MEDIUM-GRAY * Used as supporting text color and decoration.
+  default-medium-15: #E6E6EC, //Formerly LIGHT-GRAY  * Used for detailing and borders.
+  default-light: #FFFFFF, //Formerly WHITE
+  /*cool tones*/
+  primary-dark: #192632, //Formerly DATA-DARK-CHARCOAL *
+  primary-dark-95: #182A39, //Formerly MASTHEAD-BLACK * Used in the masthead
+  primary-dark-75: #435865, //Formerly DATA-DARK-BLUE-GRAY
+  primary-medium: #748B99, //Formerly MEDIUM-COOL-GRAY * Used for text and shading
+  primary-medium-50: #B5C2CB, //Formerly COOL-GRAY * Used for borders and shading
+  primary-medium-40: #DCE3E9, //Formerly WHITE-LIGHT-GRAY * Used for detailing and borders.
+  primary-medium-10: #F0F4F7, //Formerly PALE-GRAY * Used for shading
+  primary-light: #F8F8FA, //Formerly WHITE-GRAY
+  primary-black: #000000
+);
+
+$ge-aqua-blue: (
+  50 : #e4f3f7,
+  100 : #bbe2ec,
+  200 : #8ecedf,
+  300 : #61bad2,
+  400 : #3facc8,
+  500 : #1d9dbe,
+  600 : #1a95b8,
+  700 : #158baf,
+  800 : #1181a7,
+  900 : #0a6f99,
+  A100 : #c7edff,
+  A200 : #94dcff,
+  A400 : #61cbff,
+  A700 : #47c3ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$ge-accent: (
+  50 : #fef7e0,
+  100 : #feecb3,
+  200 : #fde080,
+  300 : #fcd34d,
+  400 : #fbc926,
+  500 : #fac000,
+  600 : #f9ba00,
+  700 : #f9b200,
+  800 : #f8aa00,
+  900 : #f69c00,
+  A100 : #ffffff,
+  A200 : #fff6ea,
+  A400 : #ffe1b7,
+  A700 : #ffd79d,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);

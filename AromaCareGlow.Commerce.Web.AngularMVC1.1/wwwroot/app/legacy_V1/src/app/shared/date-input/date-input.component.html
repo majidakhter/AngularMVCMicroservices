@@ -1,0 +1,19 @@
+<p-calendar *ngIf="!multiDateSelect" [(ngModel)]="selectedSingleDate" [showOtherMonths]="false" selectionMode="single"
+  [(dateFormat)]="dateFormatDisplay" [minDate]="minDateValue" [maxDate]="maxDateValue" [showIcon]="true"
+  (onSelect)="onDateChanged($event)" (onBlur)="onInputBlur($event)" (onFocus)="onInputFocus()"
+  [inputStyle]="{'border-width':'1px 0px 1px 1px' , 'width':'90%','height':'26px'}" (onClose)="onDateChanged()">
+</p-calendar>
+<p-calendar *ngIf="multiDateSelect" [(ngModel)]="selectedDateList" [showOtherMonths]="false" selectionMode="multiple"
+  [(dateFormat)]="dateFormatDisplay" [minDate]="minDateValue" [maxDate]="maxDateValue" [showIcon]="true"
+  (onSelect)="onDateChanged($event)" (onBlur)="onInputBlur($event)" (onFocus)="onInputFocus()"
+  [inputStyle]="{'border-width':'1px 0px 1px 1px' , 'width':'90%','height':'26px'}" (click)="onDateChanged()"
+  [readonlyInput]="true" #calendar>
+  <p-footer>
+    <input type="button" class="inline-input footer-10 primary-button button" (click)="cancel()" name="cancel"
+      value="Cancel">
+    <input type="button" class="inline-input footer-10 float-right primary-button button" (click)="done()" name="Done"
+      value="Done">
+  </p-footer>
+</p-calendar>
+
+<div class="m-20" *ngIf="multiDateSelect"><label class="label label-md" *ngIf="viewDates"> {{viewDates}} </label></div>

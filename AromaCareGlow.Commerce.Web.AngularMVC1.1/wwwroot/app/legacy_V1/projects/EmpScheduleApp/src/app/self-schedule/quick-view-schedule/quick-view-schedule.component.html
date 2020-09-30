@@ -1,0 +1,41 @@
+<div class="schedule-content">
+  <wfm-event-details [mappedEvent]="mapEvent(event)" [displayType]="extendedDisplay">
+    <div><span class="span-space">{{ 'quick-view-schedule.startTime' | translate }}
+        {{event.startDate | dateformat:"TIME_24HOUR_SHORT"}}</span>
+      <span>{{ 'quick-view-schedule.endTime' | translate }}
+        {{event.endDate | dateformat:"TIME_24HOUR_SHORT"}}</span></div>
+    <div *ngIf="event.isActivity">
+      {{ 'quick-view-schedule.role' | translate }} {{ event.profile?.code }}
+    </div>
+    <div>{{ 'quick-view-schedule.facility' | translate }} {{event.facility.name}}</div>
+  </wfm-event-details>
+  <div *ngIf="isClicked">
+    <div class="event-detials-more">
+      <div *ngIf="!event.isActivity">{{ 'quick-view-schedule.department' | translate }}
+        {{event.department.name}}</div>
+      <div *ngIf="event.unit">{{ 'quick-view-schedule.unit' | translate  }}
+        {{ event.unit?.name }}</div>
+      <div *ngIf="event.isActivity">{{ 'quick-view-schedule.department' | translate }}
+        {{event.department.name}}</div>
+      <div>{{ 'quick-view-schedule.hours' | translate }} {{event.hours}}</div>
+      <div>{{ 'quick-view-schedule.lunchLength' | translate }} {{event.lunchHours}}</div>
+      <div>{{ 'quick-view-schedule.position' | translate }} {{event.position?.name}}</div>
+      <div *ngIf="!event.isActivity">
+        {{ 'quick-view-schedule.job-class' | translate }} {{ event.jobClass?.code }}
+        <div *ngIf="event.requestedReason">
+          {{'quick-view-schedule.comments' | translate}}{{event.requestedReason}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="float-right">
+  <label class="view-link margin-left-10" (click)="this.isClicked = !this.isClicked">
+    {{ (isClicked ? 'schedule.view-less' : 'schedule.view-more') | translate }}
+  </label>
+  <button *ngIf="event.source=='SelfScheduled'" class="primary-button button retractAlign"
+    (click)="retractSelfSchedule(this)">
+    {{ 'quick-view-schedule.retract' | translate }}
+  </button>
+</div>
+<hr>

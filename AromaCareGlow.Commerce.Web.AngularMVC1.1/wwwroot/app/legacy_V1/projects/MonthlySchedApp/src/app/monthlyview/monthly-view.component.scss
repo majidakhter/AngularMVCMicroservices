@@ -1,0 +1,25 @@
+@import "../../../../../src/themes/wf-default/colors";
+
+.ui-g-9 {
+    padding:0px 10px;
+    width: 70%;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+}
+
+.ui-g {
+    margin: 24px 15px 15px 15px;
+}
+
+.ui-g-3 {
+    padding-right: 0px;
+    width: 30%;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+}
+
+.title-class{
+    font-size: 26px;
+    color: map-get($wfm-colors, default-dark);
+    padding: 20px 0px 15px 25px;
+}

@@ -1,0 +1,65 @@
+
+@import "../../../../../src/themes/wf-default/colors";
+
+.ui-g-9 {
+  width: 70%;
+  overflow-y: auto;
+  height: calc(100vh - 20px);
+}
+
+.ui-g {
+  margin: 24px 15px 15px 15px;
+}
+
+.ui-g-3 {
+  padding-right: 0px;
+  width: 30%;
+  overflow-y: auto;
+  height: calc(100vh - 20px);
+  border-left: 1px solid #dedede;
+}
+
+.t-middle {
+  margin: auto 0;
+  margin-right: 10px;
+}
+
+.no-scheddule {
+  margin: 40px;
+  color: map-get($wfm-colors, alert-informational);
+}
+
+.display {
+  display: flex;
+  padding-top: 40px;
+}
+
+.p-10 {
+  padding-left: 10px;
+}
+
+::ng-deep wf-modal .wf-modal hr {
+  display: none;
+}
+
+::ng-deep wf-modal .wf-modal {
+  padding: 5px 20px;
+  min-height: 35%;
+  width: 60%;
+}
+
+::ng-deep wf-modal section.modal-buttons {
+  display: none;
+}
+
+::ng-deep wf-modal .wf-modal section.modal-content {
+  padding: 0px 0px 10px 0px;
+}
+
+.selfScheduleHeader {
+  font-size: 26px;
+  color: map-get($wfm-colors, default-dark);
+  font-weight: 100;
+  padding: 8px 0px 0px 33px;
+  position: fixed;
+}

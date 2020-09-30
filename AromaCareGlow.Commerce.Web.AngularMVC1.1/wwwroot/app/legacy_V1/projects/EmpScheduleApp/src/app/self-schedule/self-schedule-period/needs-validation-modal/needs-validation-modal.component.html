@@ -1,0 +1,10 @@
+<div class="font">
+  <h4 class="m-20">{{ 'schedule.validation-warning' | translate }}</h4>
+  <span>{{ 'self-schedule-period.needsWarning' | translate }}</span><br>
+  <div class="shift-align"> <span>{{selectedDate |dateformat:"DATE_MONTH_DAY"}}, {{range}}</span><br>
+    {{profileName}}<br>
+    <span>{{'self-schedule-period.shift-unavailable'| translate }}</span></div>
+  <hr>
+  <button class="f-right priority-button button" (click)="closeApprovalModal()">{{'button.ok' | translate}}</button>
+ 
+</div>
