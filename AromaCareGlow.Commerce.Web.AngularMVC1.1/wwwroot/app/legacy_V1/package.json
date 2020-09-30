@@ -102,7 +102,7 @@
     "moment": "^2.23.0",
     "ngx-auto-unsubscribe": "2.0.0",
     "ngx-logger": "3.3.6",
-    "node-sass": "4.10.0",
+    "node-sass": "4.13.1",
     "primeflex": "^1.0.0-rc.1",
     "primeicons": "^1.0.0",
     "primeng": "^8.0.2",
