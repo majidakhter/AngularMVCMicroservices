@@ -126,7 +126,7 @@
     "@types/jasminewd2": "2.0.3",
     "@types/node": "7.0.8",
     "@types/signalr": "2.2.35",
-    "https-proxy-agent": "2.2.1",
+    "https-proxy-agent": "2.2.3",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "3.0.0",
