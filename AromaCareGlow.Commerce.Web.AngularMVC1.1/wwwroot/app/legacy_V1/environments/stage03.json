@@ -2,14 +2,14 @@
   "production": false,
   "isStandalone": true,
   "baseApiPath": "/remoteWAS/",
-  "WASPath": "https://intt03.apihcdevcloud.com/tm/testing1/web-services/",
+  "WASPath": "https://stage03.apidevcloud.com/tm/testing1/web-services/",
   "loginUser": {
-    "username": "blue01",
+    "username": "test01",
     "password": "api",
     "timeout": "1:00:00"
   },
   "logger": {
-    "logUrl": "/api/intt03/logs",
+    "logUrl": "/api/stage03/logs",
     "logLevel": "NgxLoggerLevel.WARN",
     "serverLogLevel": "NgxLoggerLevel.OFF"
   },

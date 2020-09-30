@@ -63,19 +63,19 @@
               "sourceMap": true,
               "aot": true
             },
-            "int03": {
+            "stage03": {
               "sourceMap": true,
               "aot": true
             },
-            "int07": {
+            "stage07": {
               "sourceMap": true,
               "aot": true
             },
-            "int06": {
+            "stage06": {
               "sourceMap": true,
               "aot": true
             },
-            "int11": {
+            "stage11": {
               "sourceMap": true,
               "aot": true
             },
@@ -88,36 +88,36 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "monthly-view:build"
+            "browserTarget": "yearly-view:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "monthly-view:build:production"
+              "browserTarget": "yearly-view:build:production"
             },
             "sim": {
-              "browserTarget": "monthly-view:build:sim"
+              "browserTarget": "yearly-view:build:sim"
             },
             "int03": {
-              "browserTarget": "monthly-view:build:int03"
+              "browserTarget": "yearly-view:build:stage03"
             },
             "int06": {
-              "browserTarget": "monthly-view:build:int06"
+              "browserTarget": "yearly-view:build:stage06"
             },
             "int07": {
-              "browserTarget": "monthly-view:build:int07"
+              "browserTarget": "yearly-view:build:stage07"
             },
             "int11": {
-              "browserTarget": "monthly-view:build:int11"
+              "browserTarget": "yearly-view:build:stage11"
             },
             "local": {
-              "browserTarget": "monthly-view:build:local"
+              "browserTarget": "yearly-view:build:local"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "monthly-view:build"
+            "browserTarget": "yearly-view:build"
           }
         },
         "test": {
@@ -137,8 +137,10 @@
                 "input": "src/styles.scss"
               }
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js",
-              "node_modules/signalr/jquery.signalR.min.js"],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/signalr/jquery.signalR.min.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -167,11 +169,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "monthly-view:serve"
+            "devServerTarget": "yearly-view:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "monthly-view:serve:production"
+              "devServerTarget": "yearly-view:serve:production"
             }
           }
         },
@@ -186,9 +188,9 @@
         }
       }
     },
-    "MonthlyViewApp": {
-      "root": "projects/MonthlyViewApp/",
-      "sourceRoot": "projects/MonthlyViewApp/src",
+    "YearlyViewApp": {
+      "root": "projects/YearlyViewApp/",
+      "sourceRoot": "projects/YearlyViewApp/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -199,14 +201,14 @@
             "customWebpackConfig": {
               "path": "./config/custom-webpack.config.js"
             },
-            "outputPath": "dist/MonthlyViewApp",
-            "index": "projects/MonthlyViewApp/src/index.html",
-            "main": "projects/MonthlyViewApp/src/main.ts",
-            "polyfills": "projects/MonthlyViewApp/src/polyfills.ts",
-            "tsConfig": "projects/MonthlyViewApp/tsconfig.app.json",
+            "outputPath": "dist/YearlyViewApp",
+            "index": "projects/YearlyViewApp/src/index.html",
+            "main": "projects/YearlyViewApp/src/main.ts",
+            "polyfills": "projects/YearlyViewApp/src/polyfills.ts",
+            "tsConfig": "projects/YearlyViewApp/tsconfig.app.json",
             "assets": [
-              "projects/MonthlyViewApp/src/favicon.ico",
-              "projects/MonthlyViewApp/src/assets"
+              "projects/YearlyViewApp/src/favicon.ico",
+              "projects/YearlyViewApp/src/assets"
             ],
             "styles": [
               {
@@ -245,15 +247,15 @@
               "sourceMap": true,
               "aot": true
             },
-            "int03": {
+            "stage03": {
               "sourceMap": true,
               "aot": true
             },
-            "int06": {
+            "stage06": {
               "sourceMap": true,
               "aot": true
             },
-            "int11": {
+            "stage11": {
               "sourceMap": true,
               "aot": true
             },
@@ -266,42 +268,42 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MonthlyViewApp:build"
+            "browserTarget": "YearlyViewApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MonthlyViewApp:build:production"
+              "browserTarget": "YearlyViewApp:build:production"
             },
             "sim": {
-              "browserTarget": "MonthlyViewApp:build:sim"
+              "browserTarget": "YearlyViewApp:build:sim"
             },
-            "int03": {
-              "browserTarget": "MonthlyViewApp:build:int03"
+            "stage03": {
+              "browserTarget": "YearlyViewApp:build:stage03"
             },
-            "int06": {
-              "browserTarget": "MonthlyViewApp:build:int06"
+            "stage06": {
+              "browserTarget": "YearlyViewApp:build:stage06"
             },
-            "int11": {
-              "browserTarget": "MonthlyViewApp:build:int11"
+            "stage11": {
+              "browserTarget": "YearlyViewApp:build:stage11"
             },
             "local": {
-              "browserTarget": "MonthlyViewApp:build:local"
+              "browserTarget": "YearlyViewApp:build:local"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MonthlyViewApp:build"
+            "browserTarget": "YearlyViewApp:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/MonthlyViewApp/src/test.ts",
-            "polyfills": "projects/MonthlyViewApp/src/polyfills.ts",
-            "tsConfig": "projects/MonthlyViewApp/tsconfig.spec.json",
-            "karmaConfig": "projects/MonthlyViewApp/karma.conf.js",
+            "main": "projects/YearlyViewApp/src/test.ts",
+            "polyfills": "projects/YearlyViewApp/src/polyfills.ts",
+            "tsConfig": "projects/YearlyViewApp/tsconfig.spec.json",
+            "karmaConfig": "projects/YearlyViewApp/karma.conf.js",
             "codeCoverage": true,
             "sourceMap": true,
             "styles": [
@@ -309,14 +311,16 @@
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               },
               {
-                "input": "projects/MonthlyViewApp/src/styles.scss"
+                "input": "projects/YearlyViewApp/src/styles.scss"
               }
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js",
-              "node_modules/signalr/jquery.signalR.min.js"],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/signalr/jquery.signalR.min.js"
+            ],
             "assets": [
-              "projects/MonthlyViewApp/src/favicon.ico",
-              "projects/MonthlyViewApp/src/assets"
+              "projects/YearlyViewApp/src/favicon.ico",
+              "projects/YearlyViewApp/src/assets"
             ]
           }
         },
@@ -324,8 +328,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/MonthlyViewApp/tsconfig.app.json",
-              "projects/MonthlyViewApp/tsconfig.spec.json"
+              "projects/YearlyViewApp/tsconfig.app.json",
+              "projects/YearlyViewApp/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -334,27 +338,27 @@
         }
       }
     },
-    "MonthlyViewApp-e2e": {
-      "root": "projects/MonthlyViewApp-e2e/",
+    "YearlyViewApp-e2e": {
+      "root": "projects/YearlyViewApp-e2e/",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/MonthlyViewApp-e2e/protractor.conf.js",
-            "devServerTarget": "MonthlyViewApp:serve"
+            "protractorConfig": "projects/YearlyViewApp-e2e/protractor.conf.js",
+            "devServerTarget": "YearlyViewApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MonthlyViewApp:serve:production"
+              "devServerTarget": "YearlyViewApp:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "projects/MonthlyViewApp-e2e/tsconfig.e2e.json",
+            "tsConfig": "projects/YearlyViewApp-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -362,9 +366,9 @@
         }
       }
     },
-    "SelfScheduleApp": {
-      "root": "projects/SelfScheduleApp/",
-      "sourceRoot": "projects/SelfScheduleApp/src",
+    "SelfTimelineApp": {
+      "root": "projects/SelfTimelineApp/",
+      "sourceRoot": "projects/SelfTimelineApp/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -375,14 +379,14 @@
             "customWebpackConfig": {
               "path": "./config/custom-webpack.config.js"
             },
-            "outputPath": "dist/SelfScheduleApp",
-            "index": "projects/SelfScheduleApp/src/index.html",
-            "main": "projects/SelfScheduleApp/src/main.ts",
-            "polyfills": "projects/SelfScheduleApp/src/polyfills.ts",
-            "tsConfig": "projects/SelfScheduleApp/tsconfig.app.json",
+            "outputPath": "dist/SelfTimelineApp",
+            "index": "projects/SelfTimelineApp/src/index.html",
+            "main": "projects/SelfTimelineApp/src/main.ts",
+            "polyfills": "projects/SelfTimelineApp/src/polyfills.ts",
+            "tsConfig": "projects/SelfTimelineApp/tsconfig.app.json",
             "assets": [
-              "projects/SelfScheduleApp/src/favicon.ico",
-              "projects/SelfScheduleApp/src/assets"
+              "projects/SelfTimelineApp/src/favicon.ico",
+              "projects/SelfTimelineApp/src/assets"
             ],
             "styles": [
               {
@@ -420,15 +424,15 @@
               "sourceMap": true,
               "aot": true
             },
-            "int02": {
+            "stage02": {
               "sourceMap": true,
               "aot": true
             },
-            "int03": {
+            "stage03": {
               "sourceMap": true,
               "aot": true
             },
-            "int11": {
+            "stage11": {
               "sourceMap": true,
               "aot": true
             },
@@ -441,42 +445,42 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "SelfScheduleApp:build"
+            "browserTarget": "SelfTimelineApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "SelfScheduleApp:build:production"
+              "browserTarget": "SelfTimelineApp:build:production"
             },
             "sim": {
-              "browserTarget": "SelfScheduleApp:build:sim"
+              "browserTarget": "SelfTimelineApp:build:sim"
             },
-            "int03": {
-              "browserTarget": "SelfScheduleApp:build:int03"
+            "stage03": {
+              "browserTarget": "SelfTimelineApp:build:stage03"
             },
-            "int02": {
-              "browserTarget": "SelfScheduleApp:build:int02"
+            "stage02": {
+              "browserTarget": "SelfTimelineApp:build:stage02"
             },
-            "int11": {
-              "browserTarget": "SelfScheduleApp:build:int11"
+            "stage11": {
+              "browserTarget": "SelfTimelineApp:build:stage11"
             },
             "local": {
-              "browserTarget": "SelfScheduleApp:build:local"
+              "browserTarget": "SelfTimelineApp:build:local"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SelfScheduleApp:build"
+            "browserTarget": "SelfTimelineApp:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/SelfScheduleApp/src/test.ts",
-            "polyfills": "projects/SelfScheduleApp/src/polyfills.ts",
-            "tsConfig": "projects/SelfScheduleApp/tsconfig.spec.json",
-            "karmaConfig": "projects/SelfScheduleApp/karma.conf.js",
+            "main": "projects/SelfTimelineApp/src/test.ts",
+            "polyfills": "projects/SelfTimelineApp/src/polyfills.ts",
+            "tsConfig": "projects/SelfTimelineApp/tsconfig.spec.json",
+            "karmaConfig": "projects/SelfTimelineApp/karma.conf.js",
             "codeCoverage": true,
             "sourceMap": true,
             "styles": [
@@ -484,14 +488,16 @@
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               },
               {
-                "input": "projects/SelfScheduleApp/src/styles.scss"
+                "input": "projects/SelfTimelineApp/src/styles.scss"
               }
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js",
-              "node_modules/signalr/jquery.signalR.min.js"],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/signalr/jquery.signalR.min.js"
+            ],
             "assets": [
-              "projects/SelfScheduleApp/src/favicon.ico",
-              "projects/SelfScheduleApp/src/assets"
+              "projects/SelfTimelineApp/src/favicon.ico",
+              "projects/SelfTimelineApp/src/assets"
             ]
           }
         },
@@ -499,8 +505,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/SelfScheduleApp/tsconfig.app.json",
-              "projects/SelfScheduleApp/tsconfig.spec.json"
+              "projects/SelfTimelineApp/tsconfig.app.json",
+              "projects/SelfTimelineApp/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -509,27 +515,27 @@
         }
       }
     },
-    "SelfScheduleApp-e2e": {
-      "root": "projects/SelfScheduleApp-e2e/",
+    "SelfTimelineApp-e2e": {
+      "root": "projects/SelfTimelineApp-e2e/",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/SelfScheduleApp-e2e/protractor.conf.js",
-            "devServerTarget": "SelfScheduleApp:serve"
+            "protractorConfig": "projects/SelfTimelineApp-e2e/protractor.conf.js",
+            "devServerTarget": "SelfTimelineApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "SelfScheduleApp:serve:production"
+              "devServerTarget": "SelfTimelineApp:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "projects/SelfScheduleApp-e2e/tsconfig.e2e.json",
+            "tsConfig": "projects/SelfTimelineApp-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -538,7 +544,7 @@
       }
     }
   },
-  "defaultProject": "monthly-view",
+  "defaultProject": "yearly-view",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "scss"

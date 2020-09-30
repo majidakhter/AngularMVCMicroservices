@@ -1,19 +1,19 @@
 {
-  "name": "quick-schedule",
+  "name": "test-schedule",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
     "build:local": "cross-env NODE_ENV=local ng build  --configuration=local",
-    "build:int02": "cross-env NODE_ENV=int02 ng build  --configuration=int02",
+    "build:int02": "cross-env NODE_ENV=stage02 ng build  --configuration=stage02",
     "build:prod": "cross-env NODE_ENV=prod ng build --configuration=production --single-bundle true & npm run concat",
     "test": "ng test --code-coverage --watch=true",
     "coverage": "ng test --codeCoverage",
     "test-ci": "ng test --watch=false --code-coverage",
     "lint": "ng lint",
     "local": "npm run build:local && ng serve -o --configuration=local",
-    "int02": "npm run build:int02 && ng serve -o --configuration=int02",
-    "concat": "concat -o dist/QuickSchedule/quick-schedule.js ./dist/QuickSchedule/polyfills.js ./dist/QuickSchedule/main.js "
+    "int02": "npm run build:stage02 && ng serve -o --configuration=stage02",
+    "concat": "concat -o dist/TestSchedule/test-schedule.js ./dist/TestSchedule/polyfills.js ./dist/TestSchedule/main.js "
   },
   "private": true,
   "dependencies": {

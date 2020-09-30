@@ -3,7 +3,7 @@
   "isStandalone": true,
   "baseApiPath": "http://localhost:44309/",
   "loginUser": {
-    "username": "lee",
+    "username": "makhter",
     "password": "api",
     "timeout": "1:00:00"
   },

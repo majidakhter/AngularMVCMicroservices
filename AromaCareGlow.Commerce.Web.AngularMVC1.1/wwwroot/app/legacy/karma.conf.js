@@ -21,12 +21,12 @@ module.exports = function (config) {
       }
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../../../../../Angular/QuickSchedule/TestResults/coverage'),
+      dir: require('path').join(__dirname, '../../../../../Angular/TestSchedule/TestResults/coverage'),
       reports: ['html', 'cobertura', 'text-summary'],
       fixWebpackSourcePaths: true
     },
     junitReporter: {
-      outputDir: '../../../../../Angular/QuickSchedule/TestResults/junit',
+      outputDir: '../../../../../Angular/TestSchedule/TestResults/junit',
       useBrowserName: false
     },
 

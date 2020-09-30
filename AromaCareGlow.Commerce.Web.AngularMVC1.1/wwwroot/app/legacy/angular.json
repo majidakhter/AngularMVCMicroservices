@@ -17,7 +17,7 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/QuickSchedule",
+            "outputPath": "dist/TestSchedule",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,7 +69,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.int02.ts"
+                  "with": "src/environments/environment.stage02.ts"
                 }
               ],
               "sourceMap": true,
@@ -90,24 +90,24 @@
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "QuickSchedule:build"
+            "browserTarget": "TestSchedule:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "QuickSchedule:build:production"
+              "browserTarget": "TestSchedule:build:production"
             },
             "int02": {
-              "browserTarget": "QuickSchedule:build:int02"
+              "browserTarget": "TestSchedule:build:stage02"
             },
             "local": {
-              "browserTarget": "QuickSchedule:build:local"
+              "browserTarget": "TestSchedule:build:local"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "QuickSchedule:build"
+            "browserTarget": "TestSchedule:build"
           }
         },
         "test": {
@@ -149,18 +149,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "QuickSchedule:serve"
+            "devServerTarget": "TestSchedule:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "QuickSchedule:serve:production"
+              "devServerTarget": "TestSchedule:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "QuickSchedule",
+  "defaultProject": "TestSchedule",
   "cli": {
     "analytics": false
   }
