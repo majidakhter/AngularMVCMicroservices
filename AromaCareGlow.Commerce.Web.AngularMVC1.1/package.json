@@ -18,7 +18,7 @@
     "@angular/router": "4.0.2",
     "@ng-bootstrap/ng-bootstrap": "1.0.0",
     "angular-in-memory-web-api": "~0.2.4",
-    "body-parser": "1.14.1",
+    "body-parser": "1.20.1",
     "bootstrap": "3.3.5",
     "core-js": "^2.4.1",
     "es6-shim": "^0.35.0",
